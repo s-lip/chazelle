@@ -1,0 +1,86 @@
+.rounded (@radius: 10px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    
+    font-size: 12pt;
+    font-family: Helvetica Neue, Helvetica, sans-serif;
+    
+    strong {
+        font-weight: 900;
+    }
+    
+}
+
+.hidden {
+    display: none;
+    }
+
+#fixie-nav {
+    position: fixed;
+    top: 0px; 
+    left: 0px;
+    width: 250px;
+    padding: 10px 5px 5px 10px;
+    margin: auto; 
+    z-index: 100000;
+    
+    color: black;
+    font-variant: small-caps;
+    
+    background-color: rgba(255,255,255,0.8);
+    border-right: 5px solid white;
+    border-bottom: 5px solid white;
+    border-radius: 0 0 10px 0;
+    
+    h3 {
+        margin: 0;
+    }
+    
+    #fixie-nav-expanded {
+    }
+    
+    ul {
+        padding: 0;
+        margin: 0;
+        
+        li {
+            list-style-type: none;
+        }
+        
+        &.team-status {
+            margin: 10px 0 20px 0;
+        }
+        
+        &.nav {
+            li {
+                a {
+                    text-transform: uppercase;
+                    width: 100%;
+                    margin-left: -10px;
+                    padding: 5px;
+                    background: #cf0012;
+                    color: white;
+                    display: block;
+                    text-decoration: none;
+                    text-align: center;
+                    
+                    &:hover {
+                        background: #af0010;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#countdown {
+}
+
+#login {
+}
