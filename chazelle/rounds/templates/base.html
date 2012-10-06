@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html>
 <head>
-<title>Heist!</title>
+<title>Heist! - {% block page_title %}Home{% endblock %}</title>
     <link rel="stylesheet/less" href="/static/less/base.less"/>
     
     {% block more_styles %}
@@ -46,7 +46,7 @@
     <script type="text/javascript" src="/static/js/fixie-nav.js"></script>
     
     <div id="fixie-nav">
-        <h3>Op status: {{ team.name }}</h3>
+        <h3>Status: {{ team.name }}</h3>
         
         <div id="fixie-nav-expanded" class="hidden">
             <ul class="team-status">

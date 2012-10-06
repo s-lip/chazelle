@@ -1,11 +1,31 @@
 {% extends 'hunt_central_base.html' %}
 
 {% block header %}
-    <div id="splash">
-        (poster goes here)
-    </div>
 {% endblock header %}
 
 {% block content %}
-Hello, hunters!
+
+<div id="splash">
+    <img src="" width="500" height="750"/>
+</div>
+<div id="frontpage-text">
+    <h2>Team Members</h2>
+    <ul id="rounds">
+        <li><a href="">You</a></li>
+        <li><a href="">Martin Bishop</a></li>
+        <li><a href="">Richard Feynmann</a></li>
+        <li><a href="">Max Smart</a></li>
+        <li><a href="">Danny Ocean</a></li>
+    </ul>
+    <h2>EvilBank Coin Vault Traps</h2>
+    <ul class="checklist">
+        <li>Snake Pit</li>
+        <li class="checked">Laser Maze</li>
+        <li class="checked">Locked Safe</li>
+    </ul>
+    <h2>Notes</h2>
+    <ul id="notes">
+        <li><a href="">The plan</a></li>
+    </ul>
+</div>
 {% endblock content %}

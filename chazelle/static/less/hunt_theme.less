@@ -1,17 +1,72 @@
 body {
-    background-color: #905f33;
-    color: white;
+    background-color: white;
+    color: black;
+    
+    margin: 0;
+    padding: 0;
+    
+    font-size: 12pt;
+    font-family: Helvetica Neue, Helvetica, sans-serif;
     
     a {
-        color: #af0010;
+        color: #cf0012;
+        
+        &:hover { 
+            color: #af0010; 
+        }
     }
     
     h1, h2, h3 {
+        font-family: 'Crete Round', serif;
         text-transform: uppercase;
+        font-weight: normal;
+    }
+    
+    h3 {
+        font-size: 1.4em;
     }
     
     #container {
-        width: 900px;
-        margin: 0 auto;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    #splash {
+        float: left;
+        height: 100%;
+        max-width: 700px;
+        max-height: 1000px;
+        background-color: black;
+        margin: 0 20px 0 0;
+        padding: 0;
+        
+        img {
+            height: 100%;
+        }
+    }
+    
+    #frontpage-text {
+        padding: 1px 20px 20px 20px;
+        ul {
+            padding-left: 20px;
+            li {
+                margin-left: 20px;
+                display: block;
+            }
+            &.checklist {
+                li:before {
+                    content: "&nbsp;";
+                    padding: 12px;
+                }
+                li.checked {
+                    padding: 0;
+                    &:before {
+                        content: "✓";
+                        margin: 6px;
+                    }
+                }
+            }
+        }
     }
 }

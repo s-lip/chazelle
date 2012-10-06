@@ -1,0 +1,13 @@
+{% extends "sneakers/base.html" %}
+
+{% block content %}
+    {% if solved %}
+    <p>Enter password: <span class="highlight">NUTFLUSH</span><br/>
+    Connected.</p>
+
+    <p>EvilBank Regional Data Center -- Atlanta, GA<br/>
+    root@atlanta.evil.bank#</p>
+    {% endif %}
+    <h2>Puzzle Name</h2>
+    <p>[There is a puzzle here.{% if solved %} You solved it and got the answer shown above, at which point the text above became visible on the puzzle page.{% endif %}]</p>
+{% endblock %}
