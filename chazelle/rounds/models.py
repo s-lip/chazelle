@@ -10,6 +10,9 @@ optional = dict(blank=True, null=True)
 class Round(models.Model):
     slug = models.SlugField()
     order = models.PositiveSmallIntegerField()
+    
+    def __unicode__(self):
+        return self.slug
 
 
 class Puzzle(models.Model):
@@ -17,5 +20,8 @@ class Puzzle(models.Model):
     round = models.ForeignKey(Round)
     is_meta = models.BooleanField(default=False)
     is_roundsolution = models.BooleanField(default=False)
+    
+    def __unicode__(self):
+        return self.round.slug + ": " + self.slug
     
     # post save hook for tracking hunt state, where unlock algorithm gets run
