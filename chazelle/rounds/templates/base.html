@@ -22,12 +22,12 @@
     
 </head>
 
-<body id="{% block body_id %}{% endblock %}">
+<body id="{% block body_id %}{% endblock %}" class="{% block body_class %}{% endblock %}">
 
     <div id="container">
         <div id="header">
             {% block header %}
-            <h1>Heist!</h1>
+            <h1><a href="{% url home %}">COINHEIST</a></h1>
             {% endblock header %}
         </div>
         
@@ -51,8 +51,8 @@
         <div id="fixie-nav-expanded" class="hidden">
             <ul class="team-status">
             <li>Next unlock: <strong>{{ next_unlock_time|date:"l G:i T"}}</strong></li>
-            <li>Warchest: <strong>${{ team.points }}</strong></li>
-            <li>Bribe money: <strong>${{ team.extra_credit }}</strong></li>
+            <li>Warchest: <strong>${% if team.points %}{{ team.points }}{% else %}0{% endif %}</strong></li>
+            <li>Bribes: <strong>{{ team.extra_credit }}</strong></li>
             </ul>
             <ul class="nav">
             <li>{{'home,Home'|link}}</li>

@@ -23,12 +23,10 @@ def hunt_active(view):
             
 def is_unlocked(view):
     '''Checks to see if this round is unlocked for this team; if not, 404s'''
-    def new_view(*args):
-        request = args[0]
-        round_slug = args[1]
+    def new_view(request, round_slug):
         team = Team.objects.get(id=request.user.id)
         if team.rounds_unlocked.filter(slug=round_slug):
-            return view(*args)
+            return view(request, round_slug)
         else:
             raise Http404
     return new_view

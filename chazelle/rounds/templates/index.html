@@ -1,7 +1,6 @@
 {% extends 'hunt_central_base.html' %}
 
-{% block header %}
-{% endblock header %}
+{% block header %}{% endblock header %}
 
 {% block content %}
 
@@ -10,23 +9,26 @@
 </div>
 <div id="frontpage-text">
     <h1><a href="{% url home %}">COINHEIST</a></h1>
-    <h2>Team Members</h2>
+    <h2>Team</h2>
     <ul id="rounds">
         <li><a href="">You</a></li>
-        <li><a href="">Martin Bishop</a></li>
+        <li><a href="{% url round "sneakers" %}">Martin Bishop</a></li>
         <li><a href="">Richard Feynmann</a></li>
         <li><a href="">Max Smart</a></li>
         <li><a href="">Danny Ocean</a></li>
     </ul>
-    <h2>EvilBank Coin Vault Traps</h2>
+    <h2>EvilBank Traps</h2>
     <ul class="checklist">
-        <li>Snake Pit</li>
-        <li class="checked">Laser Maze</li>
         <li class="checked">Locked Safe</li>
+        <li class="checked">Firewall</li>
+        <li>Laser Maze</li>
+        <li>Snake Pit</li>
+        <li class="checked">Game of Chance</li>
+        <li>Puzzle Box</li>
     </ul>
     <h2>Notes</h2>
     <ul id="notes">
-        <li><a href="">The plan</a></li>
+        <li><a href="{% url note "the_plan" %}">The plan</a></li>
     </ul>
 </div>
 {% endblock content %}

@@ -11,7 +11,7 @@ def round(request, round_slug):
     context = { 
         'round_slug': round_slug 
         }
-    return render(request, round_slug + '/index.html', add_nav_context(request, context))
+    return render(request, 'rounds/' + round_slug + '/index.html', add_nav_context(request, context))
 
 @is_unlocked
 @login_required 
@@ -28,5 +28,5 @@ def puzzle(request, round_slug, puzzle_slug):
         'is_solved' : is_solved 
         }
         
-    return render(request, round_slug + '/' + puzzle_slug + '.html', add_nav_context(request, context))
+    return render(request, 'rounds/' + round_slug + '/' + puzzle_slug + '.html', add_nav_context(request, context))
 
