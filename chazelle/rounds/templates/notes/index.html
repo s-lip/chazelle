@@ -1,0 +1,8 @@
+{% extends "notes/base.html" %}
+
+{% block content %}
+<h2>Notes</h2>
+    <ul id="notes">
+        <li><a href="{% url note "the_plan" %}">The plan</a></li>
+    </ul>
+{% endblock content %}

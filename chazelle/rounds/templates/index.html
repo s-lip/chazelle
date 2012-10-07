@@ -11,9 +11,9 @@
     <h1><a href="{% url home %}">COINHEIST</a></h1>
     <h2>Team</h2>
     <ul id="rounds">
-        <li><a href="">You</a></li>
+        <li><a href="{% url round "opening" %}">{{ team.name }}</a></li>
         <li><a href="{% url round "sneakers" %}">Martin Bishop</a></li>
-        <li><a href="">Richard Feynmann</a></li>
+        <li><a href="">Richard Feynman</a></li>
         <li><a href="">Max Smart</a></li>
         <li><a href="">Danny Ocean</a></li>
     </ul>
@@ -28,7 +28,7 @@
     </ul>
     <h2>Notes</h2>
     <ul id="notes">
-        <li><a href="{% url note "the_plan" %}">The plan</a></li>
+        <li><a href="{% url note "the_situation" %}">The Situation</a></li>
     </ul>
 </div>
 {% endblock content %}

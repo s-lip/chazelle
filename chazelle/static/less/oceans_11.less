@@ -1,0 +1,70 @@
+@cobalt: #031544;
+@neon-blue: #0088EE;
+@gold: gold;
+
+.beveled(@color, @thickness: 4px) {
+    border-top: @thickness solid @color + #666666;
+    border-left: @thickness solid @color + #666666;
+    border-right: @thickness solid @color - #666666;
+    border-bottom: @thickness solid @color - #666666;
+}
+
+body {
+    &.vegas-day { background-color: #F9FF99; }
+    &.vegas-night { background-color: @cobalt; }
+    
+    font-size: 14pt;
+    
+    a {
+        color: @neon-blue;
+        text-decoration: none;
+        &:hover {
+            border-bottom: 2pt dotted @neon-blue;
+        }
+    }
+}
+
+#container {
+    width: 940px;
+    padding: 0 20px;
+    margin: 0 auto;
+    background: rgba(255,255,255,.4);
+}
+
+@box: 150px;
+
+#header {
+    padding-bottom: 20px;
+    #casinos {
+        width: 940px;
+        height: 200px;
+        background-color: white;
+    }
+}
+
+#content {
+    #conspirators {
+        list-style-type: none;
+        margin-left: 350px;
+        padding: 0;
+        li {
+            display: block;
+            clear: both;
+            .thumbnail {
+                width: @box;
+                height: @box;
+                margin: 0 4px 4px 0;
+                background-color: @gold;
+                .beveled(@gold);
+                float: left;
+                
+                &.casino {
+                    width: @box / 2;
+                    height: @box / 2;
+                    background-color: @cobalt;
+                    .beveled(@cobalt);
+                }
+            }
+        }
+    }
+}
