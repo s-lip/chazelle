@@ -26,7 +26,7 @@ DATABASES = {
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Los_Angeles'
+TIME_ZONE = 'America/New_York'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -113,11 +113,6 @@ TEMPLATE_DIRS = (
     'rounds/templates',
 )
 
-# app-specific settings
-
-HUNT_START_TIME = datetime.datetime(2013,1,1,12)
-HUNT_STARTED = True
-
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -129,7 +124,6 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'south',
     'debug_toolbar',
-    'teams',
     'rounds',
 )
 
