@@ -9,26 +9,32 @@
 </div>
 <div id="frontpage-text">
     <h1><a href="{% url home %}">COINHEIST</a></h1>
+    <a href="{% url round "opening" %}">EVILBank server</a>
+    
+    {% if evilbank_server.is_solved %}
     <h2>Team</h2>
-    <ul id="rounds">
-        <li><a href="{% url round "opening" %}">{{ team.name }}</a></li>
-        <li><a href="{% url round "sneakers" %}">Martin Bishop</a></li>
-        <li><a href="">Richard Feynman</a></li>
-        <li><a href="">Max Smart</a></li>
-        <li><a href="">Danny Ocean</a></li>
+    <ul id="rounds" class="checklist">
+        <li {% if sneakers.is_solved %}class="checked"{% endif %}>{% if sneakers.is_unlocked %}<a href="{% url round "sneakers" %}">Martin Bishop</a>{% else %}Martin Bishop{% endif %}</li>
+        <li {% if feynman.is_solved %}class="checked"{% endif %}>{% if feynman.is_unlocked %}<a href="">Richard Feynman</a>{% else %}Richard Feynman{% endif %}</li>
+        <li {% if agent_86.is_solved %}class="checked"{% endif %}>{% if agent_86.is_unlocked %}<a href="">{% if agent_86.is_99 %}Agent 99{% else %}Max Smart{% endif %}</a>{% else %}Max Smart{% endif %}</li>
+        <li {% if oceans_11.is_solved %}class="checked"{% endif %}>{% if oceans_11.is_unlocked %}<a href="">Danny Ocean</a>{% else %}Danny Ocean{% endif %}</li>
+        <li {% if rubik.is_solved %}class="checked"{% endif %}>{% if rubik.is_unlocked %}<a href="">Erno Rubik</a>{% else %}Erno Rubik{% endif %}</li>
+        <li {% if indiana_jones.is_solved %}class="checked"{% endif %}>{% if indiana_jones.is_unlocked %}<a href="">Indiana Jones</a>{% else %}Indiana Jones{% endif %}</li>
     </ul>
     <h2>EvilBank Traps</h2>
     <ul class="checklist">
-        <li class="checked">Locked Safe</li>
-        <li class="checked">Firewall</li>
-        <li>Laser Maze</li>
-        <li>Snake Pit</li>
-        <li class="checked">Game of Chance</li>
-        <li>Puzzle Box</li>
+        <li {% if feynman.trap_solved %}class="checked"{% endif %}>Locked Safe</li>
+        <li {% if sneakers.trap_solved %}class="checked"{% endif %}>Firewall</li>
+        <li {% if agent_99.trap_solved %}class="checked"{% endif %}>Laser Maze</li>
+        <li {% if indiana_jones.trap_solved %}class="checked"{% endif %}>Snake Pit</li>
+        <li {% if oceans_11.trap_solved %}class="checked"{% endif %}>Game of Chance</li>
+        <li {% if rubik.trap_solved %}class="checked"{% endif %}>Puzzle Box</li>
     </ul>
+    {% endif %}
+    
     <h2>Notes</h2>
     <ul id="notes">
-        <li><a href="{% url note "the_situation" %}">The Situation</a></li>
+        <li><a href="{% url note "the_situation" %}">Opening Ceremony</a></li>
     </ul>
 </div>
 {% endblock content %}
