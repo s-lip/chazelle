@@ -15,11 +15,11 @@
     <h2>Team</h2>
     <ul id="rounds" class="checklist">
         <li {% if sneakers.is_solved %}class="checked"{% endif %}>{% if sneakers.is_unlocked %}<a href="{% url round "sneakers" %}">Martin Bishop</a>{% else %}Martin Bishop{% endif %}</li>
-        <li {% if feynman.is_solved %}class="checked"{% endif %}>{% if feynman.is_unlocked %}<a href="">Richard Feynman</a>{% else %}Richard Feynman{% endif %}</li>
+        <li {% if feynman.is_solved %}class="checked"{% endif %}>{% if feynman.is_unlocked %}<a href="{% url round "feynman" %}">Richard Feynman</a>{% else %}Richard Feynman{% endif %}</li>
         <li {% if agent_86.is_solved %}class="checked"{% endif %}>{% if agent_86.is_unlocked %}<a href="">{% if agent_86.is_99 %}Agent 99{% else %}Max Smart{% endif %}</a>{% else %}Max Smart{% endif %}</li>
-        <li {% if oceans_11.is_solved %}class="checked"{% endif %}>{% if oceans_11.is_unlocked %}<a href="">Danny Ocean</a>{% else %}Danny Ocean{% endif %}</li>
+        <li {% if oceans_11.is_solved %}class="checked"{% endif %}>{% if oceans_11.is_unlocked %}<a href="{% url round "oceans_11" %}">Danny Ocean</a>{% else %}Danny Ocean{% endif %}</li>
         <li {% if rubik.is_solved %}class="checked"{% endif %}>{% if rubik.is_unlocked %}<a href="">Erno Rubik</a>{% else %}Erno Rubik{% endif %}</li>
-        <li {% if indiana_jones.is_solved %}class="checked"{% endif %}>{% if indiana_jones.is_unlocked %}<a href="">Indiana Jones</a>{% else %}Indiana Jones{% endif %}</li>
+        <li {% if indiana_jones.is_solved %}class="checked"{% endif %}>{% if indiana_jones.is_unlocked %}<a href="{% url round "indiana_jones" %}">Indiana Jones</a>{% else %}Indiana Jones{% endif %}</li>
     </ul>
     <h2>EvilBank Traps</h2>
     <ul class="checklist">

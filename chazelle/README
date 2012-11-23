@@ -1,5 +1,7 @@
 How to set up this site for design-type work:
 
+(Note: this requires you to do some stuff on the command line. Fortunately, most of the commands are written out for you here.)
+
 0. Make an account on github. Have aldeka, gwillen, or paulproteus add you to the private Sages github account.
 
 1. Install Python 2.7 or higher, pip, git, and virtualenv on your computer. (Some of these may already be installed.)
@@ -8,12 +10,12 @@ How to set up this site for design-type work:
 
 3. Fork the chazelle repository on github.com so you have your own fork to play with. Download your fork's code to your computer: 
 git clone ******
-Your project folder will now have a folder in it called "hunt".
+Your project folder will now have a folder in it called "chazelle".
 
 4. While still in your project folder, run: 
 virtualenv env
 source env/bin/activate
-pip hunt/requirements.txt***
+pip chazelle/requirements.txt***
 
 This will install Django and all the other necessary prerequisites into a separate "environment" on your computer. (This is better than installing them on your computer systemwide in case you have other projects using different versions of e.g. Django--otherwise the version'd get clobbered.)
 

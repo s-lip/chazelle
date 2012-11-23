@@ -1,0 +1,213 @@
+{
+    team: {
+        name: "Manic Sages",
+        next_unlock_time: "2012-01-18T16:44:30+0100"
+    },
+    notes: {
+        'opening_ceremony_note_unlocked': true, 
+        'opening_round_note_unlocked': true, 
+        'agent_99_note_unlocked': false
+    }
+    rounds_ordered: ["opening", "oceans_11", "feynman", "get_smart", "indiana", "sneakers", "rubik"],
+    opening: {
+        slug: "opening",
+        name: "EvilBank Server",
+        is_unlocked: true,
+        is_solved: true,
+        puzzles: [
+            "puzzle_1",
+            "puzzle_2",
+            "puzzle_3",
+            "puzzle_4",
+            "puzzle_5",
+            "puzzle_6",
+        ],
+        puzzle_1: {
+            slug: "puzzle_1",
+            name: "Puzzle 1",
+            is_unlocked: true,
+            is_solved: true,
+            answer: "RUBIK"
+        },
+        puzzle_2: {
+            slug: "puzzle_2",
+            name: "Puzzle 2",
+            is_unlocked: true,
+            is_solved: true,
+            answer: "MAXWELLSMART"
+        },
+        puzzle_3: {
+            slug: "puzzle_3",
+            name: "Puzzle 3",
+            is_unlocked: true,
+            is_solved: true,
+            answer: "INDIANAJONES"
+        },
+        puzzle_4: {
+            slug: "puzzle_4",
+            name: "Puzzle 4",
+            is_unlocked: true,
+            is_solved: true,
+            answer: "DANNYOCEAN"
+        },
+        puzzle_5: {
+            slug: "puzzle_5",
+            name: "Puzzle 5",
+            is_unlocked: true,
+            is_solved: true,
+            answer: "RICHARDFEYNMAN"
+        },
+        puzzle_6: {
+            slug: "puzzle_6",
+            name: "Puzzle 6",
+            is_unlocked: true,
+            is_solved: true,
+            answer: "MARTINBISHOP"
+        }
+    },
+    oceans_11: {
+        slug: "oceans_11",
+        name: "Ocean's 11",
+        is_unlocked: true,
+        is_solved: true,
+        puzzles: [
+            "puzzle_1",
+            "puzzle_2",
+            "puzzle_3",
+            "puzzle_4",
+            "puzzle_5",
+        ],
+        puzzle_1: {
+            slug: "puzzle_1",
+            name: "Puzzle 1",
+            is_unlocked: true,
+            is_solved: true,
+            answer: "LEMONADESTAND"
+        },
+        puzzle_2: {
+            slug: "puzzle_2",
+            name: "Puzzle 2",
+            is_unlocked: true,
+            is_solved: false,
+            answer: "DOILY"
+        },
+        puzzle_3: {
+            slug: "puzzle_3",
+            name: "Puzzle 3",
+            is_unlocked: true,
+            is_solved: true,
+            answer: "CHAINSAW"
+        },
+        puzzle_4: {
+            slug: "puzzle_4",
+            name: "Puzzle 4",
+            is_unlocked: true,
+            is_solved: true,
+            answer: "ROCKINGINTHEFREEWORLD"
+        },
+        puzzle_5: {
+            slug: "puzzle_5",
+            name: "Puzzle 5",
+            is_unlocked: true,
+            is_solved: true,
+            answer: "GENGHISKHAN"
+        },
+    },
+    feynman: {
+        slug: "feynman",
+        name: "Feynman",
+        is_unlocked: true,
+        is_solved: false,
+        puzzles: [
+            "puzzle_1",
+            "puzzle_2",
+            "puzzle_3",
+            "puzzle_4",
+            "puzzle_5",
+        ],
+        puzzle_1: {
+            slug: "puzzle_1",
+            name: "Puzzle 1",
+            is_unlocked: true,
+            is_solved: false,
+            answer: "GINGERSNAP"
+        },
+        puzzle_2: {
+            slug: "puzzle_2",
+            name: "Puzzle 2",
+            is_unlocked: true,
+            is_solved: false,
+            answer: "PAVEDWITHGOODINTENTIONS"
+        },
+        puzzle_3: {
+            slug: "puzzle_3",
+            name: "Puzzle 3",
+            is_unlocked: true,
+            is_solved: true,
+            answer: "DJANGOREINHARDT"
+        },
+        puzzle_4: {
+            slug: "puzzle_4",
+            name: "Puzzle 4",
+            is_unlocked: true,
+            is_solved: false,
+            answer: "SHORELINE"
+        },
+        puzzle_5: {
+            slug: "puzzle_5",
+            name: "Puzzle 5",
+            is_unlocked: true,
+            is_solved: true,
+            answer: "VASELINE"
+        },
+    },
+    sneakers: {
+        slug: "sneakers",
+        name: "Sneakers",
+        is_unlocked: false,
+        is_solved: false,
+        puzzles: [
+            "puzzle_1",
+            "puzzle_2",
+            "puzzle_3",
+            "puzzle_4",
+            "puzzle_5",
+        ],
+        puzzle_1: {
+            slug: "puzzle_1",
+            name: "Puzzle 1",
+            is_unlocked: false,
+            is_solved: false,
+            answer: "KUNGFUPANDA"
+        },
+        puzzle_2: {
+            slug: "puzzle_2",
+            name: "Puzzle 2",
+            is_unlocked: false,
+            is_solved: false,
+            answer: "LEROYJENKINS"
+        },
+        puzzle_3: {
+            slug: "puzzle_3",
+            name: "Puzzle 3",
+            is_unlocked: false,
+            is_solved: false,
+            answer: "RUMPLESTILTSKIN"
+        },
+        puzzle_4: {
+            slug: "puzzle_4",
+            name: "Puzzle 4",
+            is_unlocked: false,
+            is_solved: false,
+            answer: "KACHINA"
+        },
+        puzzle_5: {
+            slug: "puzzle_5",
+            name: "Puzzle 5",
+            is_unlocked: false,
+            is_solved: false,
+            answer: "JACCUSE"
+        },
+    },
+}
+
