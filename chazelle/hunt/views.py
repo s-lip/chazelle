@@ -3,7 +3,8 @@ from hunt.hunt_state import state, HuntState
 
 def home(request):
     context = HuntState().get_context(
-        general_data=['team'])
+        general_data=['team'],
+        injected_data=['rounds'])
     return render(request, 'index.html', add_nav_context(request, context))
 
 

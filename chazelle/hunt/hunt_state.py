@@ -10,16 +10,40 @@ class HuntState(object):
                 os.path.dirname(__file__),
                 'hunt_state.ini'))
 
-    def get_context(self, injected_things=None, general_data=None):
+    def get_context(self, injected_data=None, general_data=None):
         context = {}
-        if injected_things:
-            raise NotImplemented
+        if injected_data:
+            for item in injected_data:
+                if item == 'rounds':
+                    context.update(self._get_rounds())
+                else:
+                    raise NotImplemented
 
         if general_data:
-            if 'team' in general_data:
-                context.update(self._get_team())
+            for item in general_data:
+                if item == 'team':
+                    context[item] = self._get_team()
+                else:
+                    raise NotImplemented
 
         return context
+
+    def _get_rounds(self):
+        data = {}
+        rounds_list = self.parser.get('rounds_ordering', 'order'
+                                      ).split()
+        for r in rounds_list:
+            # Provide the basics
+            r_data = {
+                # FIXME: Deal with is_99
+                'name': self.parser.get(r, 'name'),
+                'slug': self.parser.get(r, 'slug'),
+                'is_unlocked': self.parser.getboolean(r, 'is_unlocked'),
+                'is_solved': self.parser.getboolean(r, 'is_solved'),
+                }
+            data[r_data['slug']] = r_data
+
+        return data
 
     def _get_team(self):
         data = {}
