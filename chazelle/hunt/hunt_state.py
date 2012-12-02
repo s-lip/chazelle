@@ -59,7 +59,7 @@ class Hunt():
     def __init__(self, team, rounds=[]):
         self.team = team
         self.rounds = rounds
-        
+
     def next_autounlock_time(self):
         return datetime.datetime.now() + datetime.timedelta(hours=1)
 
@@ -71,7 +71,7 @@ class Round():
         self.puzzles = puzzles
         self.is_solved = is_solved
         self.trap_solved = trap_solved
-    
+
     def __unicode__(self):
         return self.name
 
@@ -82,19 +82,19 @@ class Puzzle():
         self.is_unlocked = is_unlocked
         self.is_solved = is_solved
         self.answer = answer
-        
+
     def __unicode__(self):
         return self.name
-        
+
 class Note():
     def __init__(self, slug, name, is_unlocked=False):
         self.slug = slug
         self.name = name
         self.is_unlocked=is_unlocked
-        
+
     def __unicode__(self):
         return self.name
-        
+
 # initialize data!!!!
 
 hunt = Hunt(team="Manic Sages")
@@ -169,7 +169,7 @@ sneakers.puzzles = [a, b, c, d, e, f]
 # rubik
 
 # indiana jones
-         
+
 notes = {'opening_ceremony_note_unlocked': True, 'opening_round_note_unlocked': True, 'agent_99_note_unlocked': False}
 
 state = {
