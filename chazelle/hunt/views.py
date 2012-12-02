@@ -5,28 +5,15 @@ def home(request):
     context = HuntState().get_context(
         general_data=['team'],
         injected_data=['rounds'])
-    return render(request, 'index.html', add_nav_context(request, context))
+    return render(request, 'index.html', context)
 
 
 def notes(request):
     context = HuntState().get_context(
         general_data=['team'])
-    return render(request, 'notes/index.html', add_nav_context(request, context))
+    return render(request, 'notes/index.html', context)
 
 
 def note(request, note_name):
-    return render(request, 'notes/' + note_name + '.html', add_nav_context(request, {}))
-
-
-def add_nav_context(request, context):
-    nav_context = {
-    }
-    for round in context['rounds']:
-        assert context[round]
-
-    poster_string = 'poster'
-    for round in state['rounds']:
-        if round.is_solved:
-            poster_string = poster_string + '-' + round.slug
-    nav_context['poster'] = poster_string + '.png'
-    return dict(nav_context.items() + context.items())
+    context = {}
+    return render(request, 'notes/' + note_name + '.html', context)
