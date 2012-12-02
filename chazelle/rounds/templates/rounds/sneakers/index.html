@@ -7,9 +7,18 @@
 <h2>INTERCEPTED MESSAGES</h2>
 
 <ul>
-  {% for puzzle in puzzles %}
-    <li><a href="/sneakers/puzzle/">[{% if puzzle.answered %}X{% else %}&nbsp;{% endif %}] {{ puzzle.name }}</a></li>
-  {% endfor %}
+    <li><a href="{% url puzzle "sneakers" "sample_puzzle" %}">[{% if puzzle.answered %}X{% else %}&nbsp;{% endif %}] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "sample_puzzle" %}">[X] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "sample_puzzle" %}">[X] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "sample_puzzle" %}">[{% if puzzle.answered %}X{% else %}&nbsp;{% endif %}] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "sample_puzzle" %}">[{% if puzzle.answered %}X{% else %}&nbsp;{% endif %}] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "sample_puzzle" %}">[{% if puzzle.answered %}X{% else %}&nbsp;{% endif %}] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "sample_puzzle" %}">[{% if puzzle.answered %}X{% else %}&nbsp;{% endif %}] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "sample_puzzle" %}">[{% if puzzle.answered %}X{% else %}&nbsp;{% endif %}] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "sample_puzzle" %}">[X] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "sample_puzzle" %}">[{% if puzzle.answered %}X{% else %}&nbsp;{% endif %}] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "sample_puzzle" %}">[{% if puzzle.answered %}X{% else %}&nbsp;{% endif %}] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "sample_puzzle" %}">[X] Puzzle Name</a></li>
 </ul>
 
   <ul>
@@ -21,9 +30,9 @@
 <h2>OTHER SYSTEMS</h2>
 
   <ul>
-  <li><a href="/sneakers/puzzle/">[ ] Federal Reserve</a></li>
-  <li><a href="/sneakers/puzzle/">[ ] National Power Grid</a></li>
-  <li><a href="/sneakers/puzzle/">[ ] Air Traffic Control</a></li>
+  <li><a href="{% url puzzle "sneakers" "sample_puzzle" %}">[ ] Federal Reserve</a></li>
+  <li><a href="{% url puzzle "sneakers" "sample_puzzle" %}">[ ] National Power Grid</a></li>
+  <li><a href="{% url puzzle "sneakers" "sample_puzzle" %}">[ ] Air Traffic Control</a></li>
   </ul>
 
 {% endblock %}
