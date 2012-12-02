@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from hunt.hunt_state import state, HuntState
+from hunt.hunt_state import HuntState
 
 def home(request):
     context = HuntState().get_context(

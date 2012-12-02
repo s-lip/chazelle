@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from hunt.hunt_state import state
 
 def round(request, round_slug):
     context = { 
