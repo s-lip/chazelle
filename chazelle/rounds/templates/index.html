@@ -11,7 +11,7 @@
     <h1><a href="{% url home %}">COINHEIST</a></h1>
     <a href="{% url round "opening" %}">EVILBank server</a>
     
-    {% if evilbank_server.is_solved %}
+    {% if evilserver.is_solved %}
     <h2>Team</h2>
     <ul id="rounds" class="checklist">
         <li {% if sneakers.is_solved %}class="checked"{% endif %}>{% if sneakers.is_unlocked %}<a href="{% url round "sneakers" %}">Martin Bishop</a>{% else %}Martin Bishop{% endif %}</li>
