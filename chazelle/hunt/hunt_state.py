@@ -50,14 +50,9 @@ class HuntState(object):
         return data
 
     def _get_team(self):
-        data = {}
-        data['team'] = {
-            'name': self.parser.get('team', 'name'),
-            'next_unlock_time': iso8601.parse_date(
-                self.parser.get('team', 'next_unlock_time')),
-            'points': int(self.parser.get('team', 'points')),
-            'extra_credit': int(self.parser.get('team', 'extra_credit')),
-            }
+        data = self._config_parser_section_to_dict('team')
+        for intify in ('points', 'extra_credit'):
+            data[intify] = int(data[intify])
         return data
 
 class Hunt():
