@@ -1,4 +1,13 @@
 import datetime
+import os.path
+import ConfigParser
+
+class HuntState(object):
+    def __init__(self):
+        self.parser = ConfigParser.RawConfigParser()
+        self.parser.read(os.path.join(
+                os.path.dirname(__file__),
+                'hunt_state.ini'))
 
 class Hunt():
     def __init__(self, team, rounds=[]):
