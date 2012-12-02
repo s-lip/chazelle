@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from hunt.hunt_state import state
+from hunt.hunt_state import state, HuntState
 
 def home(request):
-    context = {}
+    context = HuntState().for_home()
     return render(request, 'index.html', add_nav_context(request, context))
     
  

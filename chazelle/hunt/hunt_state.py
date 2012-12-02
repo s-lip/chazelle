@@ -1,6 +1,7 @@
 import datetime
 import os.path
 import ConfigParser
+import iso8601
 
 class HuntState(object):
     def __init__(self):
@@ -8,6 +9,17 @@ class HuntState(object):
         self.parser.read(os.path.join(
                 os.path.dirname(__file__),
                 'hunt_state.ini'))
+
+    def for_home(self):
+        data = {}
+        data['team'] = {
+            'name': self.parser.get('team', 'name'),
+            'next_unlock_time': iso8601.parse_date(
+                self.parser.get('team', 'next_unlock_time')),
+            'points': int(self.parser.get('team', 'points')),
+            'extra_credit': int(self.parser.get('team', 'extra_credit')),
+            }
+        return data
 
 class Hunt():
     def __init__(self, team, rounds=[]):
