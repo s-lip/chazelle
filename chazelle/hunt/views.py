@@ -19,8 +19,6 @@ def note(request, note_name):
 
 def add_nav_context(request, context):
     nav_context = {
-        'team': state['team'],
-        'next_unlock_time': state['next_autounlock_time']
     }
     for round in state['rounds']:
         nav_context[round.slug] = round
