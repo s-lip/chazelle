@@ -15,5 +15,6 @@ def notes(request):
 
 
 def note(request, note_name):
-    context = {}
+    context = hunt.hunt_state.HuntState().get_context(
+        general_data=['team'])
     return render(request, 'notes/' + note_name + '.html', context)
