@@ -47,6 +47,8 @@ class HuntState(object):
             r_data = self._config_parser_section_to_dict(r)
             data[r_data['slug']] = r_data
 
+        data['rounds'] = rounds_list
+
         return data
 
     def _get_team(self):

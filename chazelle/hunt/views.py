@@ -21,8 +21,8 @@ def note(request, note_name):
 def add_nav_context(request, context):
     nav_context = {
     }
-    for round in state['rounds']:
-        nav_context[round.slug] = round
+    for round in context['rounds']:
+        assert context[round]
 
     poster_string = 'poster'
     for round in state['rounds']:
