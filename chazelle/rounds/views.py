@@ -11,8 +11,6 @@ def round(request, round_slug):
 
 def puzzle(request, round_slug, puzzle_slug):
     is_solved = False
-    if state[round_slug][puzzle_slug].is_solved:
-        is_solved = True
     context = { 
         'round_slug': round_slug, 
         'puzzle_slug': puzzle_slug, 
