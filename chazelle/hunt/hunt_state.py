@@ -28,19 +28,23 @@ class HuntState(object):
 
         return context
 
+    def _config_parser_section_to_dict(self, section_name):
+        ret = {}
+        items = self.parser.items(section_name)
+        for (key, value) in items:
+            if key.startswith('is_'):
+                value = self.parser.getboolean(section_name, key)
+            if key.endswith('_date'):
+                value = iso8601.parse_date(value)
+            ret[key] = value
+        return ret
+
     def _get_rounds(self):
         data = {}
         rounds_list = self.parser.get('rounds_ordering', 'order'
                                       ).split()
         for r in rounds_list:
-            # Provide the basics
-            r_data = {
-                # FIXME: Deal with is_99
-                'name': self.parser.get(r, 'name'),
-                'slug': self.parser.get(r, 'slug'),
-                'is_unlocked': self.parser.getboolean(r, 'is_unlocked'),
-                'is_solved': self.parser.getboolean(r, 'is_solved'),
-                }
+            r_data = self._config_parser_section_to_dict(r)
             data[r_data['slug']] = r_data
 
         return data
