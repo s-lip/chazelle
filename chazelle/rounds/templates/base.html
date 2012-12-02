@@ -50,7 +50,7 @@
         
         <div id="fixie-nav-expanded" class="hidden">
             <ul class="team-status">
-            <li>Next unlock: <strong>{{ next_unlock_time|date:"l G:i T"}}</strong></li>
+            <li>Next unlock: <strong>{{ team.next_unlock_time|date:"l G:i T"}}</strong></li>
             <li>Warchest: <strong>${% if team.points %}{{ team.points }}{% else %}0{% endif %}</strong></li>
             <li>Bribes: <strong>{{ team.extra_credit }}</strong></li>
             </ul>
