@@ -8,7 +8,9 @@ def home(request):
 
 
 def notes(request):
-    return render(request, 'notes/index.html', add_nav_context(request, {}))
+    context = HuntState().get_context(
+        general_data=['team'])
+    return render(request, 'notes/index.html', add_nav_context(request, context))
 
 
 def note(request, note_name):
