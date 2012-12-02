@@ -2,7 +2,8 @@ from django.shortcuts import render
 from hunt.hunt_state import state, HuntState
 
 def home(request):
-    context = HuntState().for_home()
+    context = HuntState().get_context(
+        general_data=['team'])
     return render(request, 'index.html', add_nav_context(request, context))
 
 

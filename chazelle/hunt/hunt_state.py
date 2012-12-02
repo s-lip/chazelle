@@ -10,7 +10,18 @@ class HuntState(object):
                 os.path.dirname(__file__),
                 'hunt_state.ini'))
 
-    def for_home(self):
+    def get_context(self, injected_things=None, general_data=None):
+        context = {}
+        if injected_things:
+            raise NotImplemented
+
+        if general_data:
+            if 'team' in general_data:
+                context.update(self._get_team())
+
+        return context
+
+    def _get_team(self):
         data = {}
         data['team'] = {
             'name': self.parser.get('team', 'name'),
