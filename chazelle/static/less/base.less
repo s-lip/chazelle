@@ -4,6 +4,11 @@
   -moz-border-radius: @radius;
 }
 
+@font-face {
+    name: 'League Gothic';
+    src: url('static/fonts/leaguegothic-regular-webfont.ttf');
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -19,6 +24,12 @@ body {
 
 .hidden {
     display: none;
+    }
+    
+.clearer {
+    clear: both;
+    float: none;
+    width: 100%;
     }
 
 #fixie-nav {
@@ -43,9 +54,9 @@ body {
     
     h3 {
         margin: 0;
-        font-size: 16pt;
+        font-size: 24pt;
         font-variant: normal;
-        font-family: ChunkFive, serif;
+        font-family: 'League Gothic', ChunkFive, Bodoni, serif;
         font-weight: normal;
         text-transform: uppercase;
     }

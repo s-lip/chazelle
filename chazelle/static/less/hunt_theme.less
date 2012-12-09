@@ -1,3 +1,8 @@
+@font-face {
+    name: 'League Gothic';
+    src: url('static/fonts/leaguegothic-regular-webfont.ttf');
+}
+
 body {
     background-color: #fbfbfb;
     color: black;
@@ -6,86 +11,109 @@ body {
     padding: 0;
     
     font-size: 15pt;
-    font-family: 'Crete Round', Courier, serif;
+    font-family: 'Crete Round', Palatino, serif;
     
     a {
         color: #cf0012;
+        color: gold;
         
         &:hover { 
             color: #af0010; 
         }
     }
     
-    h1, h2, h3 {
-        font-family: ChunkFive, serif;
+    h1, h2, h3, #rounds, #traps {
+        font-family: 'League Gothic', ChunkFive, Bodoni, serif;
         text-transform: uppercase;
         font-weight: normal;
+        font-size: 2em;
     }
     
     h1 {
-        font-size: 3.5em;
-        background: black;
-        color: white;
+        font-size: 4em;
+        color: black;
         margin: 0;
         padding:  20px 0 10px 0;
         margin-top: -1px;
-        border-bottom: 8px solid gold;
-        box-shadow: 0 0 10px rgba(0,0,0,0.22);
+        
+        .heist {
+            color: gold;
+        }
         
         a {
+            color: black;
             text-decoration: none;
+        }
+        
+        a:hover, a:hover .heist {
+            color: #af0010;
         }
     }
     
     h2 {
-        font-size: 1.2em;
-        margin-bottom: 5px;
+        font-size: 3em;
+        margin: 20px 0 5px 0;
     }
     
     #container {
-        width: 100%;
-        margin: 0;
-        padding: 0;
+        width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
     }
     
-    #splash {
-        float: left;
-        height: 100%;
-        background-color: black;
-        margin: 0 25px 0 0;
-        
-        img {
-            height: 100%;
-            max-height: 1000px;
-            margin: 0 15px 0 5px;
-        }
-    }
-    
-    #frontpage-text {
+    #frontpage {
         padding: 1px 0 20px 20px;
         ul {
-            margin: 0 0 40px 0;
-            padding-left: 20px;
+            display: block;
+            clear: both;
             li {
-                margin-left: 20px;
                 display: block;
             }
-            &.checklist {
-                li:before {
-                    content: "_";
-                    padding: 12px;
+            
+            &#rounds, &#traps {
+                margin: 0;
+                padding: 0;
+                a {
+                    text-decoration: none;
                 }
-                li.checked {
+                li {
+                    display: block;
+                    float: left;
+                    width: 180px;
+                    margin: 0;
                     padding: 0;
-                    &:before {
-                        content: "✓";
-                        padding: 12px 6px 10px 10px;
+                    div {
+                        padding: 10px;
+                        margin: -10px auto 0 auto;
+                        text-align: center;
+                        span {
+                            padding: 0;
+                            line-height: 0.7em;
+                        }
+                        .surname {
+                            font-size: 1.6em;
+                            padding: 0;
+                            }
+                        .sobriquet {
+                            font-size: .6em;
+                        }
+                    }
+                    img {
+                        width: 100%;
+                        height: 200px;
+                        background: grey;
                     }
                 }
             }
-        }
-        #rounds a {
-            text-decoration: none;
+            li, li a {
+                color: #aaa;
+                &.unlocked, &.unlocked a {
+                    color: gold;
+                    &.solved, &.solved a {
+                        color: black;
+                    }
+                }
+            }
         }
     }
     

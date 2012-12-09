@@ -1,40 +1,143 @@
 {% extends 'hunt_central_base.html' %}
 
-{% block header %}{% endblock header %}
+{% block header %}<h1><a href="{% url home %}">COIN<span class="heist">HEIST</span></a></h1>{% endblock header %}
 
 {% block content %}
-
-<div id="splash">
-    <img src="/static/img/poster.png"/>
-</div>
-<div id="frontpage-text">
-    <h1><a href="{% url home %}">COINHEIST</a></h1>
-    <a href="{% url round "opening" %}">EVILBank server</a>
+<div id="frontpage">
     
     {% if evilserver.is_solved %}
     <h2>Team</h2>
-    <ul id="rounds" class="checklist">
-        <li {% if sneakers.is_solved %}class="checked"{% endif %}>{% if sneakers.is_unlocked %}<a href="{% url round "sneakers" %}">Martin Bishop</a>{% else %}Martin Bishop{% endif %}</li>
-        <li {% if feynman.is_solved %}class="checked"{% endif %}>{% if feynman.is_unlocked %}<a href="{% url round "feynman" %}">Richard Feynman</a>{% else %}Richard Feynman{% endif %}</li>
-        <li {% if agent_86.is_solved %}class="checked"{% endif %}>{% if agent_86.is_unlocked %}<a href="">{% if agent_86.is_99 %}Agent 99{% else %}Max Smart{% endif %}</a>{% else %}Max Smart{% endif %}</li>
-        <li {% if oceans_11.is_solved %}class="checked"{% endif %}>{% if oceans_11.is_unlocked %}<a href="{% url round "oceans_11" %}">Danny Ocean</a>{% else %}Danny Ocean{% endif %}</li>
-        <li {% if rubik.is_solved %}class="checked"{% endif %}>{% if rubik.is_unlocked %}<a href="">Erno Rubik</a>{% else %}Erno Rubik{% endif %}</li>
-        <li {% if indiana_jones.is_solved %}class="checked"{% endif %}>{% if indiana_jones.is_unlocked %}<a href="{% url round "indiana_jones" %}">Indiana Jones</a>{% else %}Indiana Jones{% endif %}</li>
+    <ul id="rounds">
+        <li class="{% if oceans_11.is_unlocked %}unlocked{% endif %} {% if oceans_11.is_solved %}solved{% endif %}">
+        {% if oceans_11.is_unlocked %}
+            <a href="{% url round "oceans_11" %}">
+            {% if oceans_11.is_solved %}
+                <img src="/static/img/dannyocean_2.png"/>
+            {% else %}
+                <img src="/static/img/dannyocean_1.png"/>
+            {% endif %}
+        {% else %}
+            <img src="/static/img/dannyocean_0.png"/>
+        {% endif %}
+        <div>Danny<br>
+        <span class="surname">Ocean</span><br/>
+        <span class="sobriquet">The Idea Man</span>
+        </div>
+            {% if oceans_11.is_unlocked %}</a>{% endif %}
+        </li>
+        <li class="{% if feynman.is_unlocked %}unlocked{% endif %} {% if feynman.is_solved %}solved{% endif %}">
+        {% if feynman.is_unlocked %}
+            <a href="{% url round "feynman" %}">
+            {% if feynman.is_solved %}
+                <img src="/static/img/richardfeynman_2.png"/>
+            {% else %}
+                <img src="/static/img/richardfeynman_1.png"/>
+            {% endif %}
+        {% else %}
+            <img src="/static/img/richardfeynman_0.png"/>
+        {% endif %}
+        <div>Richard<br>
+        <span class="surname">Feynman</span><br/>
+        <span class="sobriquet">The Genius</span></div>
+            {% if feynman.is_unlocked %}</a>{% endif %}
+        </li>
+        <li class="{% if get_smart.is_unlocked %}unlocked{% endif %} {% if get_smart.is_solved %}solved{% endif %}">
+        {% if get_smart.is_unlocked %}
+            <a href="{% url round "get_smart" %}">
+            {% if get_smart.is_99 %}
+                {% if get_smart.is_solved %}
+                    <img src="/static/img/agent_99_2.png"/>
+                {% else %}
+                    <img src="/static/img/agent_99_1.png"/>
+                {% endif %}
+            {% endif %}
+            {% if get_smart.is_99 %}
+                {% if get_smart.is_solved %}
+                    <img src="/static/img/agent_86_2.png"/>
+                {% else %}
+                    <img src="/static/img/agent_86_1.png"/>
+                {% endif %}
+            {% endif %}
+        {% else %}
+            <img src="/static/img/agent_86_0.png"/>
+            <div>
+            {% if get_smart.is_99 %}Agent<br>
+                <span class="surname">99</span><br/>
+            {% else %}Maxwell<br>
+                <span class="surname">Smart</span><br/>
+            {% endif %}
+            <span class="sobriquet">The Secret Agent</span>
+            </div>
+            {% if get_smart.is_unlocked %}</a>{% endif %}
+        {% endif %}
+        </li>
+        <li class="{% if indiana.is_unlocked %}unlocked{% endif %} {% if indiana.is_solved %}solved{% endif %}">
+        {% if indiana.is_unlocked %}
+            <a href="{% url round "indiana" %}">
+            {% if indiana.is_solved %}
+                <img src="/static/img/indianajones_2.png"/>
+            {% else %}
+                <img src="/static/img/indiana_1.png"/>
+            {% endif %}
+        {% else %}
+            <img src="/static/img/indianajones_0.png"/>
+        {% endif %}
+        <div>Indiana<br>
+        <span class="surname">Jones</span><br/>
+        <span class="sobriquet">The Adventurer</span></div>
+            {% if indiana.is_unlocked %}</a>{% endif %}
+        </li>
+        <li class="{% if sneakers.is_unlocked %}unlocked{% endif %} {% if sneakers.is_solved %}solved{% endif %}">
+        {% if sneakers.is_unlocked %}
+            <a href="{% url round "sneakers" %}">
+            {% if sneakers.is_solved %}
+                <img src="/static/img/martinbishop_2.png"/>
+            {% else %}
+                <img src="/static/img/martinbishop_1.png"/>
+            {% endif %}
+        {% else %}
+            <img src="/static/img/martinbishop_0.png"/>
+        {% endif %}
+        <div>Martin<br>
+        <span class="surname">Bishop</span><br/>
+        <span class="sobriquet">The Hacker</span></div>
+            {% if sneakers.is_unlocked %}</a>{% endif %}
+        </li>
+        <li class="{% if rubik.is_unlocked %}unlocked{% endif %} {% if rubik.is_solved %}solved{% endif %}">
+        {% if rubik.is_unlocked %}
+            <a href="{% url round "rubik" %}">
+            {% if rubik.is_solved %}
+                <img src="/static/img/ernorubik_2.png"/>
+            {% else %}
+                <img src="/static/img/ernorubik_1.png"/>
+            {% endif %}
+        {% else %}
+            <img src="/static/img/ernorubik_0.png"/>
+        {% endif %}
+        <div>Erno<br>
+        <span class="surname">Rubik</span><br/>
+        <span class="sobriquet">The Toymaker</span></div>
+            {% if rubik.is_unlocked %}</a>{% endif %}
+        </li>
+        <div class="clearer"></div>
     </ul>
-    <h2>EvilBank Traps</h2>
-    <ul class="checklist">
+    <h2>Traps</h2>
+    <ul id="traps" class="">
         <li {% if feynman.trap_solved %}class="checked"{% endif %}>Locked Safe</li>
         <li {% if sneakers.trap_solved %}class="checked"{% endif %}>Firewall</li>
         <li {% if agent_99.trap_solved %}class="checked"{% endif %}>Laser Maze</li>
         <li {% if indiana_jones.trap_solved %}class="checked"{% endif %}>Snake Pit</li>
         <li {% if oceans_11.trap_solved %}class="checked"{% endif %}>Game of Chance</li>
         <li {% if rubik.trap_solved %}class="checked"{% endif %}>Puzzle Box</li>
+        <div class="clearer"></div>
     </ul>
     {% endif %}
+    <a href="{% url round "opening" %}">Enigma Valley Investment & Loan server</a>
     
     <h2>Notes</h2>
     <ul id="notes">
         <li><a href="{% url note "the_situation" %}">Opening Ceremony</a></li>
     </ul>
+    <div class="clearer"></div>
 </div>
 {% endblock content %}
