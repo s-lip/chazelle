@@ -15,9 +15,11 @@ body {
     
     a {
         color: #aa0060;
+        text-decoration: none;
         
         &:hover { 
             color: #900040; 
+            text-decoration: underline;
         }
     }
     
@@ -46,6 +48,7 @@ body {
         
         a:hover, a:hover .heist {
             color: #aa0060;
+            text-decoration: none;
         }
     }
     
@@ -65,13 +68,18 @@ body {
         ul {
             display: block;
             clear: both;
+            padding: 0 0 20px 0;
             li {
                 display: block;
             }
             
+            &#notes {
+                padding-left: 30px;
+            }
+            
             &#rounds, &#traps {
                 margin: 0;
-                padding: 0;
+                padding: 0 0 20px 0;
                 a {
                     text-decoration: none;
                 }
@@ -103,20 +111,20 @@ body {
                         background: grey;
                     }
                 }
-            }
-            li, li a {
-                color: #aaa;
-                &.unlocked, &.unlocked a {
-                    color: gold;
-                    &.solved, &.solved a {
-                        color: black;
-                        &:hover {
-                            color: #aa0060;
+                li, li a {
+                    color: #aaa;
+                    &.unlocked, &.unlocked a {
+                        color: gold;
+                        &.solved, &.solved a {
+                            color: black;
+                            &:hover {
+                                color: #aa0060;
+                            }
                         }
                     }
-                }
-                &:hover {
-                    color: #aa0060;
+                    &:hover {
+                        color: #aa0060;
+                    }
                 }
             }
         }
