@@ -6,16 +6,49 @@
 
 {% block content %}
 <ul id="conspirators">
-    <li><img class="thumbnail" alt="Danny Ocean"/><img class="casino thumbnail" alt="Mirage" /><img class="casino thumbnail" alt="MGM Grand" /</li>
-    <li><img class="thumbnail" alt="Frank Catton"/></li>
-    <li><img class="thumbnail" alt="Rusty Ryan"/></li>
-    <li><img class="thumbnail" alt="Reuben Tishkoff"/></li>
-    <li><img class="thumbnail" alt="Virgil Malloy"/></li>
-    <li><img class="thumbnail" alt="Turk Malloy"/></li>
-    <li><img class="thumbnail" alt="Livingston Dell"/></li>
-    <li><img class="thumbnail" alt="Basher Tarr"/></li>
-    <li><img class="thumbnail" alt="The Amazing Yen"/></li>
-    <li><img class="thumbnail" alt="Saul Bloom"/></li>
-    <li><img class="thumbnail" alt="Linus Caldwell"/></li>
+    <li><img class="thumbnail" alt="Danny Ocean" src="/static/img/dannyocean.jpg" />
+    {% if danny_ocean.is_solved %}
+    <img class="casino thumbnail" alt="Mirage" />
+    <img class="casino thumbnail" alt="MGM Grand" />
+    <span class="answer">{{ danny_ocean.answer }}</span>
+    {% endif %}</li>
+    <li><img class="thumbnail" alt="Frank Catton" src="/static/img/frankcatton.jpg" />
+    {% if frank_catton.is_solved %}
+    <img class="casino thumbnail" alt="Mirage" />
+    <img class="casino thumbnail" alt="MGM Grand" />
+    <span class="answer">{{ frank_catton.answer }}</span>
+    {% endif %}</li>
+    <li><img class="thumbnail" alt="Rusty Ryan" src="/static/img/rustyryan.jpg" />
+    {% if rusty_ryan.is_solved %}
+    <img class="casino thumbnail" alt="Mirage" />
+    <img class="casino thumbnail" alt="MGM Grand" />
+    <span class="answer">{{ rusty_ryan.answer }}</span>
+    {% endif %}</li>
+    <li>
+    <img class="thumbnail" alt="Reuben Tishkoff" src="/static/img/reubentishkoff.jpg"/>
+    {% if reuben_tishkoff.is_solved %}
+    <img class="casino thumbnail" alt="Mirage" />
+    <img class="casino thumbnail" alt="MGM Grand" />
+    <span class="answer">{{ reuben_tishkoff.answer }}</span>
+    {% endif %}</li>
+    <li><img class="thumbnail" alt="Virgil Malloy" src="/static/img/virgilmalloy.jpg"/>
+    {% if virgil_malloy.is_solved %}
+    <img class="casino thumbnail" alt="Mirage" />
+    <img class="casino thumbnail" alt="MGM Grand" />
+    <span class="answer">{{ virgil_malloy.answer }}</span>
+    {% endif %}</li>
+    <li><img class="thumbnail" alt="Turk Malloy" src="/static/img/turkmalloy.jpg"/>
+    {% if turk_malloy.is_solved %}
+    <img class="casino thumbnail" alt="Mirage" />
+    <img class="casino thumbnail" alt="MGM Grand" />
+    <span class="answer">{{ turk_malloy.answer }}</span>
+    {% endif %}</li>
+    
+    <li><img class="thumbnail" alt="Livingston Dell" src="/static/img/livingstondell.jpg"/></li>
+    <li><img class="thumbnail" alt="Basher Tarr" src="/static/img/bashertarr.jpg"/></li>
+    <li><img class="thumbnail" alt="The Amazing Yen" src="/static/img/theamazingyen.jpg"/></li>
+    <li><img class="thumbnail" alt="Saul Bloom" src="/static/img/saulbloom.jpg"/></li>
+    <li><img class="thumbnail" alt="Linus Caldwell" src="/static/img/linuscaldwell.jpg"/></li>
+    <div style="float: none; clear: both;">&nbsp;</div>
 </ul>
 {% endblock %}

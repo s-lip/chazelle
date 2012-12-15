@@ -16,6 +16,8 @@ class HuntState(object):
             for item in injected_data:
                 if item == 'rounds':
                     context.update(self._get_rounds())
+                elif item in self._get_rounds()['rounds']:
+                    context.update(self._get_round(item))
                 else:
                     raise NotImplemented
 
@@ -49,6 +51,20 @@ class HuntState(object):
 
         data['rounds'] = rounds_list
 
+        return data
+        
+    def _get_round(self, round_slug):
+        data = {}
+        r_data = self._config_parser_section_to_dict(round_slug)
+        data[round_slug] = r_data
+        puzzle_list = self.parser.get(round_slug, 'puzzles'
+                                      ).split()
+        puzzles = []
+        for p in puzzle_list:
+            p_data = self._config_parser_section_to_dict(p)
+            data[p_data['slug']] = p_data
+            puzzles.append(p_data['slug'])
+        data[round_slug]['puzzles'] = puzzles
         return data
 
     def _get_team(self):

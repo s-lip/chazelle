@@ -10,8 +10,32 @@
 }
 
 body {
-    &.vegas-day { background-color: #F9FF99; }
-    &.vegas-night { background-color: @cobalt; }
+    &.vegas-day { 
+        background-color: #F9FF99; 
+        background-image: url('/static/img/palmtree-day-left.png');
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        background-attachment: fixed;
+        
+        #pre-container {
+            margin-bottom: -20px;
+            background-image: url('/static/img/palmtree-day-right.png');
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            background-attachment: fixed;
+        }
+    }
+    &.vegas-night { 
+        background-color: @cobalt; 
+        background-image: url('/static/img/palmtree-night-left.png');
+        #pre-container {
+            margin-bottom: -20px;
+            background-image: url('/static/img/palmtree-night-right.png');
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            background-attachment: fixed;
+        }
+    }
     
     font-size: 14pt;
     
@@ -63,8 +87,13 @@ body {
                     width: @box / 2;
                     height: @box / 2;
                     background-color: @cobalt;
+                    float: left;
                     .beveled(@cobalt);
                 }
+            }
+            
+            .answer {
+                float: left;
             }
         }
     }
