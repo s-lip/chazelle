@@ -34,7 +34,7 @@ class HuntState(object):
         ret = {}
         items = self.parser.items(section_name)
         for (key, value) in items:
-            if key.startswith('is_'):
+            if key.startswith('is_') or key.startswith('trap_'):
                 value = self.parser.getboolean(section_name, key)
             if key.endswith('_date'):
                 value = iso8601.parse_date(value)

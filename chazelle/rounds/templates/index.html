@@ -121,22 +121,46 @@
     <a name="obstacles"></a><h2>Obstacles</h2>
     <ul id="traps" class="">
         <li class="{% if oceans_11.is_solved %}unlocked{% endif %} {% if oceans_11.trap_solved %}solved{% endif %}">
-        <img src="/static/img/guards.png"/>
+        {% if oceans_11.is_solved %}
+            <img src="/static/img/traps/guards{% if not oceans_11.trap_solved %}-silhouette{% endif %}.png"/>
+        {% else %}
+            <div class="no-image"></div>
+        {% endif %}
         <div>Guards</div></li>
         <li class="{% if feynman.is_solved %}unlocked{% endif %} {% if feynman.trap_solved %}solved{% endif %}">
-        <img src="/static/img/safe.png"/>
+        {% if feynman.is_solved %}
+            <img src="/static/img/traps/safe{% if not feynman.trap_solved %}-silhouette{% endif %}.png"/>
+        {% else %}
+            <div class="no-image"></div>
+        {% endif %}
         <div>Safe</div></li>
        <li class="{% if get_smart.is_solved %}unlocked{% endif %} {% if get_smart.trap_solved %}solved{% endif %}">
-        <img src="/static/img/lasers.png"/>
+        {% if get_smart.is_solved %}
+            <img src="/static/img/traps/lasers{% if not get_smart.trap_solved %}-silhouette{% endif %}.png"/>
+        {% else %}
+            <div class="no-image"></div>
+        {% endif %}
         <div>Lasers</div></li>
         <li class="{% if indiana.is_solved %}unlocked{% endif %} {% if indiana.trap_solved %}solved{% endif %}">
-        <img src="/static/img/lockbox.png"/>
+        {% if indiana.is_solved %}
+            <img src="/static/img/traps/puzzlebox{% if not indiana.trap_solved %}-silhouette{% endif %}.png"/>
+        {% else %}
+            <div class="no-image"></div>
+        {% endif %}
         <div>Lockbox</div></li>
         <li class="{% if sneakers.is_solved %}unlocked{% endif %} {% if sneakers.trap_solved %}solved{% endif %}">
-        <img src="/static/img/door.png"/>
+        {% if sneakers.is_solved %}
+            <img src="/static/img/traps/door{% if not sneakers.trap_solved %}-silhouette{% endif %}.png"/>
+        {% else %}
+            <div class="no-image"></div>
+        {% endif %}
         <div>Impenetrable Door</div></li>
         <li class="{% if rubik.is_solved %}unlocked{% endif %} {% if rubik.trap_solved %}solved{% endif %}">
-        <img src="/static/img/keypad.png"/>
+        {% if rubik.is_solved %}
+            <img src="/static/img/traps/keypad{% if not rubik.trap_solved %}-silhouette{% endif %}.png"/>
+        {% else %}
+            <div class="no-image"></div>
+        {% endif %}
         <div>Keypad</div></li>
         <div class="clearer"></div>
     </ul>
