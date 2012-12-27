@@ -53,7 +53,7 @@ def postprod(request):
             pass
         else:
             logging.error("WEIRD failed for %s", phpsessid)
-            return django.http.HttpResponse("You seem not to be logged in to p
+            return django.http.HttpResponse("You seem not to be logged in to puzzletron.")
 
     import lxml.html # optional dependency
     url = request.GET['htmlurl'] + '/index.html'
