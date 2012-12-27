@@ -8,13 +8,15 @@ def round(request, round_slug):
     print context
     return render(request, 'rounds/' + round_slug + '/index.html', context)
 
-def puzzle(request, round_slug, puzzle_slug):
+def puzzle(request, round_slug, puzzle_slug, extra_context=None):
     is_solved = False
     context = { 
         'round_slug': round_slug, 
         'puzzle_slug': puzzle_slug, 
         'is_solved' : is_solved 
         }
-        
+    if extra_context:
+        context.update(extra_context)
+
     return render(request, 'rounds/' + round_slug + '/' + puzzle_slug + '.html', context)
 

@@ -3,6 +3,8 @@ import hunt.hunt_state
 import os.path
 import django.http
 import urllib
+import rounds.views
+import django.utils.safestring
 
 def get_url_with_cache(u):
     import httplib2 # optional dependency
@@ -39,9 +41,25 @@ def note(request, note_name):
     return render(request, 'notes/' + note_name + '.html', context)
 
 def postprod(request):
-    puzzle_html = get_url_with_cache('http://z.manicsages.org/puzzle/' + request.GET['htmlurl'])
+    puzzle_html = django.utils.safestring.SafeString(get_url_with_cache('http://z.manicsages.org/puzzle/' + request.GET['htmlurl']))
+    round_full = request.GET.get('roundname', '') or request.GET.get('roudname', '')
+    round_full2slug = {
+        'Agent 99': None, # FIXME
+        'Sneakers': 'sneakers',
+        }
+
+    round_slug = round_full2slug[round_full]
+
     if request.GET.get('sekrit', '') == 'supersekrit':
         pass # yay back door
     else:
         assert session_id_looks_good(request.COOKIES)
+
+    return rounds.views.puzzle(request=request,
+                               round_slug=round_slug,
+                               puzzle_slug='puzzle',
+                               extra_context={'body': puzzle_html,
+                                              'puzzle_name':
+                                                  request.GET.get('title', ''),
+                                              })
     return django.http.HttpResponse(puzzle_html)
