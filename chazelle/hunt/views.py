@@ -52,6 +52,11 @@ def postprod(request):
     round_full2slug = {
         'Agent 99': None, # FIXME
         'Sneakers': 'sneakers',
+        'Rubik': 'rubik',
+        'Feynman': 'feynman',
+        "Ocean's 11": 'oceans_11',
+        'Get Smart': 'get_smart',
+        'Indiana Jones': 'indiana',
         }
 
     round_slug = round_full2slug[round_full]
