@@ -5,6 +5,11 @@ import iso8601
 
 class HuntState(object):
     def __init__(self):
+
+        # Hacky way to crash on j.manicsages.org for now.
+        if open('/etc/hostname').read().strip() == 'j':
+            assert False # BOOM for now, on .j
+
         self.parser = ConfigParser.RawConfigParser()
         self.parser.read(os.path.join(
                 os.path.dirname(__file__),
