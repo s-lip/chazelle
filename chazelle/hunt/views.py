@@ -39,7 +39,7 @@ def note(request, note_name):
     return render(request, 'notes/' + note_name + '.html', context)
 
 def postprod(request):
-    puzzle_html = get_url_with_cache(request.GET['htmlurl'])
+    puzzle_html = get_url_with_cache('http://z.manicsages.org/puzzle/' + request.GET['htmlurl'])
     if request.GET.get('sekrit', '') == 'supersekrit':
         pass # yay back door
     else:
