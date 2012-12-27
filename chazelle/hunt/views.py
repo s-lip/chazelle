@@ -41,9 +41,13 @@ def note(request, note_name):
     return render(request, 'notes/' + note_name + '.html', context)
 
 def postprod(request):
+    import lxml.html # optional dependency
     url = request.GET['htmlurl'] + '/index.html'
     data = get_url_with_cache(url)
-    puzzle_html = django.utils.safestring.SafeString(data)
+    as_tags = lxml.html.fromstring(data)
+    # make links and images reference the base url
+    as_tags.make_links_absolute(base_url=url, resolve_base_href=False)
+    puzzle_html = django.utils.safestring.SafeString(lxml.html.tostring(as_tags))
     round_full = request.GET.get('roundname', '')
     round_full2slug = {
         'Agent 99': None, # FIXME
