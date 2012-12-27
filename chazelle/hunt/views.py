@@ -43,5 +43,5 @@ def postprod(request):
     if request.GET['sekrit'] == 'supersekrit':
         pass # yay back door
     else:
-        assert session_id_looks_good(request.COOKIE)
+        assert session_id_looks_good(request.COOKIES)
     return django.http.HttpResponse(puzzle_html)
