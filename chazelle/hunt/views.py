@@ -17,7 +17,7 @@ def session_id_looks_good(cookie_dict):
     url = "http://z.manicsages.org/puzzle/login.php"
 
     cookie_dict_as_string = urllib.urlencode(cookie_dict)
-    h = httplib2.Http(os.path.expanduser("~/.httplibcache/"))
+    h = httplib2.Http()
     resp, content = h.request(url, "GET",
                               headers={'Cookie': cookie_dict_as_string})
     return ("You are logged in. Would you like to" in content)
@@ -41,6 +41,20 @@ def note(request, note_name):
     return render(request, 'notes/' + note_name + '.html', context)
 
 def postprod(request):
+    if request.GET.get('sekrit', '') == 'supersekrit':
+        pass # yay back door
+    else:
+        phpsessid = request.COOKIES.get('PHPSESSID', '')
+        if not phpsessid:
+            import logging
+            logging.error("YOWEE why no session iD")
+                         
+        if session_id_looks_good({'PHPSESSID': phpsessid}):
+            pass
+        else:
+            logging.error("WEIRD failed for %s", phpsessid)
+            return django.http.HttpResponse("You seem not to be logged in to p
+
     import lxml.html # optional dependency
     url = request.GET['htmlurl'] + '/index.html'
     data = get_url_with_cache(url)
@@ -60,11 +74,6 @@ def postprod(request):
         }
 
     round_slug = round_full2slug[round_full]
-
-    if request.GET.get('sekrit', '') == 'supersekrit':
-        pass # yay back door
-    else:
-        assert session_id_looks_good(request.COOKIES)
 
     return rounds.views.puzzle(request=request,
                                round_slug=round_slug,
