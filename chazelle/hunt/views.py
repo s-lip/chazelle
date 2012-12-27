@@ -41,10 +41,10 @@ def note(request, note_name):
     return render(request, 'notes/' + note_name + '.html', context)
 
 def postprod(request):
-    url = 'http://z.manicsages.org/puzzle/' + request.GET['htmlurl'] + '/index.html'
+    url = request.GET['htmlurl'] + '/index.html'
     data = get_url_with_cache(url)
     puzzle_html = django.utils.safestring.SafeString(data)
-    round_full = request.GET.get('roundname', '') or request.GET.get('roudname', '')
+    round_full = request.GET.get('roundname', '')
     round_full2slug = {
         'Agent 99': None, # FIXME
         'Sneakers': 'sneakers',
