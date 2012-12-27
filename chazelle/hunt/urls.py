@@ -9,4 +9,6 @@ urlpatterns = patterns('',
 
     url(r'^accounts/login/$', 'django.contrib.auth.views.login',  name='django.contrib.auth.views.login'),
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout_then_login'),
+
+    url(r'^postprod/$', 'hunt.views.postprod'),
 )
