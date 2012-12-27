@@ -40,7 +40,7 @@ def note(request, note_name):
 
 def postprod(request):
     puzzle_html = get_url_with_cache(request.GET['htmlurl'])
-    if request.GET['sekrit'] == 'supersekrit':
+    if request.GET.get('sekrit', '') == 'supersekrit':
         pass # yay back door
     else:
         assert session_id_looks_good(request.COOKIES)
