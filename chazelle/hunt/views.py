@@ -61,15 +61,11 @@ def postprod(request):
     else:
         assert session_id_looks_good(request.COOKIES)
 
-    extra_context = {'body': puzzle_html,
-                     'puzzle_name':
-                         request.GET.get('title', ''),}
-    with open('/etc/hostname') as f:
-        if f.read().strip() == 'j':
-            extra_context['static_prefix'] = '/postprod'
-
     return rounds.views.puzzle(request=request,
                                round_slug=round_slug,
                                puzzle_slug='puzzle',
-                               extra_context=extra_context)
+                               extra_context={'body': puzzle_html,
+                                              'puzzle_name':
+                                                  request.GET.get('title', ''),
+                                              })
     return django.http.HttpResponse(puzzle_html)
