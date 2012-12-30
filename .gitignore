@@ -4,3 +4,4 @@
 *.db
 *.zip
 .*.swp
+*.egg-info
