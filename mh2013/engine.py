@@ -25,3 +25,17 @@ class TestState(TeamState):
 
 class TestUnlockEngine(BasicEngine):
     TEAMSTATE_CLASS = TestState
+    def __init__(self, stomp_connection,
+                 tellme,
+                 destination,
+                 db_connection):
+        BasicEngine.__init__(self,
+                             stomp_connection,
+                             tellme,
+                             destination,
+                             db_connection)
+
+        # Create teams
+        logger.info('creating teams...')
+        self.create_team('paulproteus')
+        self.create_team('jalonso')
