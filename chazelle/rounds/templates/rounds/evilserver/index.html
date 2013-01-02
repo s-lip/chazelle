@@ -1,32 +1,46 @@
 {% extends "rounds/evilserver/base.html" %}
 
 {% block content %}
-    <h3>{% block puzzlename %}Index{% endblock %}</h3>
-    
     <table>
-    <tr class="head">
-        <th>Name</th>
-        <th>Answer</th>
-    <tr>
-    <tr>
-        <td><a href="">Welcome!</a></td>
-    </tr>
-    <tr class="solved">
-        <td><a href="">Testing one two</a></td>
-        <td>AMELIAEARHART</td>
-    <tr class="solved">
-        <td><a href="">Thoroughbred of Sin</a></td>
-        <td>HOODLUMS</td>
-    </tr>
-    <tr>
-        <td><a href="">Remember the Ides</a></td>
-    </tr>
-    <tr>
-        <td><a href="">Landmarks</a></td>
-    </tr>
-    <tr class="solved">
-        <td><a href="">Life on Mars</a></td>
-        <td>THE MUSIC MAN</td>
-    </tr>
+    <thead align="left">
+        <tr>
+            <th>Name</th>
+            <th>Answer</th>
+        </tr>
+    <thead>
+    <tbody>
+        <tr id="meta">
+            <td>BankSecuritySystem/
+                <table>
+                    <tr>
+                        <td><a href="">Password Reminder</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">Security_video.mpg</a>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="">Welcome!</a></td>
+        </tr>
+        <tr class="solved">
+            <td><a href="">Testing one two</a></td>
+            <td>AMELIAEARHART</td>
+        <tr class="solved">
+            <td><a href="">Thoroughbred of Sin</a></td>
+            <td>HOODLUMS</td>
+        </tr>
+        <tr>
+            <td><a href="">Remember the Ides</a></td>
+        </tr>
+        <tr>
+            <td><a href="">Landmarks</a></td>
+        </tr>
+        <tr class="solved">
+            <td><a href="">Life on Mars</a></td>
+            <td>THE MUSIC MAN</td>
+        </tr>
+    </tbody>
     </table>
 {% endblock %}

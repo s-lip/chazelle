@@ -16,30 +16,35 @@
     }
     
     #content {
+        padding-top: 20px;
         a {
             text-decoration: none;
         }
         h3 {
-            font-size: 1.8em;
+            font-size: 1.6em;
+            margin: .5em 0;
             font-weight: bold;
         }
-        table {
+        table, #meta table {
             padding: 0;
-            tr {
+            font-size: 11pt;
+            #meta {
+                background-image: url('/static/img/folder-icon.png');
+            }
+            tbody tr {
                 background-image: url('/static/img/file-icon.png');
                 background-repeat: no-repeat;
                 td {
                     padding-left: 1.5em;
+                    padding-right: 10px;
                 }
                 
                 &.solved {
                     font-weight: bold;
                 }
                 
-                &.head {
-                    background-image: none;
-                }
             }
+            
         }
         
     }
