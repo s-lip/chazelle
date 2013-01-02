@@ -7,8 +7,9 @@ class HuntState(object):
     def __init__(self):
 
         # Hacky way to crash on j.manicsages.org for now.
-        if open('/etc/hostname').read().strip() == 'j':
-            assert False # BOOM for now, on .j
+        if os.path.exists("/etc/hostname"):
+            if open('/etc/hostname').read().strip() == 'j':
+                assert False # BOOM for now, on .j
 
         self.parser = ConfigParser.RawConfigParser()
         self.parser.read(os.path.join(
@@ -57,7 +58,7 @@ class HuntState(object):
         data['rounds'] = rounds_list
 
         return data
-        
+
     def _get_round(self, round_slug):
         data = {}
         r_data = self._config_parser_section_to_dict(round_slug)
