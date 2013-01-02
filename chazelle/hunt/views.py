@@ -6,11 +6,13 @@ import urllib
 import rounds.views
 import django.utils.safestring
 
+
 def get_url_with_cache(u):
     import httplib2 # optional dependency
     h = httplib2.Http(os.path.expanduser("~/.httplibcache/"))
     resp, content = h.request(u, "GET")
     return content
+
 
 def session_id_looks_good(cookie_dict):
     import httplib2 # optional dependency
@@ -22,16 +24,17 @@ def session_id_looks_good(cookie_dict):
                               headers={'Cookie': cookie_dict_as_string})
     return ("You are logged in. Would you like to" in content)
 
+
 def home(request):
     context = hunt.hunt_state.HuntState().get_context(
-        general_data=['team'],
+        general_data=['team', 'notes'],
         injected_data=['rounds'])
     return render(request, 'index.html', context)
 
 
 def notes(request):
     context = hunt.hunt_state.HuntState().get_context(
-        general_data=['team'])
+        general_data=['team', 'notes'])
     return render(request, 'notes/index.html', context)
 
 
@@ -48,7 +51,7 @@ def postprod(request):
         if not phpsessid:
             import logging
             logging.error("YOWEE why no session iD")
-                         
+
         if session_id_looks_good({'PHPSESSID': phpsessid}):
             pass
         else:

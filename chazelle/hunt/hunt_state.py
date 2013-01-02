@@ -31,6 +31,8 @@ class HuntState(object):
             for item in general_data:
                 if item == 'team':
                     context[item] = self._get_team()
+                elif item == 'notes':
+                    context[item] = self._get_notes()
                 else:
                     raise NotImplemented
 
@@ -46,6 +48,13 @@ class HuntState(object):
                 value = iso8601.parse_date(value)
             ret[key] = value
         return ret
+
+    def _get_notes(self):
+        data = {}
+        notes = self.parser.get('notes', 'note_list').split()
+        for n in notes:
+            data[n] = { 'is_unlocked': self.parser.getboolean('notes', n + '_unlocked') }
+        return data
 
     def _get_rounds(self):
         data = {}

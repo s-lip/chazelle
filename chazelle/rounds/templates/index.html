@@ -4,7 +4,7 @@
 
 {% block content %}
 <div id="frontpage">
-    
+
     {% if evilserver.is_solved %}
     <a name="team"></a><h2>Team</h2>
     <ul id="rounds">
@@ -165,10 +165,18 @@
         <div class="clearer"></div>
     </ul>
     {% endif %}
-    
+
     <a name="notes"></a><h2>Notes</h2>
     <ul id="notes">
-        <li><a href="{% url note "the_situation" %}">Opening Ceremony</a></li>
+        {% if notes.agent_99_note.is_unlocked %}
+            <li><a href="{% url note "agent_99_memo" %}">Memo from Agent 99</a></li>
+        {% endif %}
+        {% if notes.evilserver_round_note.is_unlocked %}
+            <li><a href="{% url note "heist_plan" %}">Heist Plan</a></li>
+        {% endif %}
+        {% if notes.evilserver_ceremony_note.is_unlocked %}
+            <li><a href="{% url note "the_situation" %}">Opening Ceremony</a></li>
+        {% endif %}
         <div class="clearer"></div>
     </ul>
     <a href="{% url round "evilserver" %}">Enigma Valley Investment & Loan server</a>
