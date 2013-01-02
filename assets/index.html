@@ -1,16 +1,16 @@
 {% extends '_/hunt_central_base.html' %}
 
-{% block header %}<h1><a href="{% url home %}">COIN<span class="heist">HEIST</span></a></h1>{% endblock header %}
+{% block header %}<h1><a href="/">COIN<span class="heist">HEIST</span></a></h1>{% endblock header %}
 
 {% block content %}
 <div id="frontpage">
-
-    {% if evilserver.is_solved %}
+    
+    {% if team.evilserver.is_solved %}
     <a name="team"></a><h2>Team</h2>
     <ul id="rounds">
         <li id="oceans_11" class="{% if oceans_11.is_unlocked %}unlocked{% endif %} {% if oceans_11.is_solved %}solved{% endif %}">
         {% if oceans_11.is_unlocked %}
-            <a href="{% url round "oceans_11" %}">
+            <a href="/oceans_11/">
             {% if oceans_11.is_solved %}
                 <img src="/media/img/dannyocean.png"/>
             {% else %}
@@ -27,7 +27,7 @@
         </li>
         <li id="feynman" class="{% if feynman.is_unlocked %}unlocked{% endif %} {% if feynman.is_solved %}solved{% endif %}">
         {% if feynman.is_unlocked %}
-            <a href="{% url round "feynman" %}">
+            <a href="/feynman/">
             {% if feynman.is_solved %}
                 <img src="/media/img/richardfeynman.png"/>
             {% else %}
@@ -43,7 +43,7 @@
         </li>
         <li id="{% if get_smart.is_99 %}agent_99{% else %}get_smart{% endif %}" class="{% if get_smart.is_unlocked %}unlocked{% endif %} {% if get_smart.is_solved %}solved{% endif %}">
         {% if get_smart.is_unlocked %}
-            <a href="{% url round "get_smart" %}">
+            <a href="/get_smart/">
             {% if get_smart.is_99 %}
                 {% if get_smart.is_solved %}
                     <img src="/media/img/agent99.png"/>
@@ -70,7 +70,7 @@
         </li>
         <li id="indiana" class="{% if indiana.is_unlocked %}unlocked{% endif %} {% if indiana.is_solved %}solved{% endif %}">
         {% if indiana.is_unlocked %}
-            <a href="{% url round "indiana" %}">
+            <a href="/indiana/">
             {% if indiana.is_solved %}
                 <img src="/media/img/indianajones.png"/>
             {% else %}
@@ -86,7 +86,7 @@
         </li>
         <li id="sneakers" class="{% if sneakers.is_unlocked %}unlocked{% endif %} {% if sneakers.is_solved %}solved{% endif %}">
         {% if sneakers.is_unlocked %}
-            <a href="{% url round "sneakers" %}">
+            <a href="/sneakers/">
             {% if sneakers.is_solved %}
                 <img src="/media/img/martinbishop.png"/>
             {% else %}
@@ -102,7 +102,7 @@
         </li>
         <li id="rubik" class="{% if rubik.is_unlocked %}unlocked{% endif %} {% if rubik.is_solved %}solved{% endif %}">
         {% if rubik.is_unlocked %}
-            <a href="{% url round "rubik" %}">
+            <a href="/rubik/">
             {% if rubik.is_solved %}
                 <img src="/media/img/ernorubik.png"/>
             {% else %}
@@ -175,11 +175,11 @@
             <li><a href="{% url note "heist_plan" %}">Heist Plan</a></li>
         {% endif %}
         {% if notes.evilserver_ceremony_note.is_unlocked %}
-            <li><a href="{% url note "the_situation" %}">Opening Ceremony</a></li>
+            <li><a href="/note/the_situation/">Opening Ceremony</a></li>
         {% endif %}
         <div class="clearer"></div>
     </ul>
-    <a href="{% url round "evilserver" %}">Enigma Valley Investment & Loan server</a>
+    <a href="http://www.enigmavalley.com/">Enigma Valley Investment & Loan server</a>
 </div>
 {% endblock content %}
 

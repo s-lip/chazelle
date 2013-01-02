@@ -18,8 +18,6 @@
     {% block more_scripts %}
     {% endblock more_scripts %}
 
-    {% load linktag %}
-
 </head>
 
 <body id="{% block body_id %}{% endblock %}" class="{% block body_class %}{% endblock %}">
@@ -30,7 +28,7 @@
             <div id="stuff">
                 <div id="header">
                     {% block header %}
-                    <h1><a href="{% url home %}">COINHEIST</a></h1>
+                    <h1><a href="/">COINHEIST</a></h1>
                     {% endblock header %}
                 </div>
 
@@ -56,15 +54,16 @@
 
         <div id="fixie-nav-expanded" class="hidden">
             <ul class="team-status">
-            <li>Next unlock: <strong>{{ team.next_unlock_time|date:"l G:i T"}}</strong></li>
+            <li>Next unlock: <strong>{{ team.next_unlock_time}}</strong></li>
             <li>Warchest: <strong>${% if team.points %}{{ team.points }}{% else %}0{% endif %}</strong></li>
             <li>Bribes: <strong>{{ team.extra_credit }}</strong></li>
             </ul>
             <ul class="nav">
-            <li>{{'home,Home'|link}}</li>
-            <li><a href="{% url note "the_situation" %}">Introduction</a></li>
-            <li>{{'notes,Notes'|link}}</li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/note/the_situation/">Introduction</a></li>
+            <li><a href="/notes/">Notes</a></li>
             <li><strong><a href="{% url contact_hq %}" id="contact-hq-link">Contact HQ</a></strong></li>
+            <li><strong><a>Contact HQ</a></strong></li>
             </ul>
         </div>
     </div>
