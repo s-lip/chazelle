@@ -12,9 +12,9 @@
         {% if oceans_11.is_unlocked %}
             <a href="{% url round "oceans_11" %}">
             {% if oceans_11.is_solved %}
-                <img src="/static/img/dannyocean.png"/>
+                <img src="/media/img/dannyocean.png"/>
             {% else %}
-                <img src="/static/img/dannyocea-silhouette.png"/>
+                <img src="/media/img/dannyocea-silhouette.png"/>
             {% endif %}
         {% else %}
             <div class="no-image"></div>
@@ -29,9 +29,9 @@
         {% if feynman.is_unlocked %}
             <a href="{% url round "feynman" %}">
             {% if feynman.is_solved %}
-                <img src="/static/img/richardfeynman.png"/>
+                <img src="/media/img/richardfeynman.png"/>
             {% else %}
-                <img src="/static/img/richardfeynman-silhouette.png"/>
+                <img src="/media/img/richardfeynman-silhouette.png"/>
             {% endif %}
         {% else %}
             <div class="no-image"></div>
@@ -46,12 +46,12 @@
             <a href="{% url round "get_smart" %}">
             {% if get_smart.is_99 %}
                 {% if get_smart.is_solved %}
-                    <img src="/static/img/agent99.png"/>
+                    <img src="/media/img/agent99.png"/>
                 {% else %}
-                    <img src="/static/img/agent99-silhouette.png"/>
+                    <img src="/media/img/agent99-silhouette.png"/>
                 {% endif %}
             {% else %}
-                <img src="/static/img/agent86-silhouette.png"/>
+                <img src="/media/img/agent86-silhouette.png"/>
             {% endif %}
         {% else %}
             <div class="no-image"></div>
@@ -72,9 +72,9 @@
         {% if indiana.is_unlocked %}
             <a href="{% url round "indiana" %}">
             {% if indiana.is_solved %}
-                <img src="/static/img/indianajones.png"/>
+                <img src="/media/img/indianajones.png"/>
             {% else %}
-                <img src="/static/img/indianajones-silhouette.png"/>
+                <img src="/media/img/indianajones-silhouette.png"/>
             {% endif %}
         {% else %}
             <div class="no-image"></div>
@@ -88,9 +88,9 @@
         {% if sneakers.is_unlocked %}
             <a href="{% url round "sneakers" %}">
             {% if sneakers.is_solved %}
-                <img src="/static/img/martinbishop.png"/>
+                <img src="/media/img/martinbishop.png"/>
             {% else %}
-                <img src="/static/img/martinbishop-silhouette.png"/>
+                <img src="/media/img/martinbishop-silhouette.png"/>
             {% endif %}
         {% else %}
             <div class="no-image"></div>
@@ -104,9 +104,9 @@
         {% if rubik.is_unlocked %}
             <a href="{% url round "rubik" %}">
             {% if rubik.is_solved %}
-                <img src="/static/img/ernorubik.png"/>
+                <img src="/media/img/ernorubik.png"/>
             {% else %}
-                <img src="/static/img/ernorubik-silhouette.png"/>
+                <img src="/media/img/ernorubik-silhouette.png"/>
             {% endif %}
         {% else %}
             <div class="no-image"></div>
@@ -122,42 +122,42 @@
     <ul id="traps" class="">
         <li class="{% if oceans_11.is_solved %}unlocked{% endif %} {% if oceans_11.trap_solved %}solved{% endif %}">
         {% if oceans_11.is_solved %}
-            <img src="/static/img/traps/guards{% if not oceans_11.trap_solved %}-silhouette{% endif %}.png"/>
+            <img src="/media/img/traps/guards{% if not oceans_11.trap_solved %}-silhouette{% endif %}.png"/>
         {% else %}
             <div class="no-image"></div>
         {% endif %}
         <div>Guards</div></li>
         <li class="{% if feynman.is_solved %}unlocked{% endif %} {% if feynman.trap_solved %}solved{% endif %}">
         {% if feynman.is_solved %}
-            <img src="/static/img/traps/safe{% if not feynman.trap_solved %}-silhouette{% endif %}.png"/>
+            <img src="/media/img/traps/safe{% if not feynman.trap_solved %}-silhouette{% endif %}.png"/>
         {% else %}
             <div class="no-image"></div>
         {% endif %}
         <div>Safe</div></li>
        <li class="{% if get_smart.is_solved %}unlocked{% endif %} {% if get_smart.trap_solved %}solved{% endif %}">
         {% if get_smart.is_solved %}
-            <img src="/static/img/traps/lasers{% if not get_smart.trap_solved %}-silhouette{% endif %}.png"/>
+            <img src="/media/img/traps/lasers{% if not get_smart.trap_solved %}-silhouette{% endif %}.png"/>
         {% else %}
             <div class="no-image"></div>
         {% endif %}
         <div>Lasers</div></li>
         <li class="{% if indiana.is_solved %}unlocked{% endif %} {% if indiana.trap_solved %}solved{% endif %}">
         {% if indiana.is_solved %}
-            <img src="/static/img/traps/puzzlebox{% if not indiana.trap_solved %}-silhouette{% endif %}.png"/>
+            <img src="/media/img/traps/puzzlebox{% if not indiana.trap_solved %}-silhouette{% endif %}.png"/>
         {% else %}
             <div class="no-image"></div>
         {% endif %}
         <div>Lockbox</div></li>
         <li class="{% if sneakers.is_solved %}unlocked{% endif %} {% if sneakers.trap_solved %}solved{% endif %}">
         {% if sneakers.is_solved %}
-            <img src="/static/img/traps/door{% if not sneakers.trap_solved %}-silhouette{% endif %}.png"/>
+            <img src="/media/img/traps/door{% if not sneakers.trap_solved %}-silhouette{% endif %}.png"/>
         {% else %}
             <div class="no-image"></div>
         {% endif %}
         <div>Impenetrable Door</div></li>
         <li class="{% if rubik.is_solved %}unlocked{% endif %} {% if rubik.trap_solved %}solved{% endif %}">
         {% if rubik.is_solved %}
-            <img src="/static/img/traps/keypad{% if not rubik.trap_solved %}-silhouette{% endif %}.png"/>
+            <img src="/media/img/traps/keypad{% if not rubik.trap_solved %}-silhouette{% endif %}.png"/>
         {% else %}
             <div class="no-image"></div>
         {% endif %}
