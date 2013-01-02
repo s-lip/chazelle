@@ -1,12 +1,12 @@
 {% extends "_/round-base.html" %}
 
 {% block more_styles %}
-    <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}less/sneakers.less" />
+    <link rel="stylesheet/less" type="text/css" media="all" href="/sneakers/sneakers.less" />
 {% endblock %}
 
 {% block more_scripts %}
     {{ block.super }}
-    <script src="{{ STATIC_URL }}js/sneakers.js"></script>
+    <script src="/sneakers/sneakers.js"></script>
 {% endblock %}
 
 {% block body_id %}sneakers{% endblock %}
