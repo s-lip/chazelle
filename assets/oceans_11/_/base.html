@@ -1,0 +1,20 @@
+{% extends "_/round-base.html" %}
+
+{% block page_title %}Ocean's Eleven{% endblock %}
+
+{% block more_styles %}
+    <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}less/oceans_11.less" />
+{% endblock %}
+
+{% block more_scripts %}
+<link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+<script src="{{ STATIC_URL }}js/oceans_11.js"></script>
+{% endblock %}
+
+{% block body_class %}vegas-day{% endblock %}
+
+{% block header %}
+<img id="casinos" src=""/>
+{% endblock %}
+
+{% block footer %}<!--- Palm trees based on http://thenounproject.com/noun/palmtree/#icon-No1470 by YouGou, from The Noun Project, licensed CC-BY ---->{% endblock %}

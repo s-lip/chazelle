@@ -1,0 +1,15 @@
+{% extends "sneakers/_/base.html" %}
+
+{% block body_class %}puzzle{% endblock %}
+
+{% block content %}
+    {% if solved %}
+    <p>Enter password: <span class="highlight">NUTFLUSH</span><br/>
+    Connected.</p>
+
+    <p>EvilBank Regional Data Center -- Atlanta, GA<br/>
+    root@atlanta.evil.bank#</p>
+    {% endif %}
+    <h2>{{ puzzle_name }}</h2>
+    {{ body }}
+{% endblock %}

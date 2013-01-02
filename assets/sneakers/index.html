@@ -1,0 +1,38 @@
+{% extends "sneakers/_/base.html" %}
+
+{% block page_title %}Sneakers{% endblock %}
+
+{% block content %}
+
+<h2>INTERCEPTED MESSAGES</h2>
+
+<ul>
+    <li><a href="{% url puzzle "sneakers" "puzzle" %}">[{% if puzzle.answered %}X{% else %}&nbsp;{% endif %}] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "puzzle" %}">[X] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "puzzle" %}">[X] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "puzzle" %}">[{% if puzzle.answered %}X{% else %}&nbsp;{% endif %}] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "puzzle" %}">[{% if puzzle.answered %}X{% else %}&nbsp;{% endif %}] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "puzzle" %}">[{% if puzzle.answered %}X{% else %}&nbsp;{% endif %}] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "puzzle" %}">[{% if puzzle.answered %}X{% else %}&nbsp;{% endif %}] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "puzzle" %}">[{% if puzzle.answered %}X{% else %}&nbsp;{% endif %}] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "puzzle" %}">[X] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "puzzle" %}">[{% if puzzle.answered %}X{% else %}&nbsp;{% endif %}] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "puzzle" %}">[{% if puzzle.answered %}X{% else %}&nbsp;{% endif %}] Puzzle Name</a></li>
+    <li><a href="{% url puzzle "sneakers" "puzzle" %}">[X] Puzzle Name</a></li>
+</ul>
+
+  <ul>
+  <li><a href="{% url puzzle "sneakers" "password_update" %}">[ ] Password Update</a></li>
+  <br/>
+  <li>Loading Security Camera Monitoring System<span class="ellipsis-span"></span></li>
+  </ul>
+
+<h2>OTHER SYSTEMS</h2>
+
+  <ul>
+  <li><a href="{% url puzzle "sneakers" "sample_puzzle" %}">[ ] Federal Reserve</a></li>
+  <li><a href="{% url puzzle "sneakers" "sample_puzzle" %}">[ ] National Power Grid</a></li>
+  <li><a href="{% url puzzle "sneakers" "sample_puzzle" %}">[ ] Air Traffic Control</a></li>
+  </ul>
+
+{% endblock %}
