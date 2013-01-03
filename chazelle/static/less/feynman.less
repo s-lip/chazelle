@@ -1,14 +1,39 @@
 #feynman {
-    background-image: url('/static/img/feynman.jpg');
-    
+    background-image: url('/static/img/graph-paper.jpg');
+    font-family: Helvetica Neue, Helvetica, sans-serif;
+
+    a {
+        color: blue;
+
+        &:visited {
+            color: red;
+        }
+        &:hover {
+            color: green;
+        }
+    }
+
     #container {
         width: 900px;
-        background: rgba(255,255,255,.5);
         margin: 0 0 0 30px;
         padding: 0 20px;
     }
-    
+
     h1 {
         font-size: 3em;
+        a {
+            text-decoration: none;
+        }
+    }
+
+    #content {
+        margin-top: 20px;
+        .solved a {
+            text-decoration: line-through;
+            color: black;
+            .answer {
+                text-decoration: none !important;
+            }
+        }
     }
 }
