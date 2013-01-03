@@ -10,13 +10,18 @@
 }
 
 body {
-    &.vegas-day { 
-        background-color: #F9FF99; 
+
+    font-family: Arial, sans-serif;
+    h1, h2, h3 {
+        font-family: 'Kaushan Script', cursive;
+    }
+    &.vegas-day {
+        background-color: #F9FF99;
         background-image: url('/static/img/palmtree-day-left.png');
         background-repeat: no-repeat;
         background-position: bottom left;
         background-attachment: fixed;
-        
+
         #pre-container {
             margin-bottom: -20px;
             background-image: url('/static/img/palmtree-day-right.png');
@@ -25,8 +30,8 @@ body {
             background-attachment: fixed;
         }
     }
-    &.vegas-night { 
-        background-color: @cobalt; 
+    &.vegas-night {
+        background-color: @cobalt;
         background-image: url('/static/img/palmtree-night-left.png');
         #pre-container {
             margin-bottom: -20px;
@@ -36,9 +41,9 @@ body {
             background-attachment: fixed;
         }
     }
-    
+
     font-size: 14pt;
-    
+
     a {
         color: @neon-blue;
         text-decoration: none;
@@ -69,12 +74,16 @@ body {
 #content {
     #conspirators {
         list-style-type: none;
-        margin-left: 350px;
+        margin-left: 100px;
         padding: 0;
         display: block;
         li {
             display: block;
             clear: both;
+            .casinos {
+                float: left;
+                width: 400px;
+            }
             .thumbnail {
                 width: @box;
                 height: @box;
@@ -82,18 +91,25 @@ body {
                 background-color: @gold;
                 .beveled(@gold);
                 float: left;
-                
+
                 &.casino {
                     width: @box / 2;
                     height: @box / 2;
                     background-color: @cobalt;
-                    float: left;
                     .beveled(@cobalt);
+                    margin-bottom: 0;
                 }
             }
-            
+
             .answer {
+                font-family: 'Kaushan Script', cursive;
+                clear: both;
                 float: left;
+                margin-top: 0;
+                padding-top: 0;
+                font-size: 34pt;
+                width: 100%;
+                white-space: nowrap;
             }
         }
     }
