@@ -26,20 +26,23 @@
     <div id="pre-container">
 
         <div id="container">
-            <div id="header">
-                {% block header %}
-                <h1><a href="{% url home %}">COINHEIST</a></h1>
-                {% endblock header %}
-            </div>
 
-            <div id="content">
-                {% block content %}
-                {% endblock content %}
-            </div>
+            <div id="stuff">
+                <div id="header">
+                    {% block header %}
+                    <h1><a href="{% url home %}">COINHEIST</a></h1>
+                    {% endblock header %}
+                </div>
 
-            <div id="footer">
-                {% block footer %}
-                {% endblock footer %}
+                <div id="content">
+                    {% block content %}
+                    {% endblock content %}
+                </div>
+
+                <div id="footer">
+                    {% block footer %}
+                    {% endblock footer %}
+                </div>
             </div>
         </div>
     </div>

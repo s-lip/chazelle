@@ -1,6 +1,7 @@
 @cobalt: #031544;
 @neon-blue: #0088EE;
 @gold: gold;
+@box: 150px;
 
 .beveled(@color, @thickness: 4px) {
     border-top: @thickness solid @color + #666666;
@@ -54,13 +55,17 @@ body {
 }
 
 #container {
-    width: 940px;
-    padding: 0 20px;
+    width: 980px;
+    padding: 0 10px;
     margin: 0 auto;
-    background: rgba(255,255,255,.4);
+    border-left: 5pt dotted white;
+    border-right: 5pt dotted white;
 }
 
-@box: 150px;
+#stuff {
+    padding: 0 20px;
+    background: rgba(255,255,255,.4);
+}
 
 #header {
     padding-bottom: 20px;
