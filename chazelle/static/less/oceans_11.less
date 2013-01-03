@@ -5,8 +5,8 @@
 .beveled(@color, @thickness: 4px) {
     border-top: @thickness solid @color + #666666;
     border-left: @thickness solid @color + #666666;
-    border-right: @thickness solid @color - #666666;
-    border-bottom: @thickness solid @color - #666666;
+    border-right: @thickness solid @color - #333333;
+    border-bottom: @thickness solid @color - #333333;
 }
 
 body {
@@ -91,12 +91,16 @@ body {
                 background-color: @gold;
                 .beveled(@gold);
                 float: left;
+                border-top-left-radius: 10px;
+                border-bottom-right-radius: 10px;
 
                 &.casino {
                     width: @box / 2;
                     height: @box / 2;
                     background-color: @cobalt;
                     .beveled(@cobalt);
+                    border-top: 4px solid @neon-blue;
+                    border-left: 4px solid @neon-blue;
                     margin-bottom: 0;
                 }
             }
@@ -110,6 +114,7 @@ body {
                 font-size: 34pt;
                 width: 100%;
                 white-space: nowrap;
+                text-shadow: 4px 4px 0 @neon-blue, -4px 0px 0 @gold;
             }
         }
     }
