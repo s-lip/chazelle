@@ -43,6 +43,10 @@ def note(request, note_name):
         general_data=['team'])
     return render(request, 'notes/' + note_name + '.html', context)
 
+def contact_hq(request):
+    context = {}
+    return render(request, "contact_form.html", context)
+
 def postprod(request):
     if request.GET.get('sekrit', '') == 'supersekrit':
         pass # yay back door
