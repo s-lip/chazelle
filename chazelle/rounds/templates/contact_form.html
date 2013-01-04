@@ -1,0 +1,34 @@
+{% extends "hunt_central_base.html" %}
+
+{% block body_class %}contentful{% endblock %}
+
+{% block content %}
+<h2>Call In Answer</h2>
+<form id="call-in">
+    <p><label>Puzzle: </label><select name="puzzle">
+        {% for round in roundlist %}
+        {{ round.name }}
+            {% for puzzle in round %}
+            <option name="{{ puzzle.slug }}" value="{{ puzzle.slug }}">{{ puzzle.name }}</option>
+            {% endfor %}
+        {% endfor %}
+    </select></p>
+    <p><label>Proposed answer: </label><input name="answer"/></p>
+    <input type="hidden" name="team" value="{{ team.name }}"/>
+    <p><input type="submit"/></p>
+</form>
+
+{% if traps %}
+    <h2>Request trap appointment</h2>
+    <form id="trap-appt">
+        <p><label>Trap: </label><select name="trap">
+            {% for trap in traps %}
+            <option name="{{ trap.slug }}" value="{{ trap.slug }}">{{ trap.name }}</option>
+            {% endfor %}
+        </select></p>
+        <input type="hidden" name="team" value="{{ team.name }}"/>
+        <p><input type="submit"/></p>
+    </form>
+{% endif %}
+
+{% endblock content %}
