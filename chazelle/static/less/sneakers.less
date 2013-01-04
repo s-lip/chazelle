@@ -1,7 +1,7 @@
 #sneakers {
     font-family: monospace;
     background: black;
-    color: lime;
+    color: white;
     line-height: normal;
 
     #container {
@@ -16,6 +16,27 @@
         height: 408px;
         overflow-y: auto;
         word-wrap: break-word;
+        
+        #messages {
+            -moz-column-count: 3; 
+            -moz-column-gap: 1em; 
+            -webkit-column-count: 3; 
+            -webkit-column-gap: 1em;
+        }
+        
+        #messages a, #metas a, #password a {
+            color: lime;
+            
+            
+            &.solved {
+                background: aqua;
+                color: black;
+            }
+            &.locked {
+                color: white;
+                font-weight: normal;
+            }
+        }
     }
     
     &.puzzle #content {
@@ -25,6 +46,7 @@
 
     a {
         color: lime;
+        text-decoration: none;
     }
 
     ul {
@@ -39,9 +61,17 @@
         background: lime;
         font-weight: normal;
         font-size: 1em;
+        text-transform: uppercase;
     }
 
     #footer {
         margin-top: 40px;
+        .highlight {
+            color: black;
+            background: white;
+        }
+        a {
+            color: white;
+        }
     }
 }
