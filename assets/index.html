@@ -169,7 +169,7 @@
     <a name="notes"></a><h2>Notes</h2>
     <ul id="notes">
         {% if notes.agent_99_note.is_unlocked %}
-            <li><a href="{% url note "agent_99_memo" %}">Memo from Agent 99</a></li>
+            <li><a href="{{ hunt.urls.note.agent_99_memo }}">Memo from Agent 99</a></li>
         {% endif %}
         {% if notes.evilserver_round_note.is_unlocked %}
             <li><a href="{% url note "heist_plan" %}">Heist Plan</a></li>
