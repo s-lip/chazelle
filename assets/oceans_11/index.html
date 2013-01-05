@@ -2,7 +2,7 @@
 
 {% block content %}
 <ul id="conspirators">
-    <li><a href="{% url puzzle 'oceans_11' 'recruitpuzzle' %}"><img class="thumbnail" alt="Danny Ocean" src="/media/img/dannyocean.jpg" /></a>
+    <li><a href="{{ hunt.urls.puzzle.oceans_11.recruit_puzzle }}"><img class="thumbnail" alt="Danny Ocean" src="/media/img/dannyocean.jpg" /></a>
     {% if danny_ocean.is_solved %}
     <div class="casinos">
         <a href="{% url puzzle 'oceans_11' 'casinopuzzle' %}"><img class="casino thumbnail" alt="Mirage" /></a>
@@ -10,7 +10,7 @@
     <span class="answer">✓ {{ danny_ocean.answer }}</span>
     </div>
     {% endif %}</li>
-    <li><a href="{% url puzzle 'oceans_11' 'recruitpuzzle' %}"><img class="thumbnail" alt="Frank Catton" src="/media/img/frankcatton.jpg" /></a>
+    <li><a href="{{ hunt.urls.puzzle.oceans_11.recruit_puzzle }}"><img class="thumbnail" alt="Frank Catton" src="/media/img/frankcatton.jpg" /></a>
     {% if frank_catton.is_solved %}
     <div class="casinos">
         <a href="{% url puzzle 'oceans_11' 'casinopuzzle' %}"><img class="casino thumbnail" alt="Stratosphere" /></a>
