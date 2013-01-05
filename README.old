@@ -12,11 +12,18 @@ How to set up this site for design-type work:
 git clone ******
 Your project folder will now have a folder in it called "chazelle".
 
-4. Go into the /chazelle/ folder. All the code for the fake hunt site is in here!
+4. Go into the /chazelle/ folder. All the design for the hunt site is in here!
+
+5. Type these commands:
+
+cd ..
+git clone git@github.com:manicsages/veil.git
+cd chazelle
 
 6. Run
-python manage.py runserver
-and go to http://localhost:8000 in your web browser. You should see the hunt home page (in whatever state it is so far)!
+python runserver.py
+
+and go to http://localhost:3001 in your web browser. You should see the hunt home page (in whatever state it is so far)!
 
 How to make or edit round templates and styles:
 
