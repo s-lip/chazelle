@@ -7,3 +7,4 @@ packages/Jinja2
 packages/flask
 packages/Werkzeug
 packages/jstime
+packages/passlib
