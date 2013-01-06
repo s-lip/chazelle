@@ -1,0 +1,199 @@
+html {
+	width:100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+#mainbg {
+	background-image:url('/static/img/get_smart/mainfg.png');
+	background-color: #4b4f64;
+}
+
+#puzzbg {
+	background-image:url('/static/img/get_smart/missionfg.png');
+	background-color: #4b4f64;
+}
+
+#evilbg {
+	background-image:url('/static/img/get_smart/evilfg.png');
+	background-color: #5D2220;
+
+/*	background-image: -ms-linear-gradient(top, #872E31 0%, #5D2220 100%);		/* IE10 Consumer Preview */
+/*	background-image: -moz-linear-gradient(top, #872E31 0%, #5D2220 100%); /* Mozilla Firefox */ 
+/*	background-image: -o-linear-gradient(top, #872E31 0%, #5D2220 100%);	/* Opera */ 
+/*	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #872E31), color-stop(1, #5D2220));	/* Webkit (Safari/Chrome 10) */ 
+/*	background-image: -webkit-linear-gradient(top, #872E31 0%, #5D2220 100%);	/* Webkit (Chrome 11+) */ 
+/*	background-image: linear-gradient(to bottom, #872E31 0%, #5D2220 100%);	/* W3C Markup, IE10 Release Preview */ 
+
+}
+
+.bg {
+	background-repeat:no-repeat;
+	background-position:center top;
+    width: 100%;
+    vertical-align: top;
+    float: left;
+	margin: 0px;
+	padding: 0px;
+}
+
+.bar {
+	z-index: 2;
+    width: 100%;
+    min-width: 1000px;
+}
+
+#evilbar1 {
+	background-image:url('/static/img/get_smart/evilfg.png');
+}
+
+#mainbar1 {
+	background-image:url('/static/img/get_smart/mainfg.png');
+}
+
+#puzzbar1 {
+	background-image:url('/static/img/get_smart/missionfg.png');
+}
+
+.bar1 {
+	height: 24px;
+	background-color: #000000;
+	background-repeat:no-repeat;
+	background-position:center top;
+	opacity: .5;
+
+	padding-top: 7px;
+	text-align: right;
+}
+
+#bar2 {
+	opacity: .3;
+	margin-top: 3px;
+	height: 6px;
+	background-color: #ff0000;
+}
+
+#callin {
+	font-family: "Courier", monospace;
+	font-weight: bold;
+	font-size: 11pt;
+	color: white;
+	cursor: hand; 
+	cursor: pointer;
+
+	margin-right: 150px;
+
+	/* To make unselectable */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#video {
+	position: relative;
+	left: 69px;
+	top: 175px;
+	width: 380px;
+	height: 250px;
+	background-color: #2f2f2f;
+}
+
+#maincontainer {
+	height: 720px;
+	width: 1000px;
+}
+
+#puzzcontainer {
+	height: 1230px;
+	width: 1000px;
+}
+
+.container {
+	z-index: 3;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#maincontent {
+	top:122px;
+	width:450px;
+
+	/* Works Firefox, Chrome, Safari, iOS but not IE. Looks flat in IE but works */
+	-moz-transform: perspective(2000px) rotateX(37deg) rotateZ(-3.5deg) rotateY(6deg) scaleY(1.3) scaleX(1.1) translateY(-7px) translateX(20px);
+    -webkit-transform: perspective(2000px) rotateX(37deg) rotateZ(-3.5deg) rotateY(6deg) scaleY(1.3) scaleX(1.1) translateY(-7px) translateX(20px);
+    -o-transform: perspective(2000px) rotateX(37deg) rotateZ(-3.5deg) rotateY(6deg) scaleY(1.3) scaleX(1.1) translateY(-7px) translateX(20px);
+    transform: perspective(2000px) rotateX(37deg) rotateZ(-3.5deg) rotateY(6deg) scaleY(1.3) scaleX(1.1) translateY(-7px) translateX(20px);
+
+}
+
+#evilcontent {
+	font-family: "Times", serif;
+	font-weight: normal;
+	top: 210px;
+	left: 107px;
+	width: 809px;
+}
+
+#puzzcontent {
+	left: 93px;
+	top: 108px;
+	width: 849px;
+}
+
+.content {
+	position: relative;
+
+	font-family: "Courier", monospace;
+	font-weight: bold;
+}
+
+#agentlist li {
+	font-family: "Courier", monospace;
+	font-weight: bold;
+	font-size: 11pt;
+	list-style-type: none;
+	list-style: none;
+}
+
+#agentlist a:link {
+	color: #842c31;
+	padding-left: 5px;
+}
+
+#left {
+	width:100%;
+}
+
+#right {
+	float:right;
+	width:560px;
+}
+
+#mainheader {
+	font-size: 15pt;
+	left: 103px;
+	top: 131px;
+	width: 340px;
+
+	/* Not reeeeeeally necessary */
+	transform:rotate(.5deg);
+	-ms-transform:rotate(.5deg); /* IE 9 */
+	-moz-transform:rotate(.5deg); /* Firefox */
+	-webkit-transform:rotate(.5deg); /* Safari and Chrome */
+	-o-transform:rotate(.5deg); /* Opera */	
+}
+
+.header {
+	position: relative;
+	left: 199px;
+	top: 88px;
+	width: 750px;
+
+	font-family: "Courier", monospace;
+	font-weight: bold;
+	font-size: 38pt;
+	color: #842c31;
+}

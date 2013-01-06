@@ -1,3 +1,21 @@
-{% extends "get_smart/_/base.html" %}
+{% extends "get_smart/index.html" %}
 
-{% block body_class %}kontrol puzzle{% endblock %}
+{% block body_id %}puzzbg{% endblock %}
+
+{% block body_class %}bg{% endblock %}
+
+{% block content %}
+
+    <div id="puzzcontainer" class="container">
+        <div class="header">
+            PUZZLE NAME
+        </div>
+        
+        <div id="puzzcontent" class="content">
+            Contents
+        </div>
+        
+        <div id="footer">
+        </div>
+    </div> 
+{% endblock content %}
