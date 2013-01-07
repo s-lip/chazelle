@@ -3,60 +3,156 @@
 {% block content %}
 <ul id="conspirators">
     <li><a href="/oceans_11/sample-recruit/"><img class="thumbnail" alt="Danny Ocean" src="/media/img/dannyocean.jpg" /></a>
-    {% if "/oceans_11/danny_ocean/solved" in unlocked %}
+    {% if "/oceans_11/danny_ocean/solved" in solved %}
     <div class="casinos">
         <a href="/oceans_11/sample-casino/"><img class="casino thumbnail" alt="Mirage" /></a>
         <a href="/oceans_11/sample-casino/"><img class="casino thumbnail" alt="MGM Grand" /></a>
+        <a href="/oceans_11/sample-casino/"><img class="casino thumbnail" alt="Stratosphere" /></a>
     <span class="answer">✓  danny_ocean.answer </span>
+    </div>
+    {% else %}
+     <div class="casinos">
+        <img class="casino thumbnail" alt="?" />
+        <img class="casino thumbnail" alt="?" />
+        <img class="casino thumbnail" alt="?" />
     </div>
     {% endif %}</li>
     <li><a href="/oceans_11/recruitpuzzle/"><img class="thumbnail" alt="Frank Catton" src="/media/img/frankcatton.jpg" /></a>
-    {% if "/oceans_11/frank_catton/solved" in unlocked %}
+    {% if "/oceans_11/frank_catton/solved" in solved %}
     <div class="casinos">
         <a href="/oceans_11/casinopuzzle/"><img class="casino thumbnail" alt="Stratosphere" /></a>
         <a href="/oceans_11/casinopuzzle/"><img class="casino thumbnail" alt="Aria" /></a>
     <span class="answer">✓  frank_catton.answer </span>
     </div>
+    {% else %}
+     <div class="casinos">
+        <img class="casino thumbnail" alt="?" />
+        <img class="casino thumbnail" alt="?" />
+    </div>
     {% endif %}</li>
     <li><img class="thumbnail" alt="Rusty Ryan" src="/media/img/rustyryan.jpg" />
-    {% if "/oceans_11/rusty_ryan/solved" in unlocked %}
+    {% if "/oceans_11/rusty_ryan/solved" in solved %}
     <div class="casinos">
         <img class="casino thumbnail" alt="Mirage" />
-        <img class="casino thumbnail" alt="MGM Grand" />
+        <img class="casino thumbnail" alt="Aria" />
     <span class="answer">✓  rusty_ryan.answer </span>
+    </div>
+    {% else %}
+     <div class="casinos">
+        <img class="casino thumbnail" alt="?" />
+        <img class="casino thumbnail" alt="?" />
     </div>
     {% endif %}</li>
     <li>
     <img class="thumbnail" alt="Reuben Tishkoff" src="/media/img/reubentishkoff.jpg"/>
-    {% if "/oceans_11/reuben_tishkoff/solved" in unlocked %}
+    {% if "/oceans_11/reuben_tishkoff/solved" in solved %}
     <div class="casinos">
         <img class="casino thumbnail" alt="Mirage" />
         <img class="casino thumbnail" alt="MGM Grand" />
+        <img class="casino thumbnail" alt="Aria" />
     <span class="answer">✓  reuben_tishkoff.answer </span>
+    </div>
+    {% else %}
+     <div class="casinos">
+        <img class="casino thumbnail" alt="?" />
+        <img class="casino thumbnail" alt="?" />
+        <img class="casino thumbnail" alt="?" />
     </div>
     {% endif %}</li>
     <li><img class="thumbnail" alt="Virgil Malloy" src="/media/img/virgilmalloy.jpg"/>
-    {% if "/oceans_11/virgil_malloy/solved" in unlocked %}
+    {% if "/oceans_11/virgil_malloy/solved" in solved %}
     <div class="casinos">
         <img class="casino thumbnail" alt="Mirage" />
         <img class="casino thumbnail" alt="MGM Grand" />
     <span class="answer">✓  virgil_malloy.answer </span>
     </div>
+    {% else %}
+     <div class="casinos">
+        <img class="casino thumbnail" alt="?" />
+        <img class="casino thumbnail" alt="?" />
+    </div>
     {% endif %}</li>
     <li><img class="thumbnail" alt="Turk Malloy" src="/media/img/turkmalloy.jpg"/>
-    {% if "/oceans_11/turk_malloy/solved" in unlocked %}
+    {% if "/oceans_11/turk_malloy/solved" in solved %}
     <div class="casinos">
         <img class="casino thumbnail" alt="Mirage" />
         <img class="casino thumbnail" alt="MGM Grand" />
     <span class="answer">✓  turk_malloy.answer </span>
     </div>
+    {% else %}
+     <div class="casinos">
+        <img class="casino thumbnail" alt="?" />
+        <img class="casino thumbnail" alt="?" />
+    </div>
     {% endif %}</li>
 
-    <li><img class="thumbnail" alt="Livingston Dell" src="/media/img/livingstondell.jpg"/></li>
-    <li><img class="thumbnail" alt="Basher Tarr" src="/media/img/bashertarr.jpg"/></li>
-    <li><img class="thumbnail" alt="The Amazing Yen" src="/media/img/theamazingyen.jpg"/></li>
-    <li><img class="thumbnail" alt="Saul Bloom" src="/media/img/saulbloom.jpg"/></li>
-    <li><img class="thumbnail" alt="Linus Caldwell" src="/media/img/linuscaldwell.jpg"/></li>
+    <li><img class="thumbnail" alt="Livingston Dell" src="/media/img/livingstondell.jpg"/>
+    {% if "/oceans_11/livingston_dell/solved" in solved %}
+    <div class="casinos">
+        <a href="/oceans_11/sample-casino/"><img class="casino thumbnail" alt="Mirage" /></a>
+        <a href="/oceans_11/sample-casino/"><img class="casino thumbnail" alt="MGM Grand" /></a>
+    <span class="answer">✓  danny_ocean.answer </span>
+    </div>
+    {% else %}
+     <div class="casinos">
+        <img class="casino thumbnail" alt="?" />
+        <img class="casino thumbnail" alt="?" />
+    </div>
+    {% endif %}</li>
+    <li><img class="thumbnail" alt="Basher Tarr" src="/media/img/bashertarr.jpg"/>
+    {% if "/oceans_11/basher_tarr/solved" in solved %}
+    <div class="casinos">
+        <a href="/oceans_11/sample-casino/"><img class="casino thumbnail" alt="Mirage" /></a>
+        <a href="/oceans_11/sample-casino/"><img class="casino thumbnail" alt="MGM Grand" /></a>
+    <span class="answer">✓  danny_ocean.answer </span>
+    </div>
+    {% else %}
+     <div class="casinos">
+        <img class="casino thumbnail" alt="?" />
+        <img class="casino thumbnail" alt="?" />
+    </div>
+    {% endif %}</li>
+    <li><img class="thumbnail" alt="The Amazing Yen" src="/media/img/theamazingyen.jpg"/>
+    {% if "/oceans_11/the_amazing_yen/solved" in solved %}
+    <div class="casinos">
+        <a href="/oceans_11/sample-casino/"><img class="casino thumbnail" alt="Mirage" /></a>
+        <a href="/oceans_11/sample-casino/"><img class="casino thumbnail" alt="MGM Grand" /></a>
+    <span class="answer">✓  danny_ocean.answer </span>
+    </div>
+    {% else %}
+     <div class="casinos">
+        <img class="casino thumbnail" alt="?" />
+        <img class="casino thumbnail" alt="?" />
+    </div>
+    {% endif %}</li>
+    <li><img class="thumbnail" alt="Saul Bloom" src="/media/img/saulbloom.jpg"/>
+    {% if "/oceans_11/saul_bloom/solved" in solved %}
+    <div class="casinos">
+        <a href="/oceans_11/sample-casino/"><img class="casino thumbnail" alt="Mirage" /></a>
+        <a href="/oceans_11/sample-casino/"><img class="casino thumbnail" alt="MGM Grand" /></a>
+    <span class="answer">✓  danny_ocean.answer </span>
+    </div>
+    {% else %}
+     <div class="casinos">
+        <img class="casino thumbnail" alt="?" />
+        <img class="casino thumbnail" alt="?" />
+    </div>
+    {% endif %}</li>
+    <li><img class="thumbnail" alt="Linus Caldwell" src="/media/img/linuscaldwell.jpg"/>
+    {% if "/oceans_11/linus_caldwell/solved" in solved %}
+    <div class="casinos">
+        <a href="/oceans_11/sample-casino/"><img class="casino thumbnail" alt="Mirage" /></a>
+        <a href="/oceans_11/sample-casino/"><img class="casino thumbnail" alt="MGM Grand" /></a>
+        <a href="/oceans_11/sample-casino/"><img class="casino thumbnail" alt="Stratosphere" /></a>
+    <span class="answer">✓  danny_ocean.answer </span>
+    </div>
+    {% else %}
+     <div class="casinos">
+        <img class="casino thumbnail" alt="?" />
+        <img class="casino thumbnail" alt="?" />
+        <img class="casino thumbnail" alt="?" />
+    </div>
+    {% endif %}</li>
     <div style="float: none; clear: both;">&nbsp;</div>
 </ul>
 {% endblock %}
