@@ -16,9 +16,9 @@ $(document).ready(function(){
     var populateContactLink = function(){
         var rounds = ['oceans_11', 'evilserver', 'feynman', 'get_smart', 'indiana', 'sneakers', 'rubik'];
         var location = window.location.pathname.split('/');
-        if (rounds.indexOf(location[2]) > -1) {
-            var roundName = location[2];
-            var puzzleName = location[3];
+        if (rounds.indexOf(location[1]) > -1) {
+            var roundName = location[1];
+            var puzzleName = location[2];
             var getString = '?round=' + roundName;
             if (puzzleName) {
                 getString = getString + '&puzzle=' + puzzleName;
