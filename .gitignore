@@ -5,3 +5,7 @@
 *.zip
 .*.swp
 *.egg-info
+/bin/*
+/lib/*
+/include/*
+/local/*
