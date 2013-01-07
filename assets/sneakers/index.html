@@ -35,7 +35,7 @@
   <ul id="metas">
   <li><a href="/sneakers/puzzle/" class="solved">Federal Reserve</a></li>
   <li><a href="/sneakers/puzzle/">National Power Grid</a></li>
-+  <li><a {% if round.meta.is_unlocked %}href="/sneakers/puzzle/"{% else %}class="locked"{% endif %}>Air Traffic Control</a></li>
++  <li><a {% if '/sneakers/puzzle/' in unlocked %}href="/sneakers/puzzle/"{% else %}class="locked"{% endif %}>Air Traffic Control</a></li>
   <li><a href="/sneakers/puzzle/">[ ] Air Traffic Control</a></li>
   </ul>
 
