@@ -59,10 +59,11 @@
             <li>Bribes: <strong>{{ team.extra_credit }}</strong></li>
             </ul>
             <ul class="nav">
+            {% block nav_links %}
             <li><a href="/">Home</a></li>
             <li><a href="/notes/the_situation/">Introduction</a></li>
             <li><a href="/notes/">Notes</a></li>
-            <li><strong><a href="/contact/index.html" id="contact-hq-link">Contact HQ</a></strong></li>
+            <li><strong><a href="/contact/index.html" id="contact-hq-link">Contact HQ</a></strong></li>{% endblock nav_links %}
             </ul>
         </div>
     </div>
