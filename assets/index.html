@@ -168,13 +168,13 @@
 
     <a name="notes"></a><h2>Notes</h2>
     <ul id="notes">
-        {%  if hunt.notes.agent_99_note.is_unlocked %}
-            <li><a href="{{ hunt.urls.note.agent_99_memo }}">Memo from Agent 99</a></li>
+        {%  if '/notes/agent_99/' in unlocked %}
+            <li><a href="/notes/agent_99/">Memo from Agent 99</a></li>
         {% endif %}
-        {%  if hunt.notes.evilserver_round_note.is_unlocked %}
+        {%  if '/notes/heist_plan/' in unlocked %}
             <li><a href="/notes/heist_plan/">Heist Plan</a></li>
         {% endif %}
-        {%  if hunt.notes.evilserver_ceremony_note.is_unlocked %}
+        {%  if '/notes/the_situation/' in unlocked %}
             <li><a href="/notes/the_situation/">Opening Ceremony</a></li>
         {% endif %}
         <div class="clearer"></div>
