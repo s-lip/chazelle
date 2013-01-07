@@ -1,7 +1,115 @@
-{"secret_key": "ephemeral kumquats", "hunt": {"urls": {"note": {"agent_99_memo": "fixme", "the_plan": "fixme", "heist_plan": "fixme"}, "indiana": {"mapindex3": "fixme", "mapindex2": "fixme", "mapindex1": "fixme"}, "puzzle": {"feynman": {"puzzle": "fixme"}}, "round": {"feynman": "fixme"}}, "feynman": {"trap_solved": true, "slug": "feynman", "name": "Feynman", "is_unlocked": true, "puzzles": "feynman_puzzle_1 feynman_puzzle_2 feynman_puzzle_3 feynman_puzzle_4 feynman_puzzle_5 feynman_puzzle_6 feynman_puzzle_7", "is_solved": true}, "evilserver": {"puzzles": "evilserver_puzzle_1 evilserver_puzzle_2 evilserver_puzzle_3 evilserver_puzzle_4 evilserver_puzzle_5 evilserver_puzzle_6", "slug": "evilserver", "is_solved": true, "name": "EvilBank Server", "is_unlocked": true}, "notes": {"evilserver_round_note": {"is_unlocked": true}, "agent_99_note": {"is_unlocked": false}, "evilserver_ceremony_note": {"is_unlocked": true}}, "get_smart": {"trap_solved": false, "name": "Get Smart", "is_unlocked": true, "puzzles": "get_smart_puzzle_1 get_smart_puzzle_2 get_smart_puzzle_3 get_smart_puzzle_4 get_smart_puzzle_5", "is_solved": true, "is_99": true, "slug": "get_smart"}, "oceans_11": {"trap_solved": true, "slug": "oceans_11", "name": "Ocean's 11", "is_unlocked": true, "puzzles": "oceans_11_puzzle_1 oceans_11_puzzle_2 oceans_11_puzzle_3 oceans_11_puzzle_4 oceans_11_puzzle_5 oceans_11_puzzle_6", "is_solved": true}, "sneakers": {"trap_solved": false, "slug": "sneakers", "name": "Sneakers", "is_unlocked": true, "puzzles": "sneakers_puzzle_1 sneakers_puzzle_2 sneakers_puzzle_3 sneakers_puzzle_4 sneakers_puzzle_5", "is_solved": false}, "rubik": {"trap_solved": false, "slug": "rubik", "name": "Indiana Jones", "is_unlocked": false, "puzzles": "rubik_puzzle_1 rubik_puzzle_2 rubik_puzzle_3 rubik_puzzle_4 rubik_puzzle_5", "is_solved": false}, "team": {"extra_credit": 3, "points": 9000, "name": "Manic Sages", "next_unlock_time": "2012-01-18T16:44:30+0100"}, "indiana": {"trap_solved": false, "slug": "indiana", "name": "Indiana Jones", "is_unlocked": true, "puzzles": "indiana_puzzle_1 indiana_puzzle_2 indiana_puzzle_3 indiana_puzzle_4 indiana_puzzle_5", "is_solved": false}, "rounds": ["evilserver", "oceans_11", "feynman", "get_smart", "indiana", "sneakers", "rubik"]},
- "team":
-    {"evilserver":
-        {"is_solved": false}},
- "rounds": {},
- "puzzles": {},
- "unlocked": true}
+{
+    "hunt": {
+        "evilserver": {
+            "is_solved": true, 
+            "is_unlocked": true, 
+            "name": "EvilBank Server", 
+            "puzzles": "evilserver_puzzle_1 evilserver_puzzle_2 evilserver_puzzle_3 evilserver_puzzle_4 evilserver_puzzle_5 evilserver_puzzle_6", 
+            "slug": "evilserver"
+        }, 
+        "feynman": {
+            "is_solved": true, 
+            "is_unlocked": true, 
+            "name": "Feynman", 
+            "puzzles": "feynman_puzzle_1 feynman_puzzle_2 feynman_puzzle_3 feynman_puzzle_4 feynman_puzzle_5 feynman_puzzle_6 feynman_puzzle_7", 
+            "slug": "feynman", 
+            "trap_solved": true
+        }, 
+        "get_smart": {
+            "is_99": true, 
+            "is_solved": true, 
+            "is_unlocked": true, 
+            "name": "Get Smart", 
+            "puzzles": "get_smart_puzzle_1 get_smart_puzzle_2 get_smart_puzzle_3 get_smart_puzzle_4 get_smart_puzzle_5", 
+            "slug": "get_smart", 
+            "trap_solved": false
+        }, 
+        "indiana": {
+            "is_solved": false, 
+            "is_unlocked": true, 
+            "name": "Indiana Jones", 
+            "puzzles": "indiana_puzzle_1 indiana_puzzle_2 indiana_puzzle_3 indiana_puzzle_4 indiana_puzzle_5", 
+            "slug": "indiana", 
+            "trap_solved": false
+        }, 
+        "notes": {
+            "agent_99_note": {
+                "is_unlocked": false
+            }, 
+            "evilserver_ceremony_note": {
+                "is_unlocked": true
+            }, 
+            "evilserver_round_note": {
+                "is_unlocked": true
+            }
+        }, 
+        "oceans_11": {
+            "is_solved": true, 
+            "is_unlocked": true, 
+            "name": "Ocean's 11", 
+            "puzzles": "oceans_11_puzzle_1 oceans_11_puzzle_2 oceans_11_puzzle_3 oceans_11_puzzle_4 oceans_11_puzzle_5 oceans_11_puzzle_6", 
+            "slug": "oceans_11", 
+            "trap_solved": true
+        }, 
+        "rounds": [
+            "evilserver", 
+            "oceans_11", 
+            "feynman", 
+            "get_smart", 
+            "indiana", 
+            "sneakers", 
+            "rubik"
+        ], 
+        "rubik": {
+            "is_solved": false, 
+            "is_unlocked": false, 
+            "name": "Indiana Jones", 
+            "puzzles": "rubik_puzzle_1 rubik_puzzle_2 rubik_puzzle_3 rubik_puzzle_4 rubik_puzzle_5", 
+            "slug": "rubik", 
+            "trap_solved": false
+        }, 
+        "sneakers": {
+            "is_solved": false, 
+            "is_unlocked": true, 
+            "name": "Sneakers", 
+            "puzzles": "sneakers_puzzle_1 sneakers_puzzle_2 sneakers_puzzle_3 sneakers_puzzle_4 sneakers_puzzle_5", 
+            "slug": "sneakers", 
+            "trap_solved": false
+        }, 
+        "team": {
+            "extra_credit": 3, 
+            "name": "Manic Sages", 
+            "next_unlock_time": "2012-01-18T16:44:30+0100", 
+            "points": 9000
+        }, 
+        "urls": {
+            "indiana": {
+                "mapindex1": "fixme", 
+                "mapindex2": "fixme", 
+                "mapindex3": "fixme"
+            }, 
+            "note": {
+                "agent_99_memo": "fixme", 
+                "heist_plan": "fixme", 
+                "the_plan": "fixme"
+            }, 
+            "puzzle": {
+                "feynman": {
+                    "puzzle": "fixme"
+                }
+            }, 
+            "round": {
+                "feynman": "fixme"
+            }
+        }
+    }, 
+    "puzzles": {}, 
+    "rounds": {}, 
+    "secret_key": "ephemeral kumquats", 
+    "team": {
+        "evilserver": {
+            "is_solved": false
+        }
+    }, 
+    "unlocked": true
+}
