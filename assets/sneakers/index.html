@@ -7,20 +7,20 @@
 <h2>INTERCEPTED MESSAGES</h2>
 
 <ul id="messages">
-    <li><a href="/sneakers/puzzle/" {% if "/sneakers/puzzle/solved" in unlocked %}class="solved"{% endif %}>Puzz
-    <li><a href="/sneakers/puzzle/" class="solved">Puzzle Name</a></li>
-    <li><a href="/sneakers/puzzle/" class="solved">Puzzle Name</a></li>
-    <li><a href="/sneakers/puzzle/" {% if "/sneakers/puzzle/solved" in unlocked %}class="solved"{% endif %}>Puzz
-    <li><a href="/sneakers/puzzle/" {% if "/sneakers/puzzle/solved" in unlocked %}class="solved"{% endif %}>Puzz
-    <li><a href="/sneakers/puzzle/" {% if "/sneakers/puzzle/solved" in unlocked %}class="solved"{% endif %}>Puzz
-    <li><a href="/sneakers/puzzle/" {% if "/sneakers/puzzle/solved" in unlocked %}class="solved"{% endif %}>Puzz
-    <li><a href="/sneakers/puzzle/" class="solved">Puzzle Name</a></li>
-    <li><a href="/sneakers/puzzle/" {% if "/sneakers/puzzle/solved" in unlocked %}class="solved"{% endif %}>Puzz
-    <li><a href="/sneakers/puzzle/" class="solved">Puzzle Name</a></li>
-    <li><a href="/sneakers/puzzle/" {% if "/sneakers/puzzle/solved" in unlocked %}class="solved"{% endif %}>Puzz
-    <li><a class="locked">Puzzle Name</a></li>
-    <li><a class="locked">Puzzle Name</a></li>
-    <li><a class="locked">Puzzle Name</a></li>
+    <li><a href="/sneakers/puzzle/" class="{% if "/sneakers/puzzle/solved" in solved %}solved{% endif %} {% if "/sneakers/puzzle/unlocked" not in unlocked %}locked{% endif %}">Puzz
+    <li><a href="/sneakers/puzzle/" class="{% if "/sneakers/puzzle/solved" in solved %}solved{% endif %} {% if "/sneakers/puzzle/unlocked" not in unlocked %}locked{% endif %}" class="solved">Puzzle Name</a></li>
+    <li><a href="/sneakers/puzzle/" class="{% if "/sneakers/puzzle/solved" in solved %}solved{% endif %} {% if "/sneakers/puzzle/unlocked" not in unlocked %}locked{% endif %}" class="solved">Puzzle Name</a></li>
+    <li><a href="/sneakers/puzzle/" class="{% if "/sneakers/puzzle/solved" in solved %}solved{% endif %} {% if "/sneakers/puzzle/unlocked" not in unlocked %}locked{% endif %}">Puzz
+    <li><a href="/sneakers/puzzle/" class="{% if "/sneakers/puzzle/solved" in solved %}solved{% endif %} {% if "/sneakers/puzzle/unlocked" not in unlocked %}locked{% endif %}">Puzz
+    <li><a href="/sneakers/puzzle/" class="{% if "/sneakers/puzzle/solved" in solved %}solved{% endif %} {% if "/sneakers/puzzle/unlocked" not in unlocked %}locked{% endif %}">Puzz
+    <li><a href="/sneakers/puzzle/" class="{% if "/sneakers/puzzle/solved" in solved %}solved{% endif %} {% if "/sneakers/puzzle/unlocked" not in unlocked %}locked{% endif %}">Puzz
+    <li><a href="/sneakers/puzzle/" class="{% if "/sneakers/puzzle/solved" in solved %}solved{% endif %} {% if "/sneakers/puzzle/unlocked" not in unlocked %}locked{% endif %}">Puzzle Name</a></li>
+    <li><a href="/sneakers/puzzle/" class="{% if "/sneakers/puzzle/solved" in solved %}solved{% endif %} {% if "/sneakers/puzzle/unlocked" not in unlocked %}locked{% endif %}">Puzz
+    <li><a href="/sneakers/puzzle/" class="{% if "/sneakers/puzzle/solved" in solved %}solved{% endif %} {% if "/sneakers/puzzle/unlocked" not in unlocked %}locked{% endif %}">Puzzle Name</a></li>
+    <li><a href="/sneakers/puzzle/" class="{% if "/sneakers/puzzle/solved" in solved %}solved{% endif %} {% if "/sneakers/puzzle/unlocked" not in unlocked %}locked{% endif %}">Puzz
+    <li><a class="{% if "/sneakers/puzzle/solved" in solved %}solved{% endif %} {% if "/sneakers/puzzle/unlocked" not in unlocked %}locked{% endif %}">Puzzle Name</a></li>
+    <li><a class="{% if "/sneakers/puzzle/solved" in solved %}solved{% endif %} {% if "/sneakers/puzzle/unlocked" not in unlocked %}locked{% endif %}">Puzzle Name</a></li>
+    <li><a class="{% if "/sneakers/puzzle/solved" in solved %}solved{% endif %} {% if "/sneakers/puzzle/unlocked" not in unlocked %}locked{% endif %}">Puzzle Name</a></li>
     
 </ul>
 
@@ -33,9 +33,9 @@
 <h2>OTHER SYSTEMS</h2>
 
   <ul id="metas">
-  <li><a href="/sneakers/puzzle/" class="solved">Federal Reserve</a></li>
-  <li><a href="/sneakers/puzzle/">National Power Grid</a></li>
-  <li><a href="/sneakers/puzzle/">Air Traffic Control</a></li>
+  {% if "/sneakers/puzzle/unlocked" in unlocked %}<li><a href="/sneakers/puzzle/" class="{% if "/sneakers/puzzle/solved" in solved %}solved{% endif %}">Federal Reserve</a></li>{% endif %}
+  {% if "/sneakers/puzzle/unlocked" in unlocked %}<li><a href="/sneakers/puzzle/" class="{% if "/sneakers/puzzle/solved" in solved %}solved{% endif %}">National Power Grid</a></li>{% endif %}
+  {% if "/sneakers/puzzle/unlocked" in unlocked %}<li><a href="/sneakers/puzzle/" class="{% if "/sneakers/puzzle/solved" in solved %}solved{% endif %}">Air Traffic Control</a></li>{% endif %}
   </ul>
 
 {% endblock %}
