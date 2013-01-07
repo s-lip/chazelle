@@ -1,5 +1,5 @@
 {% extends "indiana/part1/index.html" %}
-{%block body_class %}{{ block.super }} puzzle{% endblock %}
+{%block body_class %}{{ super() }} puzzle{% endblock %}
 
 {% block content %}
 {% if body %}{{body}}{% else %}
