@@ -2,10 +2,10 @@
 {%block body_class %}{{ super() }} puzzle{% endblock %}
 
 {% block content %}
-{% if body %}{{body}}{% else %}
+{% block body %}
 <h2>Puzzle title</h2>
     <p>In publishing and graphic design, lorem ipsum is placeholder text (filler text) commonly used to demons</p>
 <p>Even though "lorem ipsum" may arouse curiosity because of its resemblance to classical Latin, it is not int</p>
-{% endif %}
+{% endblock %}
 {% endblock %}
 
