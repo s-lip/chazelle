@@ -3,19 +3,19 @@
 {% block content %}
 <h2>Homework problems</h2>
 <ol id="puzzles">
-    <li {% if puzzle_1.is_solved %}class="solved"{% endif %}><a href="{{ hunt.urls.puzzle.feynman.puzzle }}">{{ puzzle_1.name }}</a>{% if puzzle_1.is_solved %} <span class="answer">{{ puzzle_1.answer }}</span>{% endif %}</li>
-    <li {% if puzzle_2.is_solved %}class="solved"{% endif %}><a href="{{ hunt.urls.puzzle.feynman.puzzle }}">{{ puzzle_2.name }}</a>{% if puzzle_2.is_solved %} <span class="answer">{{ puzzle_2.answer }}</span>{% endif %}</li>
-    <li {% if puzzle_3.is_solved %}class="solved"{% endif %}><a href="{{ hunt.urls.puzzle.feynman.puzzle }}">{{ puzzle_3.name }}</a>{% if puzzle_3.is_solved %} <span class="answer">{{ puzzle_3.answer }}</span>{% endif %}</li>
-    <li {% if puzzle_4.is_solved %}class="solved"{% endif %}><a href="{{ hunt.urls.puzzle.feynman.puzzle }}">{{ puzzle_4.name }}</a>{% if puzzle_4.is_solved %} <span class="answer">{{ puzzle_4.answer }}</span>{% endif %}</li>
-    <li {% if puzzle_5.is_solved %}class="solved"{% endif %}><a href="{{ hunt.urls.puzzle.feynman.puzzle }}">{{ puzzle_5.name }}</a>{% if puzzle_5.is_solved %} <span class="answer">{{ puzzle_5.answer }}</span>{% endif %}</li>
-    <li {% if puzzle_6.is_solved %}class="solved"{% endif %}><a href="{{ hunt.urls.puzzle.feynman.puzzle }}">{{ puzzle_6.name }}</a>{% if puzzle_6.is_solved %} <span class="answer">{{ puzzle_6.answer }}</span>{% endif %}</li>
-    <li {% if puzzle_7.is_solved %}class="solved"{% endif %}><a href="{{ hunt.urls.puzzle.feynman.puzzle }}">{{ puzzle_7.name }}</a>{% if puzzle_7.is_solved %} <span class="answer">{{ puzzle_7.answer }}</span>{% endif %}</li>
-    <li><a href="{{ hunt.urls.puzzle.feynman.puzzle }}">This is a puzzle</a></li>
-    <li><a href="{{ hunt.urls.puzzle.feynman.puzzle }}">This is a puzzle</a></li>
-    <li><a href="{{ hunt.urls.puzzle.feynman.puzzle }}">This is a puzzle</a></li>
-    <li><a href="{{ hunt.urls.puzzle.feynman.puzzle }}">This is a puzzle</a></li>
-    <li><a href="{{ hunt.urls.puzzle.feynman.puzzle }}">This is a puzzle</a></li>
-    <li><a href="{{ hunt.urls.puzzle.feynman.puzzle }}">This is a puzzle</a></li>
+    <li {% if puzzle_1.is_solved %}class="solved"{% endif %}><a href="/feynman/puzzle/">{{ puzzle_1.name }}</a>{% if puzzle_1.is_solved %} <span class="answer">{{ puzzle_1.answer }}</span>{% endif %}</li>
+    <li {% if puzzle_2.is_solved %}class="solved"{% endif %}><a href="/feynman/puzzle/">{{ puzzle_2.name }}</a>{% if puzzle_2.is_solved %} <span class="answer">{{ puzzle_2.answer }}</span>{% endif %}</li>
+    <li {% if puzzle_3.is_solved %}class="solved"{% endif %}><a href="/feynman/puzzle/">{{ puzzle_3.name }}</a>{% if puzzle_3.is_solved %} <span class="answer">{{ puzzle_3.answer }}</span>{% endif %}</li>
+    <li {% if puzzle_4.is_solved %}class="solved"{% endif %}><a href="/feynman/puzzle/">{{ puzzle_4.name }}</a>{% if puzzle_4.is_solved %} <span class="answer">{{ puzzle_4.answer }}</span>{% endif %}</li>
+    <li {% if puzzle_5.is_solved %}class="solved"{% endif %}><a href="/feynman/puzzle/">{{ puzzle_5.name }}</a>{% if puzzle_5.is_solved %} <span class="answer">{{ puzzle_5.answer }}</span>{% endif %}</li>
+    <li {% if puzzle_6.is_solved %}class="solved"{% endif %}><a href="/feynman/puzzle/">{{ puzzle_6.name }}</a>{% if puzzle_6.is_solved %} <span class="answer">{{ puzzle_6.answer }}</span>{% endif %}</li>
+    <li {% if puzzle_7.is_solved %}class="solved"{% endif %}><a href="/feynman/puzzle/">{{ puzzle_7.name }}</a>{% if puzzle_7.is_solved %} <span class="answer">{{ puzzle_7.answer }}</span>{% endif %}</li>
+    <li><a href="/feynman/puzzle/">This is a puzzle</a></li>
+    <li><a href="/feynman/puzzle/">This is a puzzle</a></li>
+    <li><a href="/feynman/puzzle/">This is a puzzle</a></li>
+    <li><a href="/feynman/puzzle/">This is a puzzle</a></li>
+    <li><a href="/feynman/puzzle/">This is a puzzle</a></li>
+    <li><a href="/feynman/puzzle/">This is a puzzle</a></li>
 </ol>
 
 <a href="/feynman/final.pdf"><h2>Take-home final</h2></a>

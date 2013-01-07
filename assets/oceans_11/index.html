@@ -2,19 +2,19 @@
 
 {% block content %}
 <ul id="conspirators">
-    <li><a href="{{ hunt.urls.puzzle.oceans_11.recruitpuzzle }}"><img class="thumbnail" alt="Danny Ocean" src="/media/img/dannyocean.jpg" /></a>
+    <li><a href="/oceans_11/recruitpuzzle/"><img class="thumbnail" alt="Danny Ocean" src="/media/img/dannyocean.jpg" /></a>
     {% if danny_ocean.is_solved %}
     <div class="casinos">
-        <a href="{{ hunt.urls.puzzle.oceans_11.casinopuzzle }}"><img class="casino thumbnail" alt="Mirage" /></a>
-        <a href="{{ hunt.urls.puzzle.oceans_11.casinopuzzle }}"><img class="casino thumbnail" alt="MGM Grand" /></a>
+        <a href="/oceans_11/casinopuzzle/"><img class="casino thumbnail" alt="Mirage" /></a>
+        <a href="/oceans_11/casinopuzzle/"><img class="casino thumbnail" alt="MGM Grand" /></a>
     <span class="answer">✓ {{ danny_ocean.answer }}</span>
     </div>
     {% endif %}</li>
-    <li><a href="{{ hunt.urls.puzzle.oceans_11.recruitpuzzle }}"><img class="thumbnail" alt="Frank Catton" src="/media/img/frankcatton.jpg" /></a>
+    <li><a href="/oceans_11/recruitpuzzle/"><img class="thumbnail" alt="Frank Catton" src="/media/img/frankcatton.jpg" /></a>
     {% if frank_catton.is_solved %}
     <div class="casinos">
-        <a href="{{ hunt.urls.puzzle.oceans_11.casinopuzzle }}"><img class="casino thumbnail" alt="Stratosphere" /></a>
-        <a href="{{ hunt.urls.puzzle.oceans_11.casinopuzzle }}"><img class="casino thumbnail" alt="Aria" /></a>
+        <a href="/oceans_11/casinopuzzle/"><img class="casino thumbnail" alt="Stratosphere" /></a>
+        <a href="/oceans_11/casinopuzzle/"><img class="casino thumbnail" alt="Aria" /></a>
     <span class="answer">✓ {{ frank_catton.answer }}</span>
     </div>
     {% endif %}</li>
