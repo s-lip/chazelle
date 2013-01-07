@@ -1,4 +1,4 @@
-{% extends "rounds/evilserver/base.html" %}
+{% extends "evilserver/_/base.html" %}
 
 {% block content %}
     <table>
@@ -9,7 +9,7 @@
         </tr>
     <thead>
     <tbody>
-        <tr id="meta" {% if evilserver.is_solved %}class="solved"{% endif %}>
+        <tr id="meta" {% if "/evilserver/evilserver/solved" in unlocked %}class="solved"{% endif %}>
             <td class="first-col">BankSecuritySystem/
                 <table>
                     <tr>
@@ -20,30 +20,30 @@
                     </tr>
                 </table>
             </td>
-            {% if evilserver.is_solved %}<td>WONTOFORATE</td>{% endif %}
+            {% if "/evilserver/evilserver/solved" in unlocked %}<td>WONTOFORATE</td>{% endif %}
         </tr>
-        <tr {% if puzzle_1.is_solved %}class="solved"{% endif %}>
+        <tr {% if "/evilserver/puzzle_1/solved" in unlocked %}class="solved"{% endif %}>
             <td class="first-col"><a href="">Welcome!</a></td>
-            {% if puzzle_1.is_solved %}<td>{{ puzzle_1.answer}}</td>{% endif %}
+            {% if "/evilserver/puzzle_1/solved" in unlocked %}<td> puzzle_1.answer</td>{% endif %}
         </tr>
-        <tr {% if puzzle_2.is_solved %}class="solved"{% endif %}>
+        <tr {% if "/evilserver/puzzle_2/solved" in unlocked %}class="solved"{% endif %}>
             <td class="first-col"><a href="">Testing one two</a></td>
-            {% if puzzle_2.is_solved %}<td>{{ puzzle_2.answer}}</td>{% endif %}
-        <tr {% if puzzle_3.is_solved %}class="solved"{% endif %}>
+            {% if "/evilserver/puzzle_2/solved" in unlocked %}<td> puzzle_2.answer</td>{% endif %}
+        <tr {% if "/evilserver/puzzle_3/solved" in unlocked %}class="solved"{% endif %}>
             <td class="first-col"><a href="">Thoroughbred of Sin</a></td>
-            {% if puzzle_3.is_solved %}<td>{{ puzzle_3.answer}}</td>{% endif %}
+            {% if "/evilserver/puzzle_3/solved" in unlocked %}<td> puzzle_3.answer</td>{% endif %}
         </tr>
-        <tr {% if puzzle_4.is_solved %}class="solved"{% endif %}>
+        <tr {% if "/evilserver/puzzle_4/solved" in unlocked %}class="solved"{% endif %}>
             <td class="first-col"><a href="">Remember the Ides</a></td>
-            {% if puzzle_4.is_solved %}<td>{{ puzzle_4.answer}}</td>{% endif %}
+            {% if "/evilserver/puzzle_4/solved" in unlocked %}<td> puzzle_4.answer</td>{% endif %}
         </tr>
-        <tr {% if puzzle_5.is_solved %}class="solved"{% endif %}>
+        <tr {% if "/evilserver/puzzle_5/solved" in unlocked %}class="solved"{% endif %}>
             <td class="first-col"><a href="">Landmarks</a></td>
-            {% if puzzle_5.is_solved %}<td>{{ puzzle_5.answer}}</td>{% endif %}
+            {% if "/evilserver/puzzle_5/solved" in unlocked %}<td> puzzle_5.answer</td>{% endif %}
         </tr>
-        <tr {% if puzzle_6.is_solved %}class="solved"{% endif %}>
+        <tr {% if "/evilserver/puzzle_6/solved" in unlocked %}class="solved"{% endif %}>
             <td class="first-col"><a href="">Life on Mars</a></td>
-            {% if puzzle_6.is_solved %}<td>{{ puzzle_6.answer}}</td>{% endif %}
+            {% if "/evilserver/puzzle_6/solved" in unlocked %}<td> puzzle_6.answer</td>{% endif %}
         </tr>
     </tbody>
     </table>
