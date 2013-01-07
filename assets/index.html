@@ -5,13 +5,13 @@
 {% block content %}
 <div id="frontpage">
     
-    {% if team.evilserver.is_solved %}
+    {% if "/evilserver/solved" in unlocked %}
     <a name="team"></a><h2>Team</h2>
     <ul id="rounds">
-        <li id="oceans_11" class="{% if oceans_11.is_unlocked %}unlocked{% endif %} {% if oceans_11.is_solved %}solved{% endif %}">
-        {% if oceans_11.is_unlocked %}
+        <li id="oceans_11" class="{% if "/oceans_11/" in unlocked %}unlocked{% endif %} {% if "/oceans_11/solved" in unlocked %}solved{% endif %}">
+        {% if "/oceans_11/" in unlocked %}
             <a href="/oceans_11/">
-            {% if oceans_11.is_solved %}
+            {% if "/oceans_11/solved" in unlocked %}
                 <img src="/media/img/dannyocean.png"/>
             {% else %}
                 <img src="/media/img/dannyocea-silhouette.png"/>
@@ -23,12 +23,12 @@
         <span class="surname">Ocean</span><br/>
         <span class="sobriquet">The Idea Man</span>
         </div>
-            {% if oceans_11.is_unlocked %}</a>{% endif %}
+            {% if "/oceans_11/" in unlocked %}</a>{% endif %}
         </li>
-        <li id="feynman" class="{% if feynman.is_unlocked %}unlocked{% endif %} {% if feynman.is_solved %}solved{% endif %}">
-        {% if feynman.is_unlocked %}
+        <li id="feynman" class="{% if "/feynman/" in unlocked %}unlocked{% endif %} {% if "/feynman/solved" in unlocked %}solved{% endif %}">
+        {% if "/feynman/" in unlocked %}
             <a href="/feynman/">
-            {% if feynman.is_solved %}
+            {% if "/feynman/solved" in unlocked %}
                 <img src="/media/img/richardfeynman.png"/>
             {% else %}
                 <img src="/media/img/richardfeynman-silhouette.png"/>
@@ -39,13 +39,13 @@
         <div>Richard<br>
         <span class="surname">Feynman</span><br/>
         <span class="sobriquet">The Genius</span></div>
-            {% if feynman.is_unlocked %}</a>{% endif %}
+            {% if "/feynman/" in unlocked %}</a>{% endif %}
         </li>
-        <li id="{% if get_smart.is_99 %}agent_99{% else %}get_smart{% endif %}" class="{% if get_smart.is_unlocked %}unlocked{% endif %} {% if get_smart.is_solved %}solved{% endif %}">
-        {% if get_smart.is_unlocked %}
+        <li id="{% if "/get_smart/is-99" in unlocked %}agent_99{% else %}get_smart{% endif %}" class="{% if "/get_smart/" in unlocked %}unlocked{% endif %} {% if "/get_smart/solved" in unlocked %}solved{% endif %}">
+        {% if "/get_smart/" in unlocked %}
             <a href="/get_smart/">
-            {% if get_smart.is_99 %}
-                {% if get_smart.is_solved %}
+            {% if "/get_smart/is-99" in unlocked %}
+                {% if "/get_smart/solved" in unlocked %}
                     <img src="/media/img/agent99.png"/>
                 {% else %}
                     <img src="/media/img/agent99-silhouette.png"/>
@@ -57,7 +57,7 @@
             <div class="no-image"></div>
         {% endif %}
             <div>
-            {% if get_smart.is_99 %}
+            {% if "/get_smart/is-99" in unlocked %}
                 Agent<br>
                 <span class="surname">99</span><br/>
             {% else %}
@@ -66,12 +66,12 @@
             {% endif %}
             <span class="sobriquet">The Secret Agent</span>
             </div>
-            {% if get_smart.is_unlocked %}</a>{% endif %}
+            {% if "/get_smart/" in unlocked %}</a>{% endif %}
         </li>
-        <li id="indiana" class="{% if indiana.is_unlocked %}unlocked{% endif %} {% if indiana.is_solved %}solved{% endif %}">
-        {% if indiana.is_unlocked %}
+        <li id="indiana" class="{% if "/indiana/" in unlocked %}unlocked{% endif %} {% if "/indiana/solved" in unlocked %}solved{% endif %}">
+        {% if "/indiana/" in unlocked %}
             <a href="/indiana/">
-            {% if indiana.is_solved %}
+            {% if "/indiana/solved" in unlocked %}
                 <img src="/media/img/indianajones.png"/>
             {% else %}
                 <img src="/media/img/indianajones-silhouette.png"/>
@@ -82,12 +82,12 @@
         <div>Indiana<br>
         <span class="surname">Jones</span><br/>
         <span class="sobriquet">The Adventurer</span></div>
-            {% if indiana.is_unlocked %}</a>{% endif %}
+            {% if "/indiana/" in unlocked %}</a>{% endif %}
         </li>
-        <li id="sneakers" class="{% if sneakers.is_unlocked %}unlocked{% endif %} {% if sneakers.is_solved %}solved{% endif %}">
-        {% if sneakers.is_unlocked %}
+        <li id="sneakers" class="{% if "/sneakers/" in unlocked %}unlocked{% endif %} {% if "/sneakers/solved" in unlocked %}solved{% endif %}">
+        {% if "/sneakers/" in unlocked %}
             <a href="/sneakers/">
-            {% if sneakers.is_solved %}
+            {% if "/sneakers/solved" in unlocked %}
                 <img src="/media/img/martinbishop.png"/>
             {% else %}
                 <img src="/media/img/martinbishop-silhouette.png"/>
@@ -98,12 +98,12 @@
         <div>Martin<br>
         <span class="surname">Bishop</span><br/>
         <span class="sobriquet">The Hacker</span></div>
-            {% if sneakers.is_unlocked %}</a>{% endif %}
+            {% if "/sneakers/" in unlocked %}</a>{% endif %}
         </li>
-        <li id="rubik" class="{% if rubik.is_unlocked %}unlocked{% endif %} {% if rubik.is_solved %}solved{% endif %}">
-        {% if rubik.is_unlocked %}
+        <li id="rubik" class="{% if "/rubik/" in unlocked %}unlocked{% endif %} {% if "/rubik/solved" in unlocked %}solved{% endif %}">
+        {% if "/rubik/" in unlocked %}
             <a href="/rubik/">
-            {% if rubik.is_solved %}
+            {% if "/rubik/solved" in unlocked %}
                 <img src="/media/img/ernorubik.png"/>
             {% else %}
                 <img src="/media/img/ernorubik-silhouette.png"/>
@@ -114,50 +114,50 @@
         <div>Erno<br>
         <span class="surname">Rubik</span><br/>
         <span class="sobriquet">The Inventor</span></div>
-            {% if rubik.is_unlocked %}</a>{% endif %}
+            {% if "/rubik/" in unlocked %}</a>{% endif %}
         </li>
         <div class="clearer"></div>
     </ul>
     <a name="obstacles"></a><h2>Obstacles</h2>
     <ul id="traps" class="">
-        <li class="{% if oceans_11.is_solved %}unlocked{% endif %} {% if oceans_11.trap_solved %}solved{% endif %}">
-        {% if oceans_11.is_solved %}
-            <img src="/media/img/traps/guards{% if not oceans_11.trap_solved %}-silhouette{% endif %}.png"/>
+        <li class="{% if "/oceans_11/solved" in unlocked %}unlocked{% endif %} {% if "/oceans_11/trap/solved" in unlocked %}solved{% endif %}">
+        {% if "/oceans_11/solved" in unlocked %}
+            <img src="/media/img/traps/guards{% if not "/oceans_11/trap/solved" in unlocked %}-silhouette{% endif %}.png"/>
         {% else %}
             <div class="no-image"></div>
         {% endif %}
         <div>Guards</div></li>
-        <li class="{% if feynman.is_solved %}unlocked{% endif %} {% if feynman.trap_solved %}solved{% endif %}">
-        {% if feynman.is_solved %}
-            <img src="/media/img/traps/safe{% if not feynman.trap_solved %}-silhouette{% endif %}.png"/>
+        <li class="{% if "/feynman/solved" in unlocked %}unlocked{% endif %} {% if "/feynman/trap/solved" in unlocked %}solved{% endif %}">
+        {% if "/feynman/solved" in unlocked %}
+            <img src="/media/img/traps/safe{% if not "/feynman/trap/solved" in unlocked %}-silhouette{% endif %}.png"/>
         {% else %}
             <div class="no-image"></div>
         {% endif %}
         <div>Safe</div></li>
-       <li class="{% if get_smart.is_solved %}unlocked{% endif %} {% if get_smart.trap_solved %}solved{% endif %}">
-        {% if get_smart.is_solved %}
-            <img src="/media/img/traps/lasers{% if not get_smart.trap_solved %}-silhouette{% endif %}.png"/>
+       <li class="{% if "/get_smart/solved" in unlocked %}unlocked{% endif %} {% if "/get_smart/trap/solved" in unlocked %}solved{% endif %}">
+        {% if "/get_smart/solved" in unlocked %}
+            <img src="/media/img/traps/lasers{% if not "/get_smart/trap/solved" in unlocked %}-silhouette{% endif %}.png"/>
         {% else %}
             <div class="no-image"></div>
         {% endif %}
         <div>Lasers</div></li>
-        <li class="{% if indiana.is_solved %}unlocked{% endif %} {% if indiana.trap_solved %}solved{% endif %}">
-        {% if indiana.is_solved %}
-            <img src="/media/img/traps/puzzlebox{% if not indiana.trap_solved %}-silhouette{% endif %}.png"/>
+        <li class="{% if "/indiana/solved" in unlocked %}unlocked{% endif %} {% if "/indiana/trap/solved" in unlocked %}solved{% endif %}">
+        {% if "/indiana/solved" in unlocked %}
+            <img src="/media/img/traps/puzzlebox{% if not "/indiana/trap/solved" in unlocked %}-silhouette{% endif %}.png"/>
         {% else %}
             <div class="no-image"></div>
         {% endif %}
         <div>Lockbox</div></li>
-        <li class="{% if sneakers.is_solved %}unlocked{% endif %} {% if sneakers.trap_solved %}solved{% endif %}">
-        {% if sneakers.is_solved %}
-            <img src="/media/img/traps/door{% if not sneakers.trap_solved %}-silhouette{% endif %}.png"/>
+        <li class="{% if "/sneakers/solved" in unlocked %}unlocked{% endif %} {% if "/sneakers/trap/solved" in unlocked %}solved{% endif %}">
+        {% if "/sneakers/solved" in unlocked %}
+            <img src="/media/img/traps/door{% if not "/sneakers/trap/solved" in unlocked %}-silhouette{% endif %}.png"/>
         {% else %}
             <div class="no-image"></div>
         {% endif %}
         <div>Impenetrable Door</div></li>
-        <li class="{% if rubik.is_solved %}unlocked{% endif %} {% if rubik.trap_solved %}solved{% endif %}">
-        {% if rubik.is_solved %}
-            <img src="/media/img/traps/keypad{% if not rubik.trap_solved %}-silhouette{% endif %}.png"/>
+        <li class="{% if "/rubik/solved" in unlocked %}unlocked{% endif %} {% if "/rubik/trap_solved" in unlocked %}solved{% endif %}">
+        {% if "/rubik/solved" in unlocked %}
+            <img src="/media/img/traps/keypad{% if not "/rubik/trap_solved" in unlocked %}-silhouette{% endif %}.png"/>
         {% else %}
             <div class="no-image"></div>
         {% endif %}
