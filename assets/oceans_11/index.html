@@ -3,52 +3,52 @@
 {% block content %}
 <ul id="conspirators">
     <li><a href="/oceans_11/recruitpuzzle/"><img class="thumbnail" alt="Danny Ocean" src="/media/img/dannyocean.jpg" /></a>
-    {% if danny_ocean.is_solved %}
+    {% if "/oceans_11/danny_ocean/solved" in unlocked %}
     <div class="casinos">
         <a href="/oceans_11/casinopuzzle/"><img class="casino thumbnail" alt="Mirage" /></a>
         <a href="/oceans_11/casinopuzzle/"><img class="casino thumbnail" alt="MGM Grand" /></a>
-    <span class="answer">✓ {{ danny_ocean.answer }}</span>
+    <span class="answer">✓  danny_ocean.answer </span>
     </div>
     {% endif %}</li>
     <li><a href="/oceans_11/recruitpuzzle/"><img class="thumbnail" alt="Frank Catton" src="/media/img/frankcatton.jpg" /></a>
-    {% if frank_catton.is_solved %}
+    {% if "/oceans_11/frank_catton/solved" in unlocked %}
     <div class="casinos">
         <a href="/oceans_11/casinopuzzle/"><img class="casino thumbnail" alt="Stratosphere" /></a>
         <a href="/oceans_11/casinopuzzle/"><img class="casino thumbnail" alt="Aria" /></a>
-    <span class="answer">✓ {{ frank_catton.answer }}</span>
+    <span class="answer">✓  frank_catton.answer </span>
     </div>
     {% endif %}</li>
     <li><img class="thumbnail" alt="Rusty Ryan" src="/media/img/rustyryan.jpg" />
-    {% if rusty_ryan.is_solved %}
+    {% if "/oceans_11/rusty_ryan/solved" in unlocked %}
     <div class="casinos">
         <img class="casino thumbnail" alt="Mirage" />
         <img class="casino thumbnail" alt="MGM Grand" />
-    <span class="answer">✓ {{ rusty_ryan.answer }}</span>
+    <span class="answer">✓  rusty_ryan.answer </span>
     </div>
     {% endif %}</li>
     <li>
     <img class="thumbnail" alt="Reuben Tishkoff" src="/media/img/reubentishkoff.jpg"/>
-    {% if reuben_tishkoff.is_solved %}
+    {% if "/oceans_11/reuben_tishkoff/solved" in unlocked %}
     <div class="casinos">
         <img class="casino thumbnail" alt="Mirage" />
         <img class="casino thumbnail" alt="MGM Grand" />
-    <span class="answer">✓ {{ reuben_tishkoff.answer }}</span>
+    <span class="answer">✓  reuben_tishkoff.answer </span>
     </div>
     {% endif %}</li>
     <li><img class="thumbnail" alt="Virgil Malloy" src="/media/img/virgilmalloy.jpg"/>
-    {% if virgil_malloy.is_solved %}
+    {% if "/oceans_11/virgil_malloy/solved" in unlocked %}
     <div class="casinos">
         <img class="casino thumbnail" alt="Mirage" />
         <img class="casino thumbnail" alt="MGM Grand" />
-    <span class="answer">✓ {{ virgil_malloy.answer }}</span>
+    <span class="answer">✓  virgil_malloy.answer </span>
     </div>
     {% endif %}</li>
     <li><img class="thumbnail" alt="Turk Malloy" src="/media/img/turkmalloy.jpg"/>
-    {% if turk_malloy.is_solved %}
+    {% if "/oceans_11/turk_malloy/solved" in unlocked %}
     <div class="casinos">
         <img class="casino thumbnail" alt="Mirage" />
         <img class="casino thumbnail" alt="MGM Grand" />
-    <span class="answer">✓ {{ turk_malloy.answer }}</span>
+    <span class="answer">✓  turk_malloy.answer </span>
     </div>
     {% endif %}</li>
 
