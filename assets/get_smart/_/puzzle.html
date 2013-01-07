@@ -1,21 +1,21 @@
-{% extends "get_smart/index.html" %}
+{% extends "get_smart/_/base.html" %}
 
 {% block body_id %}puzzbg{% endblock %}
 
 {% block body_class %}bg{% endblock %}
 
-{% block content %}
-
-    <div id="puzzcontainer" class="container">
+ {% block content %}
+   <div id="puzzcontainer" class="container">
         <div class="header">
-            PUZZLE NAME
+            {% block puzzle_title %}PUZZLE NAME{% endblock %}
         </div>
         
         <div id="puzzcontent" class="content">
-            Contents
+            {% block body %}Contents{% endblock %}
         </div>
         
         <div id="footer">
         </div>
     </div> 
-{% endblock content %}
+-{% endblock content %}
+
