@@ -9,8 +9,18 @@ requirements = collections.namedtuple('requirements',
 UNLOCK_MES = {
     # Round 0
     '/enigmavalley/': requirements(required_points=0, prerequisites=set()),
-    '/enigmavalley/puzzle1.fixme/': requirements(required_points=0,
-                                                 prerequisites=set()),
+    '/enigmavalley/puzzle1/': requirements(required_points=0,
+                                           prerequisites=set()),
+    '/enigmavalley/puzzle2/': requirements(required_points=0,
+                                           prerequisites=set()),
+    '/enigmavalley/puzzle3/': requirements(required_points=0,
+                                           prerequisites=set()),
+    '/enigmavalley/puzzle4/': requirements(required_points=0,
+                                           prerequisites=set()),
+    '/enigmavalley/puzzle5/': requirements(required_points=0,
+                                           prerequisites=set()),
+    '/enigmavalley/puzzle6/': requirements(required_points=0,
+                                           prerequisites=set()),
     '/enigmavalley/meta/': requirements(required_points=0,
                                                  prerequisites=set()),
     # Round 1
@@ -53,7 +63,12 @@ class UnlockTests(unittest2.TestCase):
         hts = HuntTeamState()
         self.assertEqual(hts.unlocked, set([
                     '/enigmavalley/',
-                    '/enigmavalley/puzzle1.fixme/',
+                    '/enigmavalley/puzzle1/',
+                    '/enigmavalley/puzzle2/',
+                    '/enigmavalley/puzzle3/',
+                    '/enigmavalley/puzzle4/',
+                    '/enigmavalley/puzzle5/',
+                    '/enigmavalley/puzzle6/',
                     '/enigmavalley/meta/',
                     ]))
 
