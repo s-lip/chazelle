@@ -5,6 +5,12 @@ import collections
 
 requirements = collections.namedtuple('requirements',
                                       'required_points prerequisites')
+## We treat 'requirements' as an OR -- if you have either the list of
+## things in requirements, OR you have the required points, we should
+## unlock it.
+
+POINT_THRESHHOLDS = {'oceans_11': 1000,
+                     }
 
 UNLOCK_MES = {
     # Round 0
@@ -22,9 +28,32 @@ UNLOCK_MES = {
     '/enigmavalley/puzzle6/': requirements(required_points=0,
                                            prerequisites=set()),
     '/enigmavalley/meta/': requirements(required_points=0,
-                                                 prerequisites=set()),
+                                        prerequisites=set()),
     # Round 1
-    
+    '/oceans_11/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
+                                prerequisites=set(['/enigmavalley/solved'])),
+    '/oceans_11/puzzle1/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
+                                        prerequisites=set(['/enigmavalley/solved'])),
+    '/oceans_11/puzzle2/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
+                                        prerequisites=set(['/enigmavalley/solved'])),
+    '/oceans_11/puzzle3/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
+                                        prerequisites=set(['/enigmavalley/solved'])),
+    '/oceans_11/puzzle4/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
+                                        prerequisites=set(['/enigmavalley/solved'])),
+    '/oceans_11/puzzle5/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
+                                        prerequisites=set(['/enigmavalley/solved'])),
+    '/oceans_11/puzzle6/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
+                                        prerequisites=set(['/enigmavalley/solved'])),
+    '/oceans_11/puzzle7/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
+                                        prerequisites=set(['/enigmavalley/solved'])),
+    '/oceans_11/puzzle8/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
+                                        prerequisites=set(['/enigmavalley/solved'])),
+    '/oceans_11/puzzle9/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
+                                        prerequisites=set(['/enigmavalley/solved'])),
+    '/oceans_11/puzzle10/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
+                                         prerequisites=set(['/enigmavalley/solved'])),
+    '/oceans_11/puzzle11/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
+                                         prerequisites=set(['/enigmavalley/solved'])),
 }
 
 class HuntTeamState(object):
@@ -34,9 +63,19 @@ class HuntTeamState(object):
 
     def do_unlock(self, things):
         assert type(things) not in types.StringTypes
+        # Store the fact that we have unlocked it
         for thing in things:
             self.unlocked.add(thing)
-            # FIXME: Trigger any event pushes to jason code
+        # unlock anything recursively now
+        for maybe_unlock in UNLOCK_MES:
+            if maybe_unlock in self.unlocked:
+                continue
+            reqs = UNLOCK_MES[maybe_unlock]
+            if self.unlocked.issuperset(reqs.prerequisites):
+                self.do_unlock([maybe_unlock])
+                logging.warning("Unlocking %s", maybe_unlock)
+        # FIXME: Trigger any event pushes to jason code
+        # ...
 
     def get_points(self):
         return 0
@@ -51,7 +90,7 @@ class HuntTeamState(object):
                 continue
 
             req = UNLOCK_MES[maybe_unlock]
-            if req.required_points >= current_points:
+            if current_points >= req.required_points:
                 unlock_these.add(maybe_unlock)
 
         if unlock_these:
@@ -71,6 +110,26 @@ class UnlockTests(unittest2.TestCase):
                     '/enigmavalley/puzzle6/',
                     '/enigmavalley/meta/',
                     ]))
+
+    def test_solve_round0(self):
+        hts = HuntTeamState()
+        hts.do_unlock(['/enigmavalley/solved'])
+        need_unlocked = set([
+                '/oceans_11/',
+                '/oceans_11/puzzle1/',
+                '/oceans_11/puzzle2/',
+                '/oceans_11/puzzle3/',
+                '/oceans_11/puzzle4/',
+                '/oceans_11/puzzle5/',
+                '/oceans_11/puzzle6/',
+                '/oceans_11/puzzle7/',
+                '/oceans_11/puzzle8/',
+                '/oceans_11/puzzle9/',
+                '/oceans_11/puzzle10/',
+                '/oceans_11/puzzle11/',
+                ])
+        for item in need_unlocked:
+            self.assert_(item in hts.unlocked, "Missing %s" % (item,))
 
 ### Note: There should be a semi-manual test that when veil is running,
 ### and "unlock" is set to True, that all the URLs we use above actually
