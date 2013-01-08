@@ -1,10 +1,15 @@
 import types
 import unittest2
 import logging
+import collections
+
+requirements = collections.namedtuple('requirements',
+                                      'required_points prerequisites')
 
 UNLOCK_MES = {
-    '/enigmavalley/': 0,
-    '/enigmavalley/puzzle1.fixme/': 0,
+    '/enigmavalley/': requirements(required_points=0, prerequisites=set()),
+    '/enigmavalley/puzzle1.fixme/': requirements(required_points=0,
+                                                 prerequisites=set()),
 }
 
 
@@ -32,8 +37,8 @@ class HuntTeamState(object):
             if maybe_unlock in self.unlocked:
                 continue
 
-            required_points = UNLOCK_MES[maybe_unlock]
-            if required_points >= current_points:
+            req = UNLOCK_MES[maybe_unlock]
+            if req.required_points >= current_points:
                 unlock_these.add(maybe_unlock)
 
         if unlock_these:
