@@ -10,6 +10,8 @@ UNLOCK_MES = {
     '/enigmavalley/': requirements(required_points=0, prerequisites=set()),
     '/enigmavalley/puzzle1.fixme/': requirements(required_points=0,
                                                  prerequisites=set()),
+    '/enigmavalley/meta/': requirements(required_points=0,
+                                                 prerequisites=set()),
 }
 
 
@@ -51,4 +53,5 @@ class UnlockTests(unittest2.TestCase):
         self.assertEqual(hts.unlocked, set([
                     '/enigmavalley/',
                     '/enigmavalley/puzzle1.fixme/',
+                    '/enigmavalley/meta/',
                     ]))
