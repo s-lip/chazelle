@@ -3,6 +3,8 @@ import unittest2
 import logging
 
 UNLOCK_MES = {
+    '/enigmavalley/': 0,
+    '/enigmavalley/puzzle1.fixme/': 0,
 }
 
 
@@ -39,6 +41,9 @@ class HuntTeamState(object):
             logging.info("Unlocked %s", unlock_these)
 
 class UnlockTests(unittest2.TestCase):
-    def test(self):
-        pass
-
+    def test_hunt_start(self):
+        hts = HuntTeamState()
+        self.assertEqual(hts.unlocked, set([
+                    '/enigmavalley/',
+                    '/enigmavalley/puzzle1.fixme/',
+                    ]))
