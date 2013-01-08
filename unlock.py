@@ -5,12 +5,13 @@ import collections
 
 requirements = collections.namedtuple('requirements',
                                       'required_points prerequisites')
-## We treat 'requirements' as an OR -- if you have either the list of
-## things in requirements, OR you have the required points, we should
-## unlock it.
+## We treat 'requirements' as an OR -- if you have ANY item in the
+## list of things in requirements, OR you have the required points, we
+## should unlock it.
 
-POINT_THRESHHOLDS = {'oceans_11': 1000,
-                     }
+POINT_THRESHHOLDS = {
+    'oceans_11': 1000,
+}
 
 UNLOCK_MES = {
     # Round 0
