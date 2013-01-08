@@ -7,14 +7,15 @@ requirements = collections.namedtuple('requirements',
                                       'required_points prerequisites')
 
 UNLOCK_MES = {
+    # Round 0
     '/enigmavalley/': requirements(required_points=0, prerequisites=set()),
     '/enigmavalley/puzzle1.fixme/': requirements(required_points=0,
                                                  prerequisites=set()),
     '/enigmavalley/meta/': requirements(required_points=0,
                                                  prerequisites=set()),
+    # Round 1
+    
 }
-
-
 
 class HuntTeamState(object):
     def __init__(self):
@@ -55,3 +56,10 @@ class UnlockTests(unittest2.TestCase):
                     '/enigmavalley/puzzle1.fixme/',
                     '/enigmavalley/meta/',
                     ]))
+
+### Note: There should be a semi-manual test that when veil is running,
+### and "unlock" is set to True, that all the URLs we use above actually
+### return HTTP status 200, except the ones that end in "/solved" because
+### that is an internal thingamabob.
+
+
