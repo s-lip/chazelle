@@ -13,6 +13,14 @@ POINT_THRESHHOLDS = {
     'oceans_11': 1000,
 }
 
+# XXX:
+# puzzles need to imply the unlocking of:
+# - their /answer/
+# - their stuff from /media/, if any
+# - the stuff not in /media/ you get for free
+# - some puzzles may have a /hint/... those presumably are unlocked manually (or time-based)
+# - some puzzles have /visit/ -- ??!!
+
 UNLOCK_MES = {
     # Round 0
     '/enigmavalley/': requirements(required_points=0, prerequisites=set()),
