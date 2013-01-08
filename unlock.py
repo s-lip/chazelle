@@ -61,6 +61,15 @@ UNLOCK_MES = {
                                          prerequisites=set(['/oceans_11/puzzle1/solved'])),
     '/oceans_11/fragment3/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
                                          prerequisites=set(['/oceans_11/puzzle2/solved'])),
+
+
+    # Round 1 casinos
+    '/oceans_11/casino1/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
+                                        prerequisites=set([
+                '/oceans_11/fragment1/',
+                '/oceans_11/fragment3/',
+                ])),
+
 }
 
 class HuntTeamState(object):
@@ -68,19 +77,36 @@ class HuntTeamState(object):
         self.unlocked = set()
         self.handle_time_tick(0)
 
+    def recursive_unlock_propagate(self):
+        unlocked_stuff_this_run = True
+        unlock_things = set()
+
+        while unlocked_stuff_this_run:
+            unlocked_stuff_this_run = False
+
+            for maybe_unlock in UNLOCK_MES:
+                if ((maybe_unlock in self.unlocked) or
+                    (maybe_unlock in unlock_things)):
+                    continue
+                reqs = UNLOCK_MES[maybe_unlock]
+                if (self.unlocked.intersection(reqs.prerequisites) or
+                    unlock_things.intersection(reqs.prerequisites)):
+                    logging.warning("Unlocked: %s", maybe_unlock)
+                    unlock_things.add(maybe_unlock)
+                    unlocked_stuff_this_run = True
+
+        return unlock_things
+
+
     def do_unlock(self, things):
         assert type(things) not in types.StringTypes
         # Store the fact that we have unlocked it
         for thing in things:
             self.unlocked.add(thing)
         # unlock anything recursively now
-        for maybe_unlock in UNLOCK_MES:
-            if maybe_unlock in self.unlocked:
-                continue
-            reqs = UNLOCK_MES[maybe_unlock]
-            if self.unlocked.issuperset(reqs.prerequisites):
-                self.do_unlock([maybe_unlock])
-                logging.warning("Unlocking %s", maybe_unlock)
+        unlock_things = self.recursive_unlock_propagate()
+        self.unlocked.update(unlock_things)
+
         # FIXME: Trigger any event pushes to jason code
         # ...
 
@@ -149,6 +175,14 @@ class UnlockTests(unittest2.TestCase):
         self.assertTrue(hts.unlocked.issuperset(needs_unlocked))
         self.assertFalse('/oceans_11/fragment3/' in hts.unlocked)
 
+    def test_solve_round1_gives_you_casinos(self):
+        hts = HuntTeamState()
+        hts.do_unlock(['/enigmavalley/solved'])
+        hts.do_unlock(['/oceans_11/puzzle1/solved'])
+        needs_unlocked = set([
+                '/oceans_11/casino1/',
+                ])
+        self.assertTrue(hts.unlocked.issuperset(needs_unlocked))
 ### Note: There should be a semi-manual test that when veil is running,
 ### and "unlock" is set to True, that all the URLs we use above actually
 ### return HTTP status 200, except the ones that end in "/solved" because
