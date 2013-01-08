@@ -183,6 +183,11 @@ class UnlockTests(unittest2.TestCase):
                 '/oceans_11/casino1/',
                 ])
         self.assertTrue(hts.unlocked.issuperset(needs_unlocked))
+
+    ## FIXME: Round 1 supermeta?
+
+
+
 ### Note: There should be a semi-manual test that when veil is running,
 ### and "unlock" is set to True, that all the URLs we use above actually
 ### return HTTP status 200, except the ones that end in "/solved" because
