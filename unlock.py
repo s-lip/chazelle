@@ -54,6 +54,12 @@ UNLOCK_MES = {
                                          prerequisites=set(['/enigmavalley/solved'])),
     '/oceans_11/puzzle11/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
                                          prerequisites=set(['/enigmavalley/solved'])),
+    '/oceans_11/fragment1/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
+                                         prerequisites=set(['/oceans_11/puzzle1/solved'])),
+    '/oceans_11/fragment2/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
+                                         prerequisites=set(['/oceans_11/puzzle1/solved'])),
+    '/oceans_11/fragment3/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
+                                         prerequisites=set(['/oceans_11/puzzle2/solved'])),
 }
 
 class HuntTeamState(object):
@@ -130,6 +136,17 @@ class UnlockTests(unittest2.TestCase):
                 ])
         for item in need_unlocked:
             self.assert_(item in hts.unlocked, "Missing %s" % (item,))
+
+    ### FIXME: There should be a test for each casino fragment, maybe
+    def test_solve_round1_casino_fragment(self):
+        hts = HuntTeamState()
+        hts.do_unlock(['/enigmavalley/solved'])
+        hts.do_unlock(['/oceans_11/puzzle1/solved'])
+        needs_unlocked = set(['/oceans_11/fragment1/',
+                              '/oceans_11/fragment2/',
+                              ])
+        self.assertTrue(hts.unlocked.issuperset(needs_unlocked))
+        self.assertFalse('/oceans_11/fragment3/' in hts.unlocked)
 
 ### Note: There should be a semi-manual test that when veil is running,
 ### and "unlock" is set to True, that all the URLs we use above actually
