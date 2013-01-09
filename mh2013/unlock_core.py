@@ -84,6 +84,11 @@ class HuntTeamState(object):
     def __init__(self):
         self.unlocked = set()
         self.handle_time_tick(0)
+        # The following are trivial things that provide
+        # read-only views of the team state, and of the
+        # round context.
+        self.team_ctx_proxy = None
+        self.round_ctx_proxy = None
 
     def recursive_unlock_propagate(self):
         unlocked_stuff_this_run = True

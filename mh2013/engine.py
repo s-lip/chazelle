@@ -2,7 +2,6 @@ import logging; logger = logging.getLogger(__name__)
 
 from veil.unlock.basic import TeamState, BasicEngine
 from .checkers import TestChecker
-from copy import deepcopy
 from . import unlock_core
 
 class Hunt2013TeamState(TeamState):
@@ -11,9 +10,9 @@ class Hunt2013TeamState(TeamState):
         TeamState.__init__(self, team_id, engine, log_collection)
         self.events = []
         self.checker = TestChecker(self, engine)
-        self.round_ctx['round'] = {'foo': None}
-        self.team_ctx = deepcopy(self.INITIAL_TEAM_CTX)
         self.core = unlock_core.HuntTeamState()
+        self.team_ctx = self.core.team_ctx_proxy
+        self.round_ctx = self.core.round_ctx_proxy
 
     def get_checker(self, ref):
         logger.info('[%s].get_checker(ref=%r)', self.team_id, ref)
