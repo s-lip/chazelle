@@ -16,12 +16,21 @@ def make_sample_puzzle_if_necessary(roundslug, puzzleslug):
             # Grab 'assets'
             'assets'))
     assert os.path.exists(guessed_asset_path)
+
+    # Does the roundslug directory exist? It better.
+    roundpath = os.path.join(guessed_asset_path, roundslug)
+    assert os.path.exists(roundpath)
+
     return None
 
 def main(argv):
     data = json.loads(sys.stdin.read())
     for puzzle in data:
         if puzzle['status'] not in GOOD_STATUSES:
+            if not puzzle['titleslug'] or not puzzle['roundslug']:
+                print "Skipping", puzzle
+                continue
+
             make_sample_puzzle_if_necessary(puzzle['roundslug'],
                                             puzzle['titleslug'])
         print puzzle
