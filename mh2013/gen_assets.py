@@ -21,7 +21,19 @@ def make_sample_puzzle_if_necessary(roundslug, puzzleslug):
     roundpath = os.path.join(guessed_asset_path, roundslug)
     assert os.path.exists(roundpath)
 
-    return None
+    # Does the puzzle directory exist?
+    puzzlepath = os.path.join(roundpath, puzzleslug)
+    # If it does exist, we are done.
+    if os.path.exists(puzzlepath):
+        assert os.path.exists(os.path.join(puzzlepath, 'index.html')), puzzlepath
+        return
+
+    # Otherwise, make one, copying from sample-puzzle
+    os.mkdir(puzzlepath)
+    round_sample_puzzle_html = open(os.path.join(
+            roundpath, 'sample-puzzle', 'index.html')).read()
+    with open(os.path.join(puzzlepath, 'index.html'), 'w') as p:
+        p.write(round_sample_puzzle_html)
 
 def main(argv):
     data = json.loads(sys.stdin.read())
