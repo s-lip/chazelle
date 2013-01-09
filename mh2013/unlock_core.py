@@ -4,10 +4,13 @@ import logging
 import collections
 
 requirements = collections.namedtuple('requirements',
-                                      'required_points prerequisites')
+                                      'required_points prerequisites and_answer')
 ## We treat 'requirements' as an OR -- if you have ANY item in the
 ## list of things in requirements, OR you have the required points, we
 ## should unlock it.
+##
+## I jammed also_unlock_answer into it because I didn't have
+## anywhere else to put that.
 
 POINT_THRESHHOLDS = {
     'oceans_11': 1000,
