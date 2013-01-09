@@ -30,15 +30,15 @@ POINT_THRESHHOLDS = {
 
 UNLOCK_MES = {
     # Round 0
-    '/enigmavalley/': requirements(required_points=0, prerequisites=set()),
+    '/enigmavalley/': requirements(required_points=0, prerequisites=set(), and_answer=False),
     '/enigmavalley/things_and_flags/': requirements(required_points=0,
-                                           prerequisites=set()),
+                                           prerequisites=set(), and_answer=True),
     '/enigmavalley/puzzle2/': requirements(required_points=0,
-                                           prerequisites=set()),
+                                           prerequisites=set(), and_answer=True),
     '/enigmavalley/puzzle3/': requirements(required_points=0,
-                                           prerequisites=set()),
+                                           prerequisites=set(), and_answer=True),
     '/enigmavalley/puzzle4/': requirements(required_points=0,
-                                           prerequisites=set()),
+                                           prerequisites=set(), and_answer=True),
     '/enigmavalley/puzzle5/': requirements(required_points=0,
                                            prerequisites=set()),
     '/enigmavalley/puzzle6/': requirements(required_points=0,
