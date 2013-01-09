@@ -43,6 +43,8 @@ UNLOCK_MES = {
                                            prerequisites=set(), and_answer=True),
     '/enigmavalley/puzzle6/': requirements(required_points=0,
                                            prerequisites=set(), and_answer=True),
+    '/enigmavalley/media/less/enigmavalley.less': requirements(required_points=0,
+                                           prerequisites=set(), and_answer=False),
     '/enigmavalley/meta/': requirements(required_points=0,
                                         prerequisites=set(), and_answer=True),
     # Round 1
@@ -164,7 +166,7 @@ class HuntTeamState(object):
 class UnlockTests(unittest2.TestCase):
     def test_hunt_start(self):
         hts = HuntTeamState()
-        self.assertEqual(hts.unlocked, set([
+        golden = set([
                     '/enigmavalley/',
                     '/enigmavalley/you_will_not_go_to_space_today/',
                     '/enigmavalley/puzzle2/',
@@ -180,7 +182,9 @@ class UnlockTests(unittest2.TestCase):
                     '/enigmavalley/puzzle5/answer/',
                     '/enigmavalley/puzzle6/answer/',
                     '/enigmavalley/meta/answer/',
-                    ]))
+                    '/enigmavalley/media/less/enigmavalley.less',
+                    ])
+        self.assertEqual(hts.unlocked, golden)
 
     def test_solve_round0(self):
         hts = HuntTeamState()
