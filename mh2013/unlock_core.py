@@ -31,7 +31,7 @@ POINT_THRESHHOLDS = {
 UNLOCK_MES = {
     # Round 0
     '/enigmavalley/': requirements(required_points=0, prerequisites=set(), and_answer=False),
-    '/enigmavalley/things_and_flags/': requirements(required_points=0,
+    '/enigmavalley/you_will_not_go_to_space_today/': requirements(required_points=0,
                                            prerequisites=set(), and_answer=True),
     '/enigmavalley/puzzle2/': requirements(required_points=0,
                                            prerequisites=set(), and_answer=True),
@@ -97,6 +97,14 @@ class HuntTeamState(object):
         self.team_ctx_proxy = None
         self.round_ctx_proxy = None
 
+    @staticmethod
+    def _get_thing_and_bundle(thing):
+        ret = set([thing])
+        if UNLOCK_MES[thing].and_answer:
+            assert thing.endswith('/')
+            ret.add(thing + 'answer/')
+        return ret
+
     def recursive_unlock_propagate(self):
         unlocked_stuff_this_run = True
         unlock_things = set()
@@ -109,15 +117,13 @@ class HuntTeamState(object):
                     (maybe_unlock in unlock_things)):
                     continue
                 reqs = UNLOCK_MES[maybe_unlock]
+
                 if (self.unlocked.intersection(reqs.prerequisites) or
                     unlock_things.intersection(reqs.prerequisites)):
-                    logging.warning("Unlocked: %s", maybe_unlock)
-                    unlock_things.add(maybe_unlock)
-                    if reqs.and_answer:
-                        assert maybe_unlock.endswith('/')
-                        unlock_things.add(maybe_unlock + 'unlocked/')
-                        logging.warning("Unlocked answery thing: %s", maybe_unlock)
                     unlocked_stuff_this_run = True
+                    thing_bundle = self._get_thing_and_bundle(maybe_unlock)
+                    unlock_things.update(thing_bundle)
+                    logging.warning("Unlocked: %s", unlock_things)
 
         return unlock_things
 
@@ -148,7 +154,8 @@ class HuntTeamState(object):
 
             req = UNLOCK_MES[maybe_unlock]
             if current_points >= req.required_points:
-                unlock_these.add(maybe_unlock)
+                unlock_bundle = self._get_thing_and_bundle(maybe_unlock)
+                unlock_these.update(unlock_bundle)
 
         if unlock_these:
             self.do_unlock(unlock_these)
@@ -159,14 +166,14 @@ class UnlockTests(unittest2.TestCase):
         hts = HuntTeamState()
         self.assertEqual(hts.unlocked, set([
                     '/enigmavalley/',
-                    '/enigmavalley/puzzle1/',
+                    '/enigmavalley/you_will_not_go_to_space_today/',
                     '/enigmavalley/puzzle2/',
                     '/enigmavalley/puzzle3/',
                     '/enigmavalley/puzzle4/',
                     '/enigmavalley/puzzle5/',
                     '/enigmavalley/puzzle6/',
                     '/enigmavalley/meta/',
-                    '/enigmavalley/puzzle1/answer/',
+                    '/enigmavalley/you_will_not_go_to_space_today/answer/',
                     '/enigmavalley/puzzle2/answer/',
                     '/enigmavalley/puzzle3/answer/',
                     '/enigmavalley/puzzle4/answer/',
