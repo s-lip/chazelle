@@ -4,7 +4,7 @@ from veil.unlock.basic import TeamState, BasicEngine
 from .checkers import TestChecker
 from copy import deepcopy
 
-class TestState(TeamState):
+class Hunt2013TeamState(TeamState):
     INITIAL_UNLOCK = [
             '/',
             '/media/',
@@ -40,7 +40,7 @@ class TestState(TeamState):
         self.unlock(*self.INITIAL_UNLOCK)
 
 class TestUnlockEngine(BasicEngine):
-    TEAMSTATE_CLASS = TestState
+    TEAMSTATE_CLASS = Hunt2013TeamState
     def __init__(self, stomp_connection,
                  tellme,
                  destination,
