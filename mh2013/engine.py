@@ -1,25 +1,11 @@
 import logging; logger = logging.getLogger(__name__)
 
-from veil.unlock.basic import TeamState, BasicEngine 
+from veil.unlock.basic import TeamState, BasicEngine
 from .checkers import TestChecker
 from copy import deepcopy
+from . import unlock_core
 
 class Hunt2013TeamState(TeamState):
-    INITIAL_UNLOCK = [
-            '/',
-            '/media/',
-            '/media/fonts/',
-            '/media/img/',
-            '/media/img/traps/',
-            '/media/js/',
-            '/media/less/',
-    ]
-
-    INITIAL_TEAM_CTX = {
-            'evilserver': {
-                'is_solved': False
-                },
-    }
 
     def __init__(self, team_id, engine, log_collection):
         TeamState.__init__(self, team_id, engine, log_collection)
@@ -27,6 +13,7 @@ class Hunt2013TeamState(TeamState):
         self.checker = TestChecker(self, engine)
         self.round_ctx['round'] = {'foo': None}
         self.team_ctx = deepcopy(self.INITIAL_TEAM_CTX)
+        self.core = unlock_core.HuntTeamState()
 
     def get_checker(self, ref):
         logger.info('[%s].get_checker(ref=%r)', self.team_id, ref)
@@ -37,7 +24,7 @@ class Hunt2013TeamState(TeamState):
     def start_hunt(self):
         logger.info('[%s].start_hunt()', self.team_id)
         self.events.append({'event': 'start_hunt'})
-        self.unlock(*self.INITIAL_UNLOCK)
+        self.unlock(*self.core.unlocked)
 
 class TestUnlockEngine(BasicEngine):
     TEAMSTATE_CLASS = Hunt2013TeamState
