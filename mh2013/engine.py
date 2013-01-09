@@ -27,6 +27,11 @@ class Hunt2013TeamState(TeamState):
 
 class TestUnlockEngine(BasicEngine):
     TEAMSTATE_CLASS = Hunt2013TeamState
+
+    def rpc_get_team_round_report(self):
+        # FIXME
+        return {}
+
     def __init__(self, stomp_connection,
                  tellme,
                  destination,
