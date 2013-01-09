@@ -43,8 +43,15 @@ UNLOCK_MES = {
                                            prerequisites=set(), and_answer=True),
     '/enigmavalley/puzzle6/': requirements(required_points=0,
                                            prerequisites=set(), and_answer=True),
-    '/enigmavalley/media/less/enigmavalley.less': requirements(required_points=0,
-                                           prerequisites=set(), and_answer=False),
+    '/media/js/less-1.3.0.min.js': requirements(required_points=0,
+                                                  prerequisites=set(), and_answer=False),
+    '/media/less/enigmavalley.less': requirements(required_points=0,
+                                                  prerequisites=set(), and_answer=False),
+    '/media/less/base.less': requirements(required_points=0,
+                                                  prerequisites=set(), and_answer=False),
+    '/media/img/evillogo.png': requirements(required_points=0,
+                                                  prerequisites=set(), and_answer=False),
+
     '/enigmavalley/meta/': requirements(required_points=0,
                                         prerequisites=set(), and_answer=True),
     # Round 1
@@ -182,7 +189,11 @@ class UnlockTests(unittest2.TestCase):
                     '/enigmavalley/puzzle5/answer/',
                     '/enigmavalley/puzzle6/answer/',
                     '/enigmavalley/meta/answer/',
-                    '/enigmavalley/media/less/enigmavalley.less',
+                    ## FIXME: enigmavalley media will move, I guess
+                    '/media/js/less-1.3.0.min.js',
+                    '/media/less/base.less',
+                    '/media/less/enigmavalley.less',
+                    '/media/img/evillogo.png',
                     ])
         self.assertEqual(hts.unlocked, golden)
 
