@@ -43,6 +43,8 @@ UNLOCK_MES = {
                                            prerequisites=set(), and_answer=True),
     '/enigmavalley/puzzle6/': requirements(required_points=0,
                                            prerequisites=set(), and_answer=True),
+    '/media/js/fixie-nav.js': requirements(required_points=0,
+                                                  prerequisites=set(), and_answer=False),
     '/media/js/less-1.3.0.min.js': requirements(required_points=0,
                                                   prerequisites=set(), and_answer=False),
     '/media/less/enigmavalley.less': requirements(required_points=0,
@@ -191,6 +193,7 @@ class UnlockTests(unittest2.TestCase):
                     '/enigmavalley/meta/answer/',
                     ## FIXME: enigmavalley media will move, I guess
                     '/media/js/less-1.3.0.min.js',
+                    '/media/js/fixie-nav.js',
                     '/media/less/base.less',
                     '/media/less/enigmavalley.less',
                     '/media/img/evillogo.png',
