@@ -40,42 +40,42 @@ UNLOCK_MES = {
     '/enigmavalley/puzzle4/': requirements(required_points=0,
                                            prerequisites=set(), and_answer=True),
     '/enigmavalley/puzzle5/': requirements(required_points=0,
-                                           prerequisites=set()),
+                                           prerequisites=set(), and_answer=True),
     '/enigmavalley/puzzle6/': requirements(required_points=0,
-                                           prerequisites=set()),
+                                           prerequisites=set(), and_answer=True),
     '/enigmavalley/meta/': requirements(required_points=0,
-                                        prerequisites=set()),
+                                        prerequisites=set(), and_answer=True),
     # Round 1
     '/oceans_11/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
-                                prerequisites=set(['/enigmavalley/solved'])),
+                                prerequisites=set(['/enigmavalley/solved']), and_answer=False),
     '/oceans_11/puzzle1/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
-                                        prerequisites=set(['/enigmavalley/solved'])),
+                                        prerequisites=set(['/enigmavalley/solved']), and_answer=False),
     '/oceans_11/puzzle2/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
-                                        prerequisites=set(['/enigmavalley/solved'])),
+                                        prerequisites=set(['/enigmavalley/solved']), and_answer=False),
     '/oceans_11/puzzle3/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
-                                        prerequisites=set(['/enigmavalley/solved'])),
+                                        prerequisites=set(['/enigmavalley/solved']), and_answer=False),
     '/oceans_11/puzzle4/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
-                                        prerequisites=set(['/enigmavalley/solved'])),
+                                        prerequisites=set(['/enigmavalley/solved']), and_answer=False),
     '/oceans_11/puzzle5/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
-                                        prerequisites=set(['/enigmavalley/solved'])),
+                                        prerequisites=set(['/enigmavalley/solved']), and_answer=False),
     '/oceans_11/puzzle6/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
-                                        prerequisites=set(['/enigmavalley/solved'])),
+                                        prerequisites=set(['/enigmavalley/solved']), and_answer=False),
     '/oceans_11/puzzle7/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
-                                        prerequisites=set(['/enigmavalley/solved'])),
+                                        prerequisites=set(['/enigmavalley/solved']), and_answer=False),
     '/oceans_11/puzzle8/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
-                                        prerequisites=set(['/enigmavalley/solved'])),
+                                        prerequisites=set(['/enigmavalley/solved']), and_answer=False),
     '/oceans_11/puzzle9/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
-                                        prerequisites=set(['/enigmavalley/solved'])),
+                                        prerequisites=set(['/enigmavalley/solved']), and_answer=False),
     '/oceans_11/puzzle10/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
-                                         prerequisites=set(['/enigmavalley/solved'])),
+                                         prerequisites=set(['/enigmavalley/solved']), and_answer=False),
     '/oceans_11/puzzle11/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
-                                         prerequisites=set(['/enigmavalley/solved'])),
+                                         prerequisites=set(['/enigmavalley/solved']), and_answer=False),
     '/oceans_11/fragment1/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
-                                         prerequisites=set(['/oceans_11/puzzle1/solved'])),
+                                         prerequisites=set(['/oceans_11/puzzle1/solved']), and_answer=False),
     '/oceans_11/fragment2/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
-                                         prerequisites=set(['/oceans_11/puzzle1/solved'])),
+                                         prerequisites=set(['/oceans_11/puzzle1/solved']), and_answer=False),
     '/oceans_11/fragment3/': requirements(required_points=POINT_THRESHHOLDS['oceans_11'],
-                                         prerequisites=set(['/oceans_11/puzzle2/solved'])),
+                                         prerequisites=set(['/oceans_11/puzzle2/solved']), and_answer=False),
 
 
     # Round 1 casinos
@@ -83,7 +83,7 @@ UNLOCK_MES = {
                                         prerequisites=set([
                 '/oceans_11/fragment1/',
                 '/oceans_11/fragment3/',
-                ])),
+                ]), and_answer=False),
 
 }
 
@@ -113,6 +113,10 @@ class HuntTeamState(object):
                     unlock_things.intersection(reqs.prerequisites)):
                     logging.warning("Unlocked: %s", maybe_unlock)
                     unlock_things.add(maybe_unlock)
+                    if reqs.and_answer:
+                        assert maybe_unlock.endswith('/')
+                        unlock_things.add(maybe_unlock + 'unlocked/')
+                        logging.warning("Unlocked answery thing: %s", maybe_unlock)
                     unlocked_stuff_this_run = True
 
         return unlock_things
@@ -162,6 +166,13 @@ class UnlockTests(unittest2.TestCase):
                     '/enigmavalley/puzzle5/',
                     '/enigmavalley/puzzle6/',
                     '/enigmavalley/meta/',
+                    '/enigmavalley/puzzle1/answer/',
+                    '/enigmavalley/puzzle2/answer/',
+                    '/enigmavalley/puzzle3/answer/',
+                    '/enigmavalley/puzzle4/answer/',
+                    '/enigmavalley/puzzle5/answer/',
+                    '/enigmavalley/puzzle6/answer/',
+                    '/enigmavalley/meta/answer/',
                     ]))
 
     def test_solve_round0(self):
