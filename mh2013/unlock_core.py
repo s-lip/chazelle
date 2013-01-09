@@ -11,6 +11,10 @@ requirements = collections.namedtuple('requirements',
 ##
 ## I jammed also_unlock_answer into it because I didn't have
 ## anywhere else to put that.
+##
+## In the future, and_answer will probably have to be replaced with a
+## set of sub-URLs to also unlock. This will be required for e.g.
+## the git puzzle.
 
 POINT_THRESHHOLDS = {
     'oceans_11': 1000,
