@@ -57,15 +57,15 @@
 
         <div id="fixie-nav-expanded" class="hidden">
             <ul class="team-status">
-            <li>Next unlock: <strong>{{ team.next_unlock_time}}</strong></li>
-            <li>Warchest: <strong>${% if team.points %}{{ team.points }}{% else %}0{% endif %}</strong></li>
-            <li>Bribes: <strong>{{ team.extra_credit }}</strong></li>
+            <li>Puzzles to next unlock: <strong>{{ team.next_unlock_puzzles}}</strong></li>
+            <li>Time to next unlock: <strong>{{ team.next_unlock_time}}</strong></li>
+            <li>Options: <strong>{% if team.options %}{{ team.options }}{% else %}0{% endif %}</strong></li>
             </ul>
             <ul class="nav">
             {% block nav_links %}
             <li><a href="/">Home</a></li>
-            <li><a href="/notes/the_situation/">Introduction</a></li>
             <li><a href="/notes/">Notes</a></li>
+            <li><strong><a href="">Call In Answer</a></strong></li>
             <li><strong><a href="/contact/index.html" id="contact-hq-link">Contact HQ</a></strong></li>{% endblock nav_links %}
             </ul>
         </div>
