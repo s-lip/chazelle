@@ -1,0 +1,15 @@
+{% extends "get_smart/_/puzzle.html" %}
+<<<<<<< HEAD
+
+{% block puzzle_title %}
+We are content
+{% endblock %}
+
+{% block body %}
+<p>Contentment is a beautiful state.</p>
+=======
+{% block body %}
+<h2>I like bodies</h2>
+<p>If you don't see our own miraculously aware nature, you'll never find a buddha even if you break your body into atoms.</p>
+>>>>>>> get_smart uses block body
+{% endblock %}
