@@ -56,6 +56,8 @@ UNLOCK_MES = {
                                                   prerequisites=set(), and_answer=False),
     '/media/img/evillogo.png': requirements(required_points=0,
                                                   prerequisites=set(), and_answer=False),
+    '/media/fonts/leaguegothic-regular-webfont.ttf': requirements(required_points=0,
+                                                  prerequisites=set(), and_answer=False),
 
     '/enigmavalley/meta/': requirements(required_points=0,
                                         prerequisites=set(), and_answer=True),
@@ -197,6 +199,7 @@ class UnlockTests(unittest2.TestCase):
                 '/enigmavalley/meta/answer/',
                 ## FIXME: enigmavalley media will move, I guess
                 '/media/js/less-1.3.0.min.js',
+                '/media/fonts/leaguegothic-regular-webfont.ttf',
                 '/media/js/fixie-nav.js',
                 '/media/less/base.less',
                 '/media/less/hunt_theme.less',
