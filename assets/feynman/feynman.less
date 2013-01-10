@@ -16,7 +16,7 @@
     }
 
     #container {
-        width: 900px;
+        width: 1100px;
         margin: 0 0 0 30px;
         padding: 0 20px;
     }
@@ -27,9 +27,12 @@
             text-decoration: none;
         }
     }
-
+    
     #content {
-        margin-top: 20px;
+        margin-top: 10px;
+        padding: 10px 30px;
+        background: none;
+        
         .solved a {
             text-decoration: line-through;
             color: black;
@@ -40,5 +43,10 @@
         .puzzle-content {
             padding-left: 20px;
         }
+        
+    }
+    
+    &.puzzle #content {
+        background: white;
     }
 }
