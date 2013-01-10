@@ -57,6 +57,12 @@ UNLOCK_MES = {
                                                   prerequisites=set(), and_answer=False),
     '/media/img/evillogo.png': requirements(required_points=0,
                                                   prerequisites=set(), and_answer=False),
+    '/media/img/evillogo.png': requirements(required_points=0,
+                                                  prerequisites=set(), and_answer=False),
+    '/media/img/folder-icon.png': requirements(required_points=0,
+                                                  prerequisites=set(), and_answer=False),
+    '/media/img/file-icon.png': requirements(required_points=0,
+                                                  prerequisites=set(), and_answer=False),
     '/media/fonts/leaguegothic-regular-webfont.ttf': requirements(required_points=0,
                                                   prerequisites=set(), and_answer=False),
 
@@ -206,6 +212,8 @@ class UnlockTests(unittest2.TestCase):
                 '/media/less/hunt_theme.less',
                 '/media/less/enigmavalley.less',
                 '/media/img/evillogo.png',
+                '/media/img/file-icon.png',
+                '/media/img/folder-icon.png',
                 ])
         self.assertEqual(hts.unlocked, golden)
 
