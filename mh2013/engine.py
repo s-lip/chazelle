@@ -25,6 +25,12 @@ class Hunt2013TeamState(TeamState):
         self.events.append({'event': 'start_hunt'})
         self.unlock(*self.core.unlocked)
 
+    def get_team_state_report(self):
+        return {'rofl': 'YES',
+                'name': 'extrayes',
+                'team': {'name': 'yes'},
+                }
+
 class TestUnlockEngine(BasicEngine):
     TEAMSTATE_CLASS = Hunt2013TeamState
 
