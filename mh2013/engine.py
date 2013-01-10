@@ -28,7 +28,6 @@ class Hunt2013TeamState(TeamState):
     def get_team_state_report(self):
         return {'rofl': 'YES',
                 'name': 'extrayes',
-                'team': {'name': 'yes'},
                 }
 
 class TestUnlockEngine(BasicEngine):
