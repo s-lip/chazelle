@@ -1,4 +1,17 @@
 {% extends "_/hunt_central_base.html" %}
 {% block content %}
-They'll need a form.
+<h2>Call In Answer</h2>
+<form id="call-in">
+    <p><label>Puzzle: </label><select name="puzzle">
+        {% for round in roundlist %}
+        {{ round.name }}
+            {% for puzzle in round %}
+            <option name="{{ puzzle.slug }}" value="{{ puzzle.slug }}">{{ puzzle.name }}</option>
+            {% endfor %}
+        {% endfor %}
+    </select></p>
+    <p><label>Proposed answer: </label><input name="answer"/></p>
+    <input type="hidden" name="team" value="{{ team.name }}"/>
+    <p><input type="submit"/></p>
+</form>
 {% endblock %}
