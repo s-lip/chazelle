@@ -28,7 +28,7 @@ class Hunt2013TeamState(TeamState):
     def get_team_state_report(self):
         return {'next_unlock_timestamp': 'Someday FIXME',
                 'next_unlock_puzzles': 'FIXME a billion',
-                'name': 'extrayes',
+                'name': 'team FIXME',
                 'options': '3.14 FIXME',
                 }
 
