@@ -32,8 +32,6 @@ UNLOCK_MES = {
     # Round 0
     '/': requirements(required_points=0, prerequisites=set(), and_answer=False),
     '/enigmavalley/': requirements(required_points=0, prerequisites=set(), and_answer=False),
-    '/enigmavalley/art_stroll/': requirements(required_points=0,
-                                              prerequisites=set(), and_answer=True),
     '/enigmavalley/changing_states/': requirements(required_points=0,
                                                    prerequisites=set(), and_answer=True),
     '/enigmavalley/open_secrets/': requirements(required_points=0,
@@ -190,14 +188,12 @@ class UnlockTests(unittest2.TestCase):
         golden = set([
                 '/',
                 '/enigmavalley/',
-                '/enigmavalley/art_stroll/',
                 '/enigmavalley/changing_states/',
                 '/enigmavalley/open_secrets/',
                 '/enigmavalley/the_silver_screen/',
                 '/enigmavalley/the_thomas_crown_scare/',
                 '/enigmavalley/you_will_not_go_to_space_today/',
                 '/enigmavalley/meta/',
-                '/enigmavalley/art_stroll/answer/',
                 '/enigmavalley/changing_states/answer/',
                 '/enigmavalley/open_secrets/answer/',
                 '/enigmavalley/the_silver_screen/answer/',
