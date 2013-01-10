@@ -30,6 +30,7 @@ POINT_THRESHHOLDS = {
 
 UNLOCK_MES = {
     # Round 0
+    '/': requirements(required_points=0, prerequisites=set(), and_answer=False),
     '/enigmavalley/': requirements(required_points=0, prerequisites=set(), and_answer=False),
     '/enigmavalley/you_will_not_go_to_space_today/': requirements(required_points=0,
                                            prerequisites=set(), and_answer=True),
@@ -176,28 +177,29 @@ class UnlockTests(unittest2.TestCase):
     def test_hunt_start(self):
         hts = HuntTeamState()
         golden = set([
-                    '/enigmavalley/',
-                    '/enigmavalley/you_will_not_go_to_space_today/',
-                    '/enigmavalley/puzzle2/',
-                    '/enigmavalley/puzzle3/',
-                    '/enigmavalley/puzzle4/',
-                    '/enigmavalley/puzzle5/',
-                    '/enigmavalley/puzzle6/',
-                    '/enigmavalley/meta/',
-                    '/enigmavalley/you_will_not_go_to_space_today/answer/',
-                    '/enigmavalley/puzzle2/answer/',
-                    '/enigmavalley/puzzle3/answer/',
-                    '/enigmavalley/puzzle4/answer/',
-                    '/enigmavalley/puzzle5/answer/',
-                    '/enigmavalley/puzzle6/answer/',
-                    '/enigmavalley/meta/answer/',
-                    ## FIXME: enigmavalley media will move, I guess
-                    '/media/js/less-1.3.0.min.js',
-                    '/media/js/fixie-nav.js',
-                    '/media/less/base.less',
-                    '/media/less/enigmavalley.less',
-                    '/media/img/evillogo.png',
-                    ])
+                '/',
+                '/enigmavalley/',
+                '/enigmavalley/you_will_not_go_to_space_today/',
+                '/enigmavalley/puzzle2/',
+                '/enigmavalley/puzzle3/',
+                '/enigmavalley/puzzle4/',
+                '/enigmavalley/puzzle5/',
+                '/enigmavalley/puzzle6/',
+                '/enigmavalley/meta/',
+                '/enigmavalley/you_will_not_go_to_space_today/answer/',
+                '/enigmavalley/puzzle2/answer/',
+                '/enigmavalley/puzzle3/answer/',
+                '/enigmavalley/puzzle4/answer/',
+                '/enigmavalley/puzzle5/answer/',
+                '/enigmavalley/puzzle6/answer/',
+                '/enigmavalley/meta/answer/',
+                ## FIXME: enigmavalley media will move, I guess
+                '/media/js/less-1.3.0.min.js',
+                '/media/js/fixie-nav.js',
+                '/media/less/base.less',
+                '/media/less/enigmavalley.less',
+                '/media/img/evillogo.png',
+                ])
         self.assertEqual(hts.unlocked, golden)
 
     def test_solve_round0(self):
