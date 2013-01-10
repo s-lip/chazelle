@@ -58,7 +58,8 @@
         <div id="fixie-nav-expanded" class="hidden">
             <ul class="team-status">
             <li>Puzzles to next unlock: <strong>{{ team.next_unlock_puzzles}}</strong></li>
-            <li>Time to next unlock: <strong>{{ team.next_unlock_time}}</strong></li>
+            <li>Time of next unlock: <strong>{{ team.next_unlock_timestamp}}</strong></li>
+	    <!-- FIXME: This should be time *until* next unlock. -->
             <li>Options: <strong>{% if team.options %}{{ team.options }}{% else %}0{% endif %}</strong></li>
             </ul>
             <ul class="nav">
