@@ -26,8 +26,10 @@ class Hunt2013TeamState(TeamState):
         self.unlock(*self.core.unlocked)
 
     def get_team_state_report(self):
-        return {'rofl': 'YES',
+        return {'next_unlock_timestamp': 'Someday FIXME',
+                'next_unlock_puzzles': 'FIXME a billion',
                 'name': 'extrayes',
+                'options': '3.14 FIXME',
                 }
 
 class TestUnlockEngine(BasicEngine):
