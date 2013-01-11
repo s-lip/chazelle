@@ -1,6 +1,6 @@
 #sneakers {
-    font-family: monospace;
-    background: black;
+    font-family: "Andale Mono", "Monaco", monospace;
+    background: url(scanlines.png);
     color: white;
     line-height: normal;
 
@@ -10,12 +10,21 @@
     }
 
     #content {
-        margin: 0;
+        margin: 1em;
         padding: 0;
         width: 640px;
         height: 408px;
         overflow-y: auto;
         word-wrap: break-word;
+
+        #puzzles li {
+            
+        }
+
+        #puzzles li:hover {
+            background-color: lime;
+            color: black;
+        }
 
         #messages {
             -moz-column-count: 3;
@@ -26,7 +35,7 @@
 
         #messages a, #metas a, #password a {
             color: lime;
-
+            font-size: 18px;
 
             &.solved {
                 background: aqua;
