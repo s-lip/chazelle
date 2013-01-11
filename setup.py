@@ -12,5 +12,5 @@ setup(
     description = "MIT Mystery Hunt 2013",
     ext_modules = [],
     packages=find_packages(exclude=["tests"]),
-    install_requires=['veil', 'unittest2'],
+    install_requires=['veil', 'unittest2', 'nose', 'nose-cov'],
 )

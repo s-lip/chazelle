@@ -1,0 +1,13 @@
+{% extends '_/no_fixnav.html' %}
+
+{% block body_id %}login{% endblock %}
+
+{% block more_scripts %}
+<meta http-equiv="REFRESH" content="0;url=http://{{fqdn._get}}/" />
+{% endblock %}
+
+{% block content %}
+
+Login successful.  Redirecting to /.
+
+{% endblock content %}

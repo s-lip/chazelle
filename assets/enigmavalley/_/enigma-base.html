@@ -1,0 +1,22 @@
+{% extends "_/no_fixnav.html" %}
+
+{% block page_title %}Corporate Intranet{% endblock %}
+
+{% block more_styles %}
+    <link rel="stylesheet/less" type="text/css" media="all" href="/static/less/enigmavalley.less" />
+{% endblock %}
+
+{% block body_id %}enigmavalley{% endblock %}
+
+{% block header %}
+{% if path.str != '/login' %}<a href="/">{% endif %}
+        <img src="/static/img/evillogo.png" align="left"/>
+        <h1>Enigma Valley Investment & Loan</h1>
+{% if path.str != '/login' %}</a>{% endif %}
+<h2>Corporate Intranet</h2>
+{% endblock header %}
+
+{% block nav_links %}
+            <li><a href="/">Home</a></li>
+            <li><strong><a href="answer/">Call In Answer</a></strong></li>
+            <li><strong><a href="/contact_hq/" id="contact-hq-link">Contact HQ</a></strong></li>{% endblock nav_links %}

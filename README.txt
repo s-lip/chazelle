@@ -12,18 +12,33 @@ How to set up this site for design-type work:
 git clone ******
 Your project folder will now have a folder in it called "chazelle".
 
-4. Go into the /chazelle/ folder. All the design for the hunt site is in here!
+4. Notice the "assets" folder. This where the templates are.
 
-5. Type these commands:
+5. Install "gevent" for your Python. On Linuxy systems, the following should work:
 
-cd ..
-git clone git@github.com:manicsages/veil.git
-cd chazelle
+   sudo apt-get install python-gevent
 
-6. Run
-python runserver.py
+6. Install "veil", the code that actually renders these templates:
 
-and go to http://localhost:3001 in your web browser. You should see the hunt home page (in whatever state it is so far)!
+All you have to do is "git clone" it into the right place. You can do that with
+these steps:
+
+   cd ..
+   git clone git@github.com:manicsages/veil.git
+
+7. "cd" back into chazelle
+
+   cd chazelle
+
+8. Run the server!
+
+   python runserver.py
+
+9. Go to http://localhost:3001 in your web browser.
+
+You should see the hunt home page (in whatever state it is so far)!
+
+Also -- 127.0.0.1:3001 will not work, so don't use that. Sorry.
 
 How to make or edit round templates and styles:
 
