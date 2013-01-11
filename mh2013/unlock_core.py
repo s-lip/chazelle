@@ -62,8 +62,6 @@ UNLOCK_MES = {
                                                   prerequisites=set(), and_answer=False),
     '/media/less/base.less': requirements(required_points=0,
                                                   prerequisites=set(), and_answer=False),
-    '/media/less/hunt_theme.less': requirements(required_points=0,
-                                                  prerequisites=set(), and_answer=False),
     '/media/less/enigmavalley.less': requirements(required_points=0,
                                                   prerequisites=set(), and_answer=False),
     '/media/img/evillogo.png': requirements(required_points=0,

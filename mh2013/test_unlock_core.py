@@ -25,7 +25,6 @@ class UnlockTests(unittest2.TestCase):
                 '/media/fonts/leaguegothic-regular-webfont.ttf',
                 '/media/js/fixie-nav.js',
                 '/media/less/base.less',
-                '/media/less/hunt_theme.less',
                 '/media/less/enigmavalley.less',
                 '/media/img/evillogo.png',
                 '/media/img/file-icon.png',
