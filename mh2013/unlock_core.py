@@ -17,7 +17,7 @@ requirements = collections.namedtuple('requirements',
 ## the git puzzle.
 
 POINT_THRESHHOLDS = {
-    'oceans_11': 1000,
+    'oceans_11': None, # None is a special value meaning do not use points
 }
 
 # XXX:
@@ -174,6 +174,12 @@ class HuntTeamState(object):
                 continue
 
             req = UNLOCK_MES[maybe_unlock]
+            # For unlock items that have opted out of the points
+            # system... do not unlock them.
+            if req.required_points is None:
+                continue
+
+            # Otherwise, do the point-based unlock logic.
             if current_points >= req.required_points:
                 unlock_bundle = self._get_thing_and_bundle(maybe_unlock)
                 unlock_these.update(unlock_bundle)
