@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+    <body>
+        <form method="POST">
+            <input name=req_text type=text />
+            <input name=contact type=text value='default' />
+            <button type=submit name=submit value=submit />
+{% for answer in puzzle.past_answers %}
+<!--past:{{answer}}-->
+{% endfor %}
+        </form>
+        {{error}}
+    </body>
+</html>
