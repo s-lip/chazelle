@@ -165,7 +165,7 @@ UNLOCK_MES = {
     '/feynman/puzzle17/': requirements(required_points=(
             POINT_THRESHHOLDS['feynman'] + ((16/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
             prerequisites=set(), and_answer=True),
-    '/feynman/puzzle18': requirements(required_points=(
+    '/feynman/puzzle18/': requirements(required_points=(
             POINT_THRESHHOLDS['feynman'] + ((17/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
             prerequisites=set(), and_answer=True),
     '/feynman/puzzle19/': requirements(required_points=(
@@ -207,7 +207,7 @@ class HuntTeamState(object):
     def _get_thing_and_bundle(thing):
         ret = set([thing])
         if UNLOCK_MES[thing].and_answer:
-            assert thing.endswith('/')
+            assert thing.endswith('/'), thing
             ret.add(thing + 'answer/')
         return ret
 
