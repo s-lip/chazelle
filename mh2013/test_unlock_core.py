@@ -64,7 +64,7 @@ class UnlockTests(unittest2.TestCase):
         self.assertTrue(hts.unlocked.issuperset(needs_unlocked))
         self.assertFalse('/oceans_11/fragment3/' in hts.unlocked)
 
-    def test_solve_round1_gives_you_casinos(self):
+    def test_solve_round1_puzzles_gives_you_casinos(self):
         hts = mh2013.unlock_core.HuntTeamState()
         hts.do_unlock(['/enigmavalley/solved'])
         hts.do_unlock(['/oceans_11/puzzle1/solved'])
@@ -75,6 +75,15 @@ class UnlockTests(unittest2.TestCase):
 
     ## FIXME: Round 1 supermeta?
 
+    def test_solve_round1_entirely_gives_you_round2(self):
+        hts = mh2013.unlock_core.HuntTeamState()
+        hts.do_unlock(['/enigmavalley/solved'])
+        hts.do_unlock(['/oceans_11/solved'])
+        needs_unlocked = set([
+                '/feynman/',
+                '/feynman/puzzle1/'
+                ])
+        self.assertTrue(hts.unlocked.issuperset(needs_unlocked))
 
 
 ### Note: There should be a semi-manual test that when veil is running,

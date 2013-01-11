@@ -1,5 +1,4 @@
 import types
-import unittest2
 import logging
 import collections
 
@@ -18,6 +17,12 @@ requirements = collections.namedtuple('requirements',
 
 POINT_THRESHHOLDS = {
     'oceans_11': None, # None is a special value meaning do not use points
+    'feynman': 2000, # FIXME: Pick a value here
+    'feynman_puzzle': 2000, # A linear proportion of this is allocated to each puzzle within Feynman
+}
+
+POINTS_GIVEN = {
+    '/oceans_11/solved': 2000, # FIXME: Set this threshhold
 }
 
 # XXX:
@@ -106,12 +111,20 @@ UNLOCK_MES = {
                 '/oceans_11/fragment3/',
                 ]), and_answer=False),
 
+    # Round 2
+    '/feynman/': requirements(required_points=POINT_THRESHHOLDS['feynman'],
+                              prerequisites=set(), and_answer=False),
+    '/feynman/puzzle1/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((0/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=False),
+
 }
 
 class HuntTeamState(object):
     def __init__(self):
+        self.points = 0
         self.unlocked = set()
-        self.handle_time_tick(0)
+        self.handle_time_tick()
         # The following are trivial things that provide
         # read-only views of the team state, and of the
         # round context.
@@ -148,6 +161,17 @@ class HuntTeamState(object):
 
         return unlock_things
 
+    @staticmethod
+    def calculate_points_for_things_unlocked(things):
+        '''Note: This is purely functional -- it does not use any state
+        from within the instance.'''
+        points = 0
+        for thing in things:
+            if thing in POINTS_GIVEN:
+                howmany = POINTS_GIVEN[thing]
+                logging.warn("Adding %d points for %s", howmany, thing)
+                points += howmany
+        return points
 
     def do_unlock(self, things):
         assert type(things) not in types.StringTypes
@@ -160,11 +184,13 @@ class HuntTeamState(object):
 
         # FIXME: Trigger any event pushes to jason code
         # ...
+        self.points = self.calculate_points_for_things_unlocked(self.unlocked)
+        self.handle_time_tick()
 
     def get_points(self):
-        return 0
+        return self.points
 
-    def handle_time_tick(self, time):
+    def handle_time_tick(self):
         current_points = self.get_points()
 
         unlock_these = set()
