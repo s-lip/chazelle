@@ -25,6 +25,13 @@ class Hunt2013TeamState(TeamState):
         self.events.append({'event': 'start_hunt'})
         self.unlock(*self.core.unlocked)
 
+    def get_team_state_report(self):
+        return {'next_unlock_timestamp': 'Someday FIXME',
+                'next_unlock_puzzles': 'FIXME a billion',
+                'name': 'team FIXME',
+                'options': '3.14 FIXME',
+                }
+
 class TestUnlockEngine(BasicEngine):
     TEAMSTATE_CLASS = Hunt2013TeamState
 

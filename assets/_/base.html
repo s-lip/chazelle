@@ -57,15 +57,18 @@
 
         <div id="fixie-nav-expanded" class="hidden">
             <ul class="team-status">
-            <li>Puzzles to next unlock: <strong>{{ team.next_unlock_puzzles}}</strong></li>
-            <li>Time to next unlock: <strong>{{ team.next_unlock_time}}</strong></li>
             <li>Options: <strong>{% if team.options %}{{ team.options }}{% else %}0{% endif %}</strong></li>
+            <h4>To next unlock:</h4>
+            <li class="unlock">Puzzles: <strong>{{ team.next_unlock_puzzles}}</strong></li>
+            <li class="unlock">Time: <strong>{{ team.next_unlock_timestamp}}</strong></li>
+	    <!-- FIXME: This should be time *until* next unlock. -->
             </ul>
             <ul class="nav">
             {% block nav_links %}
             <li><a href="/">Home</a></li>
             <li><a href="/notes/">Notes</a></li>
-            <li><strong><a href="">Call In Answer</a></strong></li>
+	    <!-- FIXME: This should only display if the page wants it. -->
+            <li><strong><a href="answer/">Call In Answer</a></strong></li>
             <li><strong><a href="/contact/index.html" id="contact-hq-link">Contact HQ</a></strong></li>{% endblock nav_links %}
             </ul>
         </div>

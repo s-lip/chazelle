@@ -30,28 +30,38 @@ POINT_THRESHHOLDS = {
 
 UNLOCK_MES = {
     # Round 0
+    '/': requirements(required_points=0, prerequisites=set(), and_answer=False),
     '/enigmavalley/': requirements(required_points=0, prerequisites=set(), and_answer=False),
+    '/enigmavalley/changing_states/': requirements(required_points=0,
+                                                   prerequisites=set(), and_answer=True),
+    '/enigmavalley/open_secrets/': requirements(required_points=0,
+                                                prerequisites=set(), and_answer=True),
+    '/enigmavalley/the_silver_screen/': requirements(required_points=0,
+                                                     prerequisites=set(), and_answer=True),
+    '/enigmavalley/the_thomas_crown_scare/': requirements(required_points=0,
+                                                          prerequisites=set(), and_answer=True),
     '/enigmavalley/you_will_not_go_to_space_today/': requirements(required_points=0,
-                                           prerequisites=set(), and_answer=True),
-    '/enigmavalley/puzzle2/': requirements(required_points=0,
-                                           prerequisites=set(), and_answer=True),
-    '/enigmavalley/puzzle3/': requirements(required_points=0,
-                                           prerequisites=set(), and_answer=True),
-    '/enigmavalley/puzzle4/': requirements(required_points=0,
-                                           prerequisites=set(), and_answer=True),
-    '/enigmavalley/puzzle5/': requirements(required_points=0,
-                                           prerequisites=set(), and_answer=True),
-    '/enigmavalley/puzzle6/': requirements(required_points=0,
-                                           prerequisites=set(), and_answer=True),
+                                                                  prerequisites=set(), and_answer=True),
+
     '/media/js/fixie-nav.js': requirements(required_points=0,
                                                   prerequisites=set(), and_answer=False),
     '/media/js/less-1.3.0.min.js': requirements(required_points=0,
                                                   prerequisites=set(), and_answer=False),
-    '/media/less/enigmavalley.less': requirements(required_points=0,
-                                                  prerequisites=set(), and_answer=False),
     '/media/less/base.less': requirements(required_points=0,
                                                   prerequisites=set(), and_answer=False),
+    '/media/less/hunt_theme.less': requirements(required_points=0,
+                                                  prerequisites=set(), and_answer=False),
+    '/media/less/enigmavalley.less': requirements(required_points=0,
+                                                  prerequisites=set(), and_answer=False),
     '/media/img/evillogo.png': requirements(required_points=0,
+                                                  prerequisites=set(), and_answer=False),
+    '/media/img/evillogo.png': requirements(required_points=0,
+                                                  prerequisites=set(), and_answer=False),
+    '/media/img/folder-icon.png': requirements(required_points=0,
+                                                  prerequisites=set(), and_answer=False),
+    '/media/img/file-icon.png': requirements(required_points=0,
+                                                  prerequisites=set(), and_answer=False),
+    '/media/fonts/leaguegothic-regular-webfont.ttf': requirements(required_points=0,
                                                   prerequisites=set(), and_answer=False),
 
     '/enigmavalley/meta/': requirements(required_points=0,
@@ -171,82 +181,3 @@ class HuntTeamState(object):
         if unlock_these:
             self.do_unlock(unlock_these)
             logging.info("Unlocked %s", unlock_these)
-
-class UnlockTests(unittest2.TestCase):
-    def test_hunt_start(self):
-        hts = HuntTeamState()
-        golden = set([
-                    '/enigmavalley/',
-                    '/enigmavalley/you_will_not_go_to_space_today/',
-                    '/enigmavalley/puzzle2/',
-                    '/enigmavalley/puzzle3/',
-                    '/enigmavalley/puzzle4/',
-                    '/enigmavalley/puzzle5/',
-                    '/enigmavalley/puzzle6/',
-                    '/enigmavalley/meta/',
-                    '/enigmavalley/you_will_not_go_to_space_today/answer/',
-                    '/enigmavalley/puzzle2/answer/',
-                    '/enigmavalley/puzzle3/answer/',
-                    '/enigmavalley/puzzle4/answer/',
-                    '/enigmavalley/puzzle5/answer/',
-                    '/enigmavalley/puzzle6/answer/',
-                    '/enigmavalley/meta/answer/',
-                    ## FIXME: enigmavalley media will move, I guess
-                    '/media/js/less-1.3.0.min.js',
-                    '/media/js/fixie-nav.js',
-                    '/media/less/base.less',
-                    '/media/less/enigmavalley.less',
-                    '/media/img/evillogo.png',
-                    ])
-        self.assertEqual(hts.unlocked, golden)
-
-    def test_solve_round0(self):
-        hts = HuntTeamState()
-        hts.do_unlock(['/enigmavalley/solved'])
-        need_unlocked = set([
-                '/oceans_11/',
-                '/oceans_11/puzzle1/',
-                '/oceans_11/puzzle2/',
-                '/oceans_11/puzzle3/',
-                '/oceans_11/puzzle4/',
-                '/oceans_11/puzzle5/',
-                '/oceans_11/puzzle6/',
-                '/oceans_11/puzzle7/',
-                '/oceans_11/puzzle8/',
-                '/oceans_11/puzzle9/',
-                '/oceans_11/puzzle10/',
-                '/oceans_11/puzzle11/',
-                ])
-        for item in need_unlocked:
-            self.assert_(item in hts.unlocked, "Missing %s" % (item,))
-
-    ### FIXME: There should be a test for each casino fragment, maybe
-    def test_solve_round1_casino_fragment(self):
-        hts = HuntTeamState()
-        hts.do_unlock(['/enigmavalley/solved'])
-        hts.do_unlock(['/oceans_11/puzzle1/solved'])
-        needs_unlocked = set(['/oceans_11/fragment1/',
-                              '/oceans_11/fragment2/',
-                              ])
-        self.assertTrue(hts.unlocked.issuperset(needs_unlocked))
-        self.assertFalse('/oceans_11/fragment3/' in hts.unlocked)
-
-    def test_solve_round1_gives_you_casinos(self):
-        hts = HuntTeamState()
-        hts.do_unlock(['/enigmavalley/solved'])
-        hts.do_unlock(['/oceans_11/puzzle1/solved'])
-        needs_unlocked = set([
-                '/oceans_11/casino1/',
-                ])
-        self.assertTrue(hts.unlocked.issuperset(needs_unlocked))
-
-    ## FIXME: Round 1 supermeta?
-
-
-
-### Note: There should be a semi-manual test that when veil is running,
-### and "unlock" is set to True, that all the URLs we use above actually
-### return HTTP status 200, except the ones that end in "/solved" because
-### that is an internal thingamabob.
-
-

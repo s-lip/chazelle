@@ -5,7 +5,7 @@
     <thead align="left">
         <tr>
             <th>Name</th>
-            <th>Answer</th>
+            <th></th>
         </tr>
     <thead>
     <tbody>
@@ -20,30 +20,27 @@
                     </tr>
                 </table>
             </td>
-            {% if "/enigmavalley/enigmavalley/solved" in unlocked %}<td>WONTOFORATE</td>{% endif %}
+            {% if "/enigmavalley/enigmavalley/solved" in unlocked %}<td></td>{% endif %}
+        </tr>
+        <tr {% if "/enigmavalley/changing_states/solved" in unlocked %}class="solved"{% endif %}>
+            <td class="first-col"><a href="changing_states/">Changing States</a></td>
+            {% if "/enigmavalley/changing_states/solved" in unlocked %}<td></td>{% endif %}
+        </tr>
+        <tr {% if "/enigmavalley/open_secrets/solved" in unlocked %}class="solved"{% endif %}>
+            <td class="first-col"><a href="open_secrets/">Open Secrets</a></td>
+            {% if "/enigmavalley/open_secrets/solved" in unlocked %}<td></td>{% endif %}
+        </tr>
+        <tr {% if "/enigmavalley/the_silver_screen/solved" in unlocked %}class="solved"{% endif %}>
+            <td class="first-col"><a href="the_silver_screen/">The Silver Screen</a></td>
+            {% if "/enigmavalley/the_silver_screen/solved" in unlocked %}<td></td>{% endif %}
+        </tr>
+        <tr {% if "/enigmavalley/the_thomas_crown_scare/solved" in unlocked %}class="solved"{% endif %}>
+            <td class="first-col"><a href="the_thomas_crown_scare/">The Thomas Crown Scare</a></td>
+            {% if "/enigmavalley/the_thomas_crown_scare/solved" in unlocked %}<td></td>{% endif %}
         </tr>
         <tr {% if "/enigmavalley/you_will_not_go_to_space_today/solved" in unlocked %}class="solved"{% endif %}>
             <td class="first-col"><a href="/enigmavalley/you_will_not_go_to_space_today/">You Will Not Go To Space Today</a></td>
-            {% if "/enigmavalley/you_will_not_go_to_space_today/solved" in unlocked %}<td> puzzle_1.answer</td>{% endif %}
-        </tr>
-        <tr {% if "/enigmavalley/puzzle_2/solved" in unlocked %}class="solved"{% endif %}>
-            <td class="first-col"><a href="">Testing one two</a></td>
-            {% if "/enigmavalley/puzzle_2/solved" in unlocked %}<td> puzzle_2.answer</td>{% endif %}
-        <tr {% if "/enigmavalley/puzzle_3/solved" in unlocked %}class="solved"{% endif %}>
-            <td class="first-col"><a href="">Thoroughbred of Sin</a></td>
-            {% if "/enigmavalley/puzzle_3/solved" in unlocked %}<td> puzzle_3.answer</td>{% endif %}
-        </tr>
-        <tr {% if "/enigmavalley/puzzle_4/solved" in unlocked %}class="solved"{% endif %}>
-            <td class="first-col"><a href="">Remember the Ides</a></td>
-            {% if "/enigmavalley/puzzle_4/solved" in unlocked %}<td> puzzle_4.answer</td>{% endif %}
-        </tr>
-        <tr {% if "/enigmavalley/puzzle_5/solved" in unlocked %}class="solved"{% endif %}>
-            <td class="first-col"><a href="">Landmarks</a></td>
-            {% if "/enigmavalley/puzzle_5/solved" in unlocked %}<td> puzzle_5.answer</td>{% endif %}
-        </tr>
-        <tr {% if "/enigmavalley/puzzle_6/solved" in unlocked %}class="solved"{% endif %}>
-            <td class="first-col"><a href="">Life on Mars</a></td>
-            {% if "/enigmavalley/puzzle_6/solved" in unlocked %}<td> puzzle_6.answer</td>{% endif %}
+            {% if "/enigmavalley/you_will_not_go_to_space_today/solved" in unlocked %}<td></td>{% endif %}
         </tr>
     </tbody>
     </table>
