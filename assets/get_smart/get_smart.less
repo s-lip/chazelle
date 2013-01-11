@@ -10,8 +10,24 @@ html {
 }
 
 #puzzbg {
-	background-image:url('/get_smart/missionfg.png');
+	//background-image:url('/get_smart/missionfg.png');
+        background-image: url('/get_smart/missionfg_mid.png');
+        background-repeat: repeat-y;
 	background-color: #4b4f64;
+}
+
+#puzzwrap {
+  background-image: url('/get_smart/missionfg_top.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+#puzzfooter {
+  background-image: url('/get_smart/missionfg_bottom.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #4b4f64;
+  min-height: 376px;
 }
 
 #evilbg {
@@ -88,7 +104,7 @@ html {
 }
 
 #puzzcontainer {
-	height: 1230px;
+	min-height: 1200px;
 	width: 1000px;
 }
 
