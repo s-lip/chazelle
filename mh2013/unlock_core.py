@@ -116,7 +116,79 @@ UNLOCK_MES = {
                               prerequisites=set(), and_answer=False),
     '/feynman/puzzle1/': requirements(required_points=(
             POINT_THRESHHOLDS['feynman'] + ((0/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
-            prerequisites=set(), and_answer=False),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle2/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((1/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle3/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((2/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle4/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((3/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle5/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((4/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle6/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((5/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle7/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((6/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle8/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((7/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle9/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((8/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle10/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((9/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle11/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((10/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle12/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((11/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle13/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((12/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle14/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((13/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle15/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((14/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle16/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((15/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle17/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((16/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle18': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((17/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle19/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((18/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle20/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((19/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle21/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((20/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle22/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((21/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle23/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((22/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle24/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((23/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/feynman/puzzle25/': requirements(required_points=(
+            POINT_THRESHHOLDS['feynman'] + ((24/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
+            prerequisites=set(), and_answer=True),
 
 }
 
@@ -180,6 +252,25 @@ class HuntTeamState(object):
                 points += howmany
         return points
 
+    @staticmethod
+    def calculate_things_to_unlock_based_on_points(point_value):
+        '''This is purely functional. It just reports what should be
+        unlocked if you hit the point value of point_value.'''
+        unlock_these = set()
+        for maybe_unlock in UNLOCK_MES:
+            req = UNLOCK_MES[maybe_unlock]
+            # For unlock items that have opted out of the points
+            # system... do not unlock them.
+            if req.required_points is None:
+                continue
+
+            # Otherwise, do the point-based unlock logic.
+            if point_value >= req.required_points:
+                unlock_bundle = HuntTeamState._get_thing_and_bundle(maybe_unlock)
+                unlock_these.update(unlock_bundle)
+
+        return unlock_these
+
     def do_unlock(self, things):
         assert type(things) not in types.StringTypes
         # Store the fact that we have unlocked it
@@ -190,9 +281,12 @@ class HuntTeamState(object):
         self.unlocked.update(unlock_things)
 
         # FIXME: Trigger any event pushes to jason code
-        # ...
-        self.points = self.calculate_points_for_things_unlocked(self.unlocked)
-        self.handle_time_tick()
+
+        # Handle unlock by points
+        new_points = self.calculate_points_for_things_unlocked(self.unlocked)
+        if new_points != self.points:
+            self.points = new_points
+            self.handle_time_tick()
 
     def get_points(self):
         return self.points
@@ -200,23 +294,15 @@ class HuntTeamState(object):
     def handle_time_tick(self):
         current_points = self.get_points()
 
-        unlock_these = set()
+        unlock_these = self.calculate_things_to_unlock_based_on_points(current_points)
 
-        for maybe_unlock in UNLOCK_MES:
-            if maybe_unlock in self.unlocked:
-                continue
+        # Did we gain any new information?
+        # If not, we are done.
+        if self.unlocked.issuperset(unlock_these):
+            return
 
-            req = UNLOCK_MES[maybe_unlock]
-            # For unlock items that have opted out of the points
-            # system... do not unlock them.
-            if req.required_points is None:
-                continue
-
-            # Otherwise, do the point-based unlock logic.
-            if current_points >= req.required_points:
-                unlock_bundle = self._get_thing_and_bundle(maybe_unlock)
-                unlock_these.update(unlock_bundle)
-
-        if unlock_these:
-            self.do_unlock(unlock_these)
-            logging.info("Unlocked %s", unlock_these)
+        # If so...
+        missing_bits = self.unlocked.symmetric_difference(unlock_these)
+        assert missing_bits
+        logging.info("Unlocked %s", missing_bits)
+        return self.do_unlock(missing_bits)

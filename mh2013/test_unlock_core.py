@@ -81,9 +81,11 @@ class UnlockTests(unittest2.TestCase):
         hts.do_unlock(['/oceans_11/solved'])
         needs_unlocked = set([
                 '/feynman/',
-                '/feynman/puzzle1/'
+                '/feynman/puzzle1/',
+                '/feynman/puzzle1/answer/',
                 ])
-        self.assertTrue(hts.unlocked.issuperset(needs_unlocked))
+        self.assertEqual(hts.unlocked.intersection(needs_unlocked),
+                         needs_unlocked)
 
 
 ### Note: There should be a semi-manual test that when veil is running,
