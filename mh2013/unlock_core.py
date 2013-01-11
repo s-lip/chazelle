@@ -17,13 +17,21 @@ requirements = collections.namedtuple('requirements',
 
 POINT_THRESHHOLDS = {
     'oceans_11': None, # None is a special value meaning do not use points
-    'feynman': 2000, # FIXME: Pick a value here
+    'feynman': 2000, # The point value at which the round is unlocked.
+    # FIXME: Pick a value here
     'feynman_puzzle': 2000, # A linear proportion of this is allocated to each puzzle within Feynman
+    'get_smart': 5000, # The point value at which the round is unlocked.
+    'get_smart_puzzle': 3000, # A linear proportion of this is allocated to each puzzle within Feynman
 }
 
 POINTS_GIVEN = {
     '/oceans_11/solved': 2000, # FIXME: Set this threshhold
+    '/feynman/solved': 2000,
 }
+
+for n in range(25):
+    slug = '/feynman/puzzle%d/solved' % (n,)
+    POINTS_GIVEN[slug] = 2000/25.
 
 # XXX:
 # puzzles need to imply the unlocking of:
@@ -190,6 +198,84 @@ UNLOCK_MES = {
             POINT_THRESHHOLDS['feynman'] + ((24/25.) * POINT_THRESHHOLDS['feynman_puzzle'])),
             prerequisites=set(), and_answer=True),
 
+    # Round 3
+    '/get_smart/': requirements(required_points=POINT_THRESHHOLDS['get_smart'],
+                              prerequisites=set(), and_answer=False),
+    '/get_smart/puzzle1/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((0/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle2/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((1/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle3/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((2/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle4/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((3/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle5/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((4/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle6/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((5/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle7/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((6/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle8/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((7/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle9/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((8/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle10/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((9/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle11/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((10/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle12/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((11/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle13/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((12/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle14/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((13/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle15/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((14/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle16/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((15/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle17/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((16/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle18': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((17/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle19/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((18/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle20/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((19/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle21/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((20/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle22/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((21/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle23/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((22/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle24/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((23/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
+    '/get_smart/puzzle25/': requirements(required_points=(
+            POINT_THRESHHOLDS['get_smart'] + ((24/25.) * POINT_THRESHHOLDS['get_smart_puzzle'])),
+            prerequisites=set(), and_answer=True),
 }
 
 class HuntTeamState(object):

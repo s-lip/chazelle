@@ -87,6 +87,39 @@ class UnlockTests(unittest2.TestCase):
         self.assertEqual(hts.unlocked.intersection(needs_unlocked),
                          needs_unlocked)
 
+    def test_solve_round2_meta_gives_you_round3(self):
+        # Note: you will also get round 3 unlocked by the sands
+        # of time, subject to some constants.
+        hts = mh2013.unlock_core.HuntTeamState()
+        # You have DEFINITELY finished round 0 at this point
+        hts.do_unlock(['/enigmavalley/solved'])
+        # You have also DEFINITELY finished round 1
+        hts.do_unlock(['/oceans_11/solved'])
+        # The test case is -- now that you've solved round 2...
+        hts.do_unlock(['/feynman/solved'])
+        # and that you also solved a few of its puzzles...
+        hts.do_unlock(['/feynman/puzzle1/solved'])
+        hts.do_unlock(['/feynman/puzzle2/solved'])
+        hts.do_unlock(['/feynman/puzzle3/solved'])
+        hts.do_unlock(['/feynman/puzzle4/solved'])
+        hts.do_unlock(['/feynman/puzzle5/solved'])
+        hts.do_unlock(['/feynman/puzzle6/solved'])
+        hts.do_unlock(['/feynman/puzzle7/solved'])
+        hts.do_unlock(['/feynman/puzzle8/solved'])
+        hts.do_unlock(['/feynman/puzzle9/solved'])
+        hts.do_unlock(['/feynman/puzzle10/solved'])
+        hts.do_unlock(['/feynman/puzzle11/solved'])
+        hts.do_unlock(['/feynman/puzzle12/solved'])
+        hts.do_unlock(['/feynman/puzzle13/solved'])
+        # you should get access to round 3
+        needs_unlocked = set(['/get_smart/',
+                              '/get_smart/puzzle1/answer/',
+                              '/get_smart/puzzle1/',
+                              ])
+        print hts.get_points()
+        self.assertEqual(hts.unlocked.intersection(needs_unlocked),
+                         needs_unlocked)
+
 
 ### Note: There should be a semi-manual test that when veil is running,
 ### and "unlock" is set to True, that all the URLs we use above actually
