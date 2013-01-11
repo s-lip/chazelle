@@ -12,7 +12,7 @@ if __name__ == '__main__':
     import vendor
     vendor.vendorify()
 
-    sys.argv = ['./bin/veil-test-server', '-L', 'debug', '-P', '3002',
+    sys.argv = ['./bin/veil-test-server', '-L', 'debug', '-P', '3005',
                 '--secret-key', 'plain', 'radically ephemeral flimsy kumquats',
                 '--vhost-path', 'enigmavalley',
                 'test.json',
