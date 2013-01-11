@@ -164,7 +164,14 @@ class HuntTeamState(object):
     @staticmethod
     def calculate_points_for_things_unlocked(things):
         '''Note: This is purely functional -- it does not use any state
-        from within the instance.'''
+        from within the instance.
+
+        This has an advantage: Re-running this program will never mutate
+        points in a weird way; it will always be consistent.
+
+        It has a disadvantage: If you need to change how many points you
+        are giving a team, you will need to create a virtual points-bank
+        unlockable URL, and unlock that.'''
         points = 0
         for thing in things:
             if thing in POINTS_GIVEN:
