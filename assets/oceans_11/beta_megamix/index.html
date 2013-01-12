@@ -1,0 +1,47 @@
+
+{% extends "oceans_11/_/puzzle.html" %}
+{% block body_class %}{{ super() }} puzzle{% endblock %}
+
+{% block puzzle_title %}Megamix{% endblock %}
+
+{% block extra_head %}
+<style>
+    .vertical {
+        height: 50px;
+        width: 1px;
+        background-color: black;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    a.link {
+        display: block;
+        background: url(link.png) center;
+        width: 206px;
+        height: 27px;
+        border: 1px solid black;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 25px;
+        text-decoration: none;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<p><em>You overhear Danny Ocean at a Vegas club shouting "Hey! DJ Roy! How
+about you add another electronic band to the mix?"</em></p>
+
+<div class="vertical"></div>
+<div><a class="link" href="part1.mp3">part1.mp3</a></div>
+<div class="vertical"></div>
+<div><a class="link" href="part2.mp3">part2.mp3</a></div>
+<div class="vertical"></div>
+<div><a class="link" href="part3.mp3">part3.mp3</a></div>
+<div class="vertical"></div>
+<div><a class="link" href="part4.mp3">part4.mp3</a></div>
+<div class="vertical"></div>
+{% endblock %}
