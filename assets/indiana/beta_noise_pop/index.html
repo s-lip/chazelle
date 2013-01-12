@@ -1,0 +1,28 @@
+
+{% extends "indiana/_/puzzle.html" %}
+{% block body_class %}{{ super() }} puzzle{% endblock %}
+
+{% block puzzle_title %}Noise pop{% endblock %}
+
+{% block extra_head %}
+
+{% endblock %}
+
+{% block body %}
+<style type="text/css">
+#blanks {
+    letter-spacing: 0.2em;
+}
+</style><a href="puzzle.mp3">MP3</a>
+<br><br><div id="blanks">
+_____&#9711;___________<br>
+_____&#9711;<br>
+&#9711;____&#9711;___<br>
+&#9711;&#9711;______<br>
+___&#9711;<br>
+&#9711;___&#9711;_<br>
+__&#9711;____&#9711;______<br>
+____&#9711;<br>
+__&#9711;_____<br></div>
+
+{% endblock %}

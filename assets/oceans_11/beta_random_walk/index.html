@@ -1,0 +1,48 @@
+
+{% extends "oceans_11/_/puzzle.html" %}
+{% block body_class %}{{ super() }} puzzle{% endblock %}
+
+{% block puzzle_title %}Random Walk{% endblock %}
+
+{% block body %}
+<div><p><em>We blindly follow the path laid out for us...</em></p>
+
+<div style="background-color: #ffffff; color: #000000; padding: 10px 30px">
+
+<p>In each &#8220;math maze,&#8221; the goal is to find a path from start to
+finish, moving horizontally and vertically from one square to the
+next. The numbers indicate how many squares in each row and column
+the path passes through.</p>
+
+<p>Recommended notation: Place a dot in each square that is used by
+the path. Fill in each square that is not used by the path.  Draw a
+line connecting two dots if the path connects those squares.  Draw a
+line separating two squares if the path does not connect those
+squares.</p>
+
+<p>Example:</p>
+
+<p align="center"><img src="/oceans_11/beta_random_walk/example.png" width="337" height="169"></p>
+
+<hr style="color: #000000; background-color: #000000; border: 1px; height: 1px"><p><img src="/oceans_11/beta_random_walk/1.png" width="225" height="225"></p>
+
+<p><img src="/oceans_11/beta_random_walk/2.png" width="225" height="225"></p>
+
+<p><img src="/oceans_11/beta_random_walk/3.png" width="225" height="225"></p>
+
+<p><img src="/oceans_11/beta_random_walk/4.png" width="281" height="281"></p>
+
+<p><img src="/oceans_11/beta_random_walk/5.png" width="337" height="337"></p>
+
+<p><img src="/oceans_11/beta_random_walk/6.png" width="337" height="337"></p>
+
+<p><img src="/oceans_11/beta_random_walk/7.png" width="393" height="393"></p>
+
+<p><img src="/oceans_11/beta_random_walk/8.png" width="393" height="393"></p>
+
+<p><img src="/oceans_11/beta_random_walk/9.png" width="449" height="449"></p>
+
+<hr style="color: #000000; background-color: #000000; border: 1px; height: 1px"><p align="center"><img src="/oceans_11/beta_random_walk/grid.png" width="393" height="393"></p>
+
+</div></div>
+{% endblock %}

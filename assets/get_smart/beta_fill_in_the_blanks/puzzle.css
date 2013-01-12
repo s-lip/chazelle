@@ -1,0 +1,18 @@
+table.crisscross {
+	font-family: Arial, sans-serif;
+    border-collapse: collapse;
+}
+table.crisscross td {
+    width:1.5em;
+    height:1.5em;
+    border: 2px solid black;
+    padding: 0px;
+	vertical-align: middle;
+	text-align: center;
+}
+td.b {
+    background-color: black;
+}
+td.w {
+    background-color: white;
+}

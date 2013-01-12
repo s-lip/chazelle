@@ -1,0 +1,225 @@
+
+{% extends "indiana/_/puzzle.html" %}
+{% block body_class %}{{ super() }} puzzle{% endblock %}
+
+{% block puzzle_title %}Houston, We Have Liftoff{% endblock %}
+
+{% block body %}
+<html><head><link rel="stylesheet" href="/indiana/beta_houston_we_have_liftoff/grid.css"></head><body>
+<p><em>As the countdown continued, someone suddenly realized with 30 seconds to go that the launch
+sequence was all jumbled up. Well, time to sort it out.</em></p>
+<p>Rearrange the letters in each row such that each column spells out a word. The first row is in the
+correct order.</p>
+
+<table class="grid"><tr><td class="nonletter"></td>
+        <td class="top_edge left_edge" id="gray">C</td>
+        <td class="top_edge">Y</td>
+        <td class="top_edge">M</td>
+        <td class="top_edge">I</td>
+        <td class="top_edge">V</td>
+        <td class="top_edge">B</td>
+        <td class="top_edge">W</td>
+        <td class="top_edge">A</td>
+        <td class="top_edge right_edge">S</td>
+    </tr><tr><td class="nonletter"></td>
+        <td class="left_edge">A</td>
+        <td id="color2">N</td>
+        <td>O</td>
+        <td>O</td>
+        <td>O</td>
+        <td>R</td>
+        <td>O</td>
+        <td id="color8">N</td>
+        <td class="right_edge">C</td>
+    </tr><tr><td class="nonletter"></td>
+        <td class="left_edge">N</td>
+        <td>L</td>
+        <td id="color3">U</td>
+        <td>E</td>
+        <td>O</td>
+        <td>I</td>
+        <td>R</td>
+        <td>C</td>
+        <td class="right_edge">R</td>
+    </tr><tr><td class="nonletter"></td>
+        <td class="left_edge">D</td>
+        <td>W</td>
+        <td>U</td>
+        <td>I</td>
+        <td>A</td>
+        <td>U</td>
+        <td>N</td>
+        <td>N</td>
+        <td class="right_edge">K</td>
+    </tr><tr><td class="nonletter"></td>
+        <td class="left_edge">N</td>
+        <td>K</td>
+        <td>M</td>
+        <td id="color4">S</td>
+        <td>F</td>
+        <td>G</td>
+        <td>U</td>
+        <td>F</td>
+        <td class="right_edge" id="color9">B</td>
+    </tr><tr><td class="nonletter"></td>
+        <td class="left_edge">L</td>
+        <td>D</td>
+        <td>T</td>
+        <td>B</td>
+        <td id="color5">R</td>
+        <td>O</td>
+        <td>T</td>
+        <td>S</td>
+        <td class="right_edge">O</td>
+    </tr><tr><td class="nonletter"></td>
+        <td class="left_edge">E</td>
+        <td>O</td>
+        <td>L</td>
+        <td>T</td>
+        <td>R</td>
+        <td>O</td>
+        <td>E</td>
+        <td>O</td>
+        <td class="right_edge">E</td>
+    </tr><tr><td class="nonletter"></td>
+        <td class="left_edge" id="color1">C</td>
+        <td>N</td>
+        <td>D</td>
+        <td>E</td>
+        <td>A</td>
+        <td id="color6">W</td>
+        <td>U</td>
+        <td>R</td>
+        <td class="right_edge">E</td>
+    </tr><tr><td class="nonletter"></td>
+        <td class="bottom_edge left_edge">M</td>
+        <td class="bottom_edge">R</td>
+        <td class="bottom_edge">N</td>
+        <td class="bottom_edge">S</td>
+        <td class="bottom_edge">D</td>
+        <td class="bottom_edge">S</td>
+        <td class="bottom_edge" id="color7">E</td>
+        <td class="bottom_edge">T</td>
+        <td class="bottom_edge right_edge">R</td>
+    </tr></table><br><table class="grid"><tr><th rowspan="3"><img src="/indiana/beta_houston_we_have_liftoff/arrow.png"></th>
+        <td class="left_edge top_edge bottom_edge" id="color1"></td>
+        <td class="top_edge bottom_edge" id="color2"></td>
+        <td class="top_edge bottom_edge" id="color3"></td>
+        <td class="top_edge bottom_edge" id="color4"></td>
+        <td class="top_edge bottom_edge" id="color5"></td>
+        <td class="top_edge bottom_edge" id="color6"></td>
+        <td class="top_edge bottom_edge" id="color7"></td>
+        <td class="top_edge bottom_edge" id="color8"></td>
+        <td class="top_edge bottom_edge right_edge" id="color9"></td>
+        <td class="nonletter"></td>
+    </tr><tr><td class="nonletter"></td>
+        <td class="nonletter"></td>
+        <td class="nonletter"></td>
+        <td class="nonletter"></td>
+        <td class="nonletter"></td>
+        <td class="nonletter"></td>
+        <td class="nonletter"></td>
+        <td class="nonletter"></td>
+        <td class="nonletter"></td>
+        <td class="nonletter"></td>
+        <td class="nonletter"></td>
+    </tr><tr><td class="top_edge left_edge">-19</td>
+        <td class="top_edge">+2</td>
+        <td class="top_edge">+7</td>
+        <td class="top_edge">+4</td>
+        <td class="top_edge">+18</td>
+        <td class="top_edge">+14</td>
+        <td class="top_edge">-20</td>
+        <td class="top_edge">+2</td>
+        <td class="top_edge right_edge">-2</td>
+        <td class="nonletter">51-A</td>
+    </tr><tr><td class="nonletter"></td>
+        <td class="left_edge">+1</td>
+        <td>+14</td>
+        <td>+18</td>
+        <td>-6</td>
+        <td>-10</td>
+        <td>+11</td>
+        <td>+14</td>
+        <td>-2</td>
+        <td class="right_edge">+2</td>
+        <td class="nonletter">51-C</td>
+    </tr><tr><td class="nonletter"></td>
+        <td class="left_edge">-1</td>
+        <td>-3</td>
+        <td>+7</td>
+        <td>+14</td>
+        <td>+5</td>
+        <td>-12</td>
+        <td>+0</td>
+        <td>-4</td>
+        <td class="right_edge">+1</td>
+        <td class="nonletter">43</td>
+    </tr><tr><td class="nonletter"></td>
+        <td class="left_edge">+10</td>
+        <td>+4</td>
+        <td>-2</td>
+        <td>+0</td>
+        <td>+11</td>
+        <td>+11</td>
+        <td>-11</td>
+        <td>+9</td>
+        <td class="right_edge">-3</td>
+        <td class="nonletter">60</td>
+    </tr><tr><td class="nonletter"></td>
+        <td class="left_edge">+10</td>
+        <td>+0</td>
+        <td>-2</td>
+        <td>-4</td>
+        <td>-9</td>
+        <td>-10</td>
+        <td>-15</td>
+        <td>-12</td>
+        <td class="right_edge">-23</td>
+        <td class="nonletter">69</td>
+    </tr><tr><td class="nonletter"></td>
+        <td class="left_edge">+8</td>
+        <td>+13</td>
+        <td>-17</td>
+        <td>+12</td>
+        <td>-6</td>
+        <td>+14</td>
+        <td>+3</td>
+        <td>-1</td>
+        <td class="right_edge">-15</td>
+        <td class="nonletter">94</td>
+    </tr><tr><td class="nonletter"></td>
+        <td class="left_edge">-13</td>
+        <td>-17</td>
+        <td>+0</td>
+        <td>-7</td>
+        <td>+19</td>
+        <td>-7</td>
+        <td>-8</td>
+        <td>-5</td>
+        <td class="right_edge">-16</td>
+        <td class="nonletter">99</td>
+    </tr><tr><td class="nonletter"></td>
+        <td class="left_edge">-6</td>
+        <td>+12</td>
+        <td>-6</td>
+        <td>+2</td>
+        <td>+3</td>
+        <td>+13</td>
+        <td>+4</td>
+        <td>+2</td>
+        <td class="right_edge">-4</td>
+        <td class="nonletter">121</td>
+    </tr><tr><td class="nonletter"></td>
+        <td class="bottom_edge left_edge">-3</td>
+        <td class="bottom_edge">+15</td>
+        <td class="bottom_edge">-15</td>
+        <td class="bottom_edge">-16</td>
+        <td class="bottom_edge">+6</td>
+        <td class="bottom_edge">-8</td>
+        <td class="bottom_edge">+11</td>
+        <td class="bottom_edge">-7</td>
+        <td class="bottom_edge right_edge">+3</td>
+        <td class="nonletter">127</td>
+    </tr></table></body></html>
+{% endblock %}

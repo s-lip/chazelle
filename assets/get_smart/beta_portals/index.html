@@ -1,0 +1,61 @@
+
+{% extends "get_smart/_/puzzle.html" %}
+{% block body_class %}{{ super() }} puzzle{% endblock %}
+
+{% block puzzle_title %}Portals{% endblock %}
+
+{% block extra_head %}
+
+{% endblock %}
+
+{% block body %}
+<a href="portals_puzzle.png">Image</a>
+<p>
+In this puzzle you will need to solve 10 grid-based logic puzzles which all interlink with each other through "portals". Below is an explanation of how the portals work and the rules for each individual puzzle.
+
+<br><br>
+PORTAL SYSTEM
+Each of the ten puzzles corresponds to a color, seen above the grid where the name of the puzzle is written. The grid contains nine square areas, one each of the other nine colors. These are portals that connect the puzzle to the one given by the portal color. On the portal squares, the two puzzles must agree on which squares are black and which are not. For instance, if in the red grid the top left square of the blue portal is black, then in the blue grid the top left square of the red portal must also be black, and vice versa.
+<br><br>
+NURIKABE (Red)
+Shade in some cells so that each contiguous unshaded area contains exactly one number, giving the number of cells in that area. Cells with numbers cannot be shaded. The shaded cells should all be connected, and there cannot be a two-by-two block of shaded cells.
+In the solution, shaded cells are considered black.
+<br><br>
+TAPA (Blue)
+Shade in some squares so that they form a connected group and no two by two area is completely shaded. Two squares that touch at a point are not considered connected. Numbers in the grid give the lengths of each consecutive block of shaded squares in the eight surrounding cells. Distinct blocks must have at least one unshaded square between them.
+In the solution, shaded cells are considered black.
+<br><br>
+SNAKE (Green)
+Shade in some cells to form a snake of width one cell which does not touch itself even at a point. The head and tail of the snake are given as white circles. A cell with a number tells how many of the eight surrounding cells contain a segment of the snake. The snake may not pass through cells with numbers.
+In the solution, shaded cells are considered black.
+<br><br>
+STATUE PARK (Yellow)
+Place each of the twelve pentominoes so that each is used once in the grid, with rotations and reflections allowed. Two pentominoes may not touch by side, and the cells not used by pentominoes must all be connected. A cell with a black circle must be part of some pentomino, and a cell with a white circle cannot be part of any pentomino.
+In the solution, cells that are part of a pentomino are considered black.
+<br><br>
+LITS (Pink)
+Shade in some cells so that each region contains four shaded cells connected by side, forming a tetromino. Two tetrominoes touching by side cannot be a rotation or reflection of each other. The shaded cells should all be connected, and there cannot be a two-by-two block of shaded cells.
+In the solution, shaded cells are considered black.
+<br><br>
+SLITHERLINK (Cyan)
+Draw a single closed loop of horizontal and vertical line segments passing through the dots. A number in a cell tells how many sides of the cell's perimeter are part of the loop.
+In the solution, cells inside the loop are considered black.
+<br><br>
+CORRAL (Orange)
+Draw a single closed loop of horizontal and vertical line segments along the grid lines. All given numbers should be contained inside the loop. The number tells how many cells inside the loop can be seen from the number's square when looking vertically or horizontally, where the number's own square is counted and the loop is treated as a wall.
+In the solution, cells inside the loop are considered black.
+<br><br>
+NORINORI (Indigo)
+Shade in exactly two cells of each region. Each shaded cell must share a side with exactly one other shaded cell, which may or may not be in the same region.
+In the solution, shaded cells are considered black.
+<br><br>
+CREEK (Dark Gray)
+Shade in some cells so that each circled number touches exactly that many shaded cells. The unshaded cells should all be connected.
+In the solution, shaded cells are considered black.
+<br><br>
+HEYAWAKE (Light Gray)
+Shade in some cells so that no two shaded cells share a side and the unshaded cells are all connected. A region with a number should contain exactly that many shaded cells. Additionally, there should be no horizontal or vertical block of unshaded cells which contains cells of three different regions.
+In the solution, shaded cells are considered black.
+</p>
+
+{% endblock %}
