@@ -7,7 +7,7 @@ echo DATE=$DATE
 echo git add -A
 git add -A
 echo git commit -m "Auto-commit $DATE"
-git commit -m "Auto-commit $DATE"
+git commit -m "Auto-commit $DATE" || echo skipping commit
 echo git fetch origin master
 git fetch origin master
 echo mergebase=$(git merge-base FETCH_HEAD master)
